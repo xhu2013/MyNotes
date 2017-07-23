@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.3.5)  23 JUL 2017 20:16
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.3.5)  23 JUL 2017 20:48
 entering extended mode
 **E:/MyNotes/Reinforcement_Learning/Reinforcement_Learning.tex
 (E:/MyNotes/Reinforcement_Learning/Reinforcement_Learning.tex
@@ -432,11 +432,35 @@ File: t1fau.fd 2006/01/25 Fontinst v1.926 font definitions for T1/fau.
 LaTeX Font Warning: Font shape `T1/fau/bx/n' undefined
 (Font)              using `T1/fau/m/n' instead on input line 74.
 
-LaTeX Font Info:    Try loading font information for C19+song on input line 76.
+LaTeX Font Info:    Try loading font information for C19+song on input line 75.
 
 (d:\CTEX\CTeX\tex\latex\CJK\GB\c19song.fd
 File: c19song.fd 2009/09/23 4.8.2
 )
+LaTeX Font Info:    Try loading font information for OMS+fau on input line 77.
+LaTeX Font Info:    No file OMSfau.fd. on input line 77.
+
+
+LaTeX Font Warning: Font shape `OMS/fau/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbullet' on input line 77.
+
+
+Overfull \hbox (9.18976pt too wide) in paragraph at lines 106--108
+\C19/song/m/n/12/54 N \C19/song/m/n/12/61 ´ \C19/song/m/n/12/41 u \C19/song/m/n
+/12/59 y \C19/song/m/n/12/63 ù \C19/song/m/n/12/52 Ù \C19/song/m/n/12/55 ¢ ´ \C
+19/song/m/n/12/42 Š \C19/song/m/n/12/46 â \C19/song/m/n/12/40  \C19/song/m/n/1
+2/55 ª\T1/fau/m/n/12 3[]\C19/song/m/n/12/40  \C19/song/m/n/12/60 / \C19/song/m
+/n/12/55 ª \C19/song/m/n/12/26 § \C19/song/m/n/12/48 | \C19/song/m/n/12/62 ^ \C
+19/song/m/n/12/63 ý \C19/song/m/n/12/55 ¢ \C19/song/m/n/12/40  \C19/song/m/n/1
+2/48 á \C19/song/m/n/12/45 = \C19/song/m/n/12/44 £ \C19/song/m/n/12/37 $\OML/l
+lcmm/m/it/12 r[]$\C19/song/m/n/12/43 Ú \C19/song/m/n/12/59 e \C19/song/m/n/12/4
+2 ‡ \C19/song/m/n/12/65 G \C19/song/m/n/12/57  \C19/song/m/n/12/40  \C19/song
+/m/n/12/64 Š \C19/song/m/n/12/43 ¼ \C19/song/m/n/12/55 ê$\OML/llcmm/m/it/12 V\O
+T1/llcmss/m/n/12 (\OML/llcmm/m/it/12 s[]\OT1/llcmss/m/n/12 )$\C19/song/m/n/12/4
+8 5
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (15.0pt): 
  Make it at least 18.0pt.
@@ -446,30 +470,36 @@ Package Fancyhdr Warning: \headheight is too small (15.0pt):
 <background.png, id=1, 2559.5625pt x 3312.375pt>
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 148.
+Package pdftex.def Info: background.png used on input line 132.
 (pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
  [1{d:/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}
 
- <E:/MyNotes/Reinforcement_Learning/background.png>] 
+ <E:/MyNotes/Reinforcement_Learning/background.png>]
+File: background.png Graphic file (type png)
+ <use background.png>
+Package pdftex.def Info: background.png used on input line 200.
+(pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
+ [2]
+
 AED: lastpage setting LastPage
 File: background.png Graphic file (type png)
 <use background.png>
-Package pdftex.def Info: background.png used on input line 171.
+Package pdftex.def Info: background.png used on input line 204.
 (pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
- [2]
+ [3]
 (E:\MyNotes\Reinforcement_Learning\Reinforcement_Learning.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 4904 strings out of 495354
- 58919 string characters out of 3183860
- 140537 words of memory out of 3000000
- 7968 multiletter control sequences out of 15000+200000
- 30419 words of font info for 100 fonts, out of 3000000 for 9000
+ 5015 strings out of 495354
+ 61083 string characters out of 3183860
+ 144526 words of memory out of 3000000
+ 8074 multiletter control sequences out of 15000+200000
+ 34840 words of font info for 115 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 32i,13n,43p,365b,538s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 32i,14n,43p,385b,611s stack positions out of 5000i,500n,10000p,200000b,50000s
 <d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/
 chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTe
 X/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun
@@ -487,15 +517,17 @@ ts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf>
 <d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/ch
 inese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/
 fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.t
-tf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf>{d:/CTEX/MiKTeX/fonts/enc/dv
-ips/fontname/8r.enc}<d:/CTEX/MiKTeX/fonts/type1/emerald/faumw.pfb><d:/CTEX/MiKT
-eX/fonts/type1/public/lxfonts/lcmex8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxf
-onts/lcmmi8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts/lcmsy8.pfb><d:/CTEX/
-MiKTeX/fonts/type1/public/lxfonts/leclq8.pfb><d:/CTEX/MiKTeX/fonts/type1/public
-/lxfonts/llcmss8.pfb>
-Output written on Reinforcement_Learning.pdf (2 pages, 534579 bytes).
+tf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype
+/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CT
+eX/fonts/truetype/chinese/simsun.ttf>{d:/CTEX/MiKTeX/fonts/enc/dvips/fontname/8
+r.enc}<d:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/CTEX/MiKTeX
+/fonts/type1/emerald/faumw.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts/lcmex
+8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts/lcmmi8.pfb><d:/CTEX/MiKTeX/fon
+ts/type1/public/lxfonts/lcmsy8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts/l
+eclq8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts/llcmss8.pfb>
+Output written on Reinforcement_Learning.pdf (3 pages, 576789 bytes).
 PDF statistics:
- 152 PDF objects out of 1000 (max. 8388607)
+ 171 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
