@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.3.5)  23 JUL 2017 20:48
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.3.5)  23 JUL 2017 22:34
 entering extended mode
 **E:/MyNotes/Reinforcement_Learning/Reinforcement_Learning.tex
 (E:/MyNotes/Reinforcement_Learning/Reinforcement_Learning.tex
@@ -256,129 +256,582 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@dimlist=\toks21
 
 (d:\CTEX\MiKTeX\tex\latex\geometry\geometry.cfg))
+(d:\CTEX\MiKTeX\tex\latex\mdframed\mdframed.sty
+Package: mdframed 2012/03/04 v1.4: mdframed
+
+(d:\CTEX\MiKTeX\tex\latex\oberdiek\kvoptions.sty
+Package: kvoptions 2010/12/23 v3.10 Keyval support for LaTeX options (HO)
+
+(d:\CTEX\MiKTeX\tex\generic\oberdiek\kvsetkeys.sty
+Package: kvsetkeys 2011/04/07 v1.13 Key value parser (HO)
+
+(d:\CTEX\MiKTeX\tex\generic\oberdiek\etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Prefix for e-TeX command names (HO)
+
+(d:\CTEX\MiKTeX\tex\generic\oberdiek\ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(d:\CTEX\MiKTeX\tex\latex\l3packages\xparse\xparse.sty
+(d:\CTEX\MiKTeX\tex\latex\l3kernel\expl3.sty
+(d:\CTEX\MiKTeX\tex\latex\l3kernel\l3names.sty
+(d:\CTEX\MiKTeX\tex\latex\l3kernel\l3bootstrap.sty
+Package: l3bootstrap 2011/12/29 v3110 L3 Experimental bootstrap code
+)
+Package: l3names 2011/12/30 v3113 L3 Experimental namespace for primitives
+)
+(d:\CTEX\MiKTeX\tex\latex\misc\etex.sty
+Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
+\et@xins=\count103
+)
+Package: expl3 2012/02/26 v3471 L3 Experimental code bundle wrapper
+
+(d:\CTEX\MiKTeX\tex\latex\l3kernel\l3basics.sty
+Package: l3basics 2012/02/26 v3460 L3 Experimental basic definitions
+)
+(d:\CTEX\MiKTeX\tex\latex\l3kernel\l3expan.sty
+Package: l3expan 2012/02/26 v3460 L3 Experimental argument expansion
+)
+(d:\CTEX\MiKTeX\tex\latex\l3kernel\l3tl.sty
+Package: l3tl 2012/02/26 v3460 L3 Experimental token lists
+)
+(d:\CTEX\MiKTeX\tex\latex\l3kernel\l3seq.sty
+Package: l3seq 2012/01/09 v3158 L3 Experimental sequences and stacks
+)
+(d:\CTEX\MiKTeX\tex\latex\l3kernel\l3int.sty
+Package: l3int 2012/02/26 v3460 L3 Experimental integers
+\c_max_int=\count104
+\l_tmpa_int=\count105
+\l_tmpb_int=\count106
+\l_tmpc_int=\count107
+\g_tmpa_int=\count108
+\g_tmpb_int=\count109
+)
+(d:\CTEX\MiKTeX\tex\latex\l3kernel\l3quark.sty
+Package: l3quark 2012/02/12 v3384 L3 Experimental quarks
+)
+(d:\CTEX\MiKTeX\tex\latex\l3kernel\l3prg.sty
+Package: l3prg 2012/02/26 v3464 L3 Experimental control structures
+\g_prg_map_int=\count110
+)
+(d:\CTEX\MiKTeX\tex\latex\l3kernel\l3clist.sty
+Package: l3clist 2012/02/26 v3460 L3 Experimental comma separated lists
+)
+(d:\CTEX\MiKTeX\tex\latex\l3kernel\l3token.sty
+Package: l3token 2012/02/26 v3460 L3 Experimental token manipulation
+)
+(d:\CTEX\MiKTeX\tex\latex\l3kernel\l3prop.sty
+Package: l3prop 2012/02/26 v3460 L3 Experimental property lists
+)
+(d:\CTEX\MiKTeX\tex\latex\l3kernel\l3msg.sty
+Package: l3msg 2012/02/26 v3470 L3 Experimental messages
+)
+(d:\CTEX\MiKTeX\tex\latex\l3kernel\l3file.sty
+Package: l3file 2012/02/26 v3464 L3 Experimental file and I/O operations
+\l_iow_stream_int=\count111
+\l_iow_line_length_int=\count112
+\l_iow_target_length_int=\count113
+\l_iow_current_line_int=\count114
+\l_iow_current_word_int=\count115
+\l_iow_current_indentation_int=\count116
+)
+(d:\CTEX\MiKTeX\tex\latex\l3kernel\l3skip.sty
+Package: l3skip 2012/02/26 v3460 L3 Experimental dimensions and skips
+\l_tmpa_dim=\dimen122
+\l_tmpb_dim=\dimen123
+\l_tmpc_dim=\dimen124
+\g_tmpa_dim=\dimen125
+\g_tmpb_dim=\dimen126
+\l_tmpa_skip=\skip46
+\l_tmpb_skip=\skip47
+\l_tmpc_skip=\skip48
+\g_tmpa_skip=\skip49
+\g_tmpb_skip=\skip50
+)
+(d:\CTEX\MiKTeX\tex\latex\l3kernel\l3keys.sty
+Package: l3keys 2011/12/22 v3086 L3 Experimental key-value interfaces
+\g_keyval_level_int=\count117
+\l_keys_choice_int=\count118
+)
+(d:\CTEX\MiKTeX\tex\latex\l3kernel\l3fp.sty
+Package: l3fp 2012/02/06 v3315 L3 Experimental floating-point operations
+\c_one_million=\count119
+\c_one_hundred_million=\count120
+\c_five_hundred_million=\count121
+\c_one_thousand_million=\count122
+\c_fp_pi_by_four_decimal_int=\count123
+\c_fp_pi_by_four_extended_int=\count124
+\c_fp_pi_decimal_int=\count125
+\c_fp_pi_extended_int=\count126
+\c_fp_two_pi_decimal_int=\count127
+\c_fp_two_pi_extended_int=\count128
+\l_fp_count_int=\count129
+\l_fp_div_offset_int=\count130
+\l_fp_exp_integer_int=\count131
+\l_fp_exp_decimal_int=\count132
+\l_fp_exp_extended_int=\count133
+\l_fp_exp_exponent_int=\count134
+\l_fp_input_a_sign_int=\count135
+\l_fp_input_a_integer_int=\count136
+\l_fp_input_a_decimal_int=\count137
+\l_fp_input_a_exponent_int=\count138
+\l_fp_input_b_sign_int=\count139
+\l_fp_input_b_integer_int=\count140
+\l_fp_input_b_decimal_int=\count141
+\l_fp_input_b_exponent_int=\count142
+\l_fp_input_a_extended_int=\count143
+\l_fp_input_b_extended_int=\count144
+\l_fp_mul_a_i_int=\count145
+\l_fp_mul_a_ii_int=\count146
+\l_fp_mul_a_iii_int=\count147
+\l_fp_mul_a_iv_int=\count148
+\l_fp_mul_a_v_int=\count149
+\l_fp_mul_a_vi_int=\count150
+\l_fp_mul_b_i_int=\count151
+\l_fp_mul_b_ii_int=\count152
+\l_fp_mul_b_iii_int=\count153
+\l_fp_mul_b_iv_int=\count154
+\l_fp_mul_b_v_int=\count155
+\l_fp_mul_b_vi_int=\count156
+\l_fp_mul_output_int=\count157
+\l_fp_output_sign_int=\count158
+\l_fp_output_integer_int=\count159
+\l_fp_output_decimal_int=\count160
+\l_fp_output_exponent_int=\count161
+\l_fp_output_extended_int=\count162
+\l_fp_round_position_int=\count163
+\l_fp_round_target_int=\count164
+\l_fp_split_sign_int=\count165
+\l_fp_internal_int=\count166
+\l_fp_trig_octant_int=\count167
+\l_fp_trig_sign_int=\count168
+\l_fp_trig_decimal_int=\count169
+\l_fp_trig_extended_int=\count170
+\l_fp_internal_dim=\dimen127
+\l_fp_internal_skip=\skip51
+)
+(d:\CTEX\MiKTeX\tex\latex\l3kernel\l3box.sty
+Package: l3box 2012/02/18 v3432 L3 Experimental boxes
+\l_tmpb_box=\box29
+\l_box_top_dim=\dimen128
+\l_box_bottom_dim=\dimen129
+\l_box_left_dim=\dimen130
+\l_box_right_dim=\dimen131
+\l_box_top_new_dim=\dimen132
+\l_box_bottom_new_dim=\dimen133
+\l_box_left_new_dim=\dimen134
+\l_box_right_new_dim=\dimen135
+\l_box_internal_box=\box30
+)
+(d:\CTEX\MiKTeX\tex\latex\l3kernel\l3coffins.sty
+Package: l3coffins 2012/02/26 v3460 L3 Experimental coffin code layer
+\l_coffin_internal_box=\box31
+\l_coffin_internal_dim=\dimen136
+\l_coffin_offset_x_dim=\dimen137
+\l_coffin_offset_y_dim=\dimen138
+\l_coffin_x_dim=\dimen139
+\l_coffin_y_dim=\dimen140
+\l_coffin_x_prime_dim=\dimen141
+\l_coffin_y_prime_dim=\dimen142
+\l_coffin_Depth_dim=\dimen143
+\l_coffin_Height_dim=\dimen144
+\l_coffin_TotalHeight_dim=\dimen145
+\l_coffin_Width_dim=\dimen146
+\c_empty_coffin=\box32
+\l_coffin_aligned_coffin=\box33
+\l_coffin_aligned_internal_coffin=\box34
+\l_coffin_bounding_shift_dim=\dimen147
+\l_coffin_left_corner_dim=\dimen148
+\l_coffin_right_corner_dim=\dimen149
+\l_coffin_bottom_corner_dim=\dimen150
+\l_coffin_top_corner_dim=\dimen151
+\l_coffin_scaled_total_height_dim=\dimen152
+\l_coffin_scaled_width_dim=\dimen153
+\l_coffin_display_coffin=\box35
+\l_coffin_display_coord_coffin=\box36
+\l_coffin_display_pole_coffin=\box37
+\l_coffin_display_offset_dim=\dimen154
+\l_coffin_display_x_dim=\dimen155
+\l_coffin_display_y_dim=\dimen156
+)
+(d:\CTEX\MiKTeX\tex\latex\l3kernel\l3color.sty
+Package: l3color 2011/09/07 v2776 L3 Experimental colour support
+)
+(d:\CTEX\MiKTeX\tex\latex\l3kernel\l3luatex.sty
+Package: l3luatex 2012/02/09 v3355 L3 Experimental LuaTeX-specific functions
+\g_cctab_allocate_int=\count171
+\g_cctab_stack_int=\count172
+))
+Package: xparse 2012/02/26 v3471 L3 Experimental document command parser
+\l_xparse_current_arg_int=\count173
+\l_xparse_m_args_int=\count174
+\l_xparse_mandatory_args_int=\count175
+\l_xparse_processor_int=\count176
+\l_xparse_v_nesting_int=\count177
+)
+(d:\CTEX\MiKTeX\tex\latex\etoolbox\etoolbox.sty
+Package: etoolbox 2011/01/03 v2.1 e-TeX tools for LaTeX
+\etb@tempcnta=\count178
+)
+(d:\CTEX\MiKTeX\tex\latex\oberdiek\zref-abspage.sty
+Package: zref-abspage 2011/03/18 v2.21 Module abspage for zref (HO)
+
+(d:\CTEX\MiKTeX\tex\latex\oberdiek\zref-base.sty
+Package: zref-base 2011/03/18 v2.21 Module base for zref (HO)
+
+(d:\CTEX\MiKTeX\tex\generic\oberdiek\kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Defining keys (HO)
+)
+(d:\CTEX\MiKTeX\tex\generic\oberdiek\pdftexcmds.sty
+Package: pdftexcmds 2011/04/22 v0.16 Utilities of pdfTeX for LuaTeX (HO)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(d:\CTEX\MiKTeX\tex\latex\oberdiek\auxhook.sty
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+Package zref Info: New property list: main on input line 707.
+Package zref Info: New property: default on input line 708.
+Package zref Info: New property: page on input line 709.
+)
+\c@abspage=\count179
+Package zref Info: New property: abspage on input line 62.
+)
+\mdf@templength=\skip52
+\c@mdf@globalstyle@cnt=\count180
+\mdf@skipabove@length=\skip53
+\mdf@skipbelow@length=\skip54
+\mdf@leftmargin@length=\skip55
+\mdf@rightmargin@length=\skip56
+\mdf@innerleftmargin@length=\skip57
+\mdf@innerrightmargin@length=\skip58
+\mdf@innertopmargin@length=\skip59
+\mdf@innerbottommargin@length=\skip60
+\mdf@splittopskip@length=\skip61
+\mdf@splitbottomskip@length=\skip62
+\mdf@outermargin@length=\skip63
+\mdf@innermargin@length=\skip64
+\mdf@linewidth@length=\skip65
+\mdf@innerlinewidth@length=\skip66
+\mdf@middlelinewidth@length=\skip67
+\mdf@outerlinewidth@length=\skip68
+\mdf@roundcorner@length=\skip69
+\mdf@footenotedistance@length=\skip70
+\mdf@userdefinedwidth@length=\skip71
+\mdf@frametitleaboveskip@length=\skip72
+\mdf@frametitlebelowskip@length=\skip73
+\mdf@frametitlerulewidth@length=\skip74
+\mdf@frametitleleftmargin@length=\skip75
+\mdf@frametitlerightmargin@length=\skip76
+\mdf@shadowsize@length=\skip77
+\mdf@frametitlebox=\box38
+\mdf@footnotebox=\box39
+\mdf@splitbox@one=\box40
+\mdf@splitbox@two=\box41
+\mdfsplitboxwidth=\skip78
+\mdfsplitboxtotalwidth=\skip79
+\mdfsplitboxheight=\skip80
+\mdfsplitboxdepth=\skip81
+\mdfsplitboxtotalheight=\skip82
+\mdfframetitleboxwidth=\skip83
+\mdfframetitleboxtotalwidth=\skip84
+\mdfframetitleboxheight=\skip85
+\mdfframetitleboxdepth=\skip86
+\mdfframetitleboxtotalheight=\skip87
+\mdffootnoteboxwidth=\skip88
+\mdffootnoteboxtotalwidth=\skip89
+\mdffootnoteboxheight=\skip90
+\mdffootnoteboxdepth=\skip91
+\mdffootnoteboxtotalheight=\skip92
+\mdftotallinewidth=\skip93
+\mdfboundingboxwidth=\skip94
+\mdfboundingboxtotalwidth=\skip95
+\mdfboundingboxheight=\skip96
+\mdfboundingboxdepth=\skip97
+\mdfboundingboxtotalheight=\skip98
+\mdf@freevspace@length=\skip99
+\mdf@horizontalwidthofbox@length=\skip100
+\mdf@verticalmarginwhole@length=\skip101
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \newmdtheoremenv with arg. spec. 'O{} m o m o ' on
+. line 483.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \mdtheorem with arg. spec. ' O{} m o m o ' on line
+. 563.
+.................................................
+
+(d:\CTEX\MiKTeX\tex\latex\mdframed\md-frame-0.mdf
+File: md-frame-0.mdf 2012/03/04 v1.4: md-frame-0
+)
+\c@mdf@zref@counter=\count181
+Package zref Info: New property: mdf@pagevalue on input line 764.
+\mdf@horizontalspaceofbox=\skip102
+)
+(d:\CTEX\MiKTeX\tex\latex\tools\enumerate.sty
+Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
+\@enLab=\toks22
+)
+(d:\CTEX\MiKTeX\tex\latex\oberdiek\epstopdf.sty
+Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
+
+(d:\CTEX\MiKTeX\tex\latex\oberdiek\epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(d:\CTEX\MiKTeX\tex\latex\oberdiek\grfext.sty
+Package: grfext 2010/08/19 v1.1 Managing graphics extensions (HO)
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+))
+(d:\CTEX\MiKTeX\tex\latex\subfigure\subfigure.sty
+Package: subfigure 2002/07/30 v2.1.4 subfigure package
+\subfigtopskip=\skip103
+\subfigcapskip=\skip104
+\subfigcaptopadj=\dimen157
+\subfigbottomskip=\skip105
+\subfigcapmargin=\dimen158
+\subfiglabelskip=\skip106
+\c@subfigure=\count182
+\c@lofdepth=\count183
+\c@subtable=\count184
+\c@lotdepth=\count185
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(d:\CTEX\MiKTeX\tex\latex\subfigure\subfigure.cfg)
+\subfig@top=\skip107
+\subfig@bottom=\skip108
+)
+(d:\CTEX\MiKTeX\tex\latex\ltxmisc\url.sty
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+(d:\CTEX\MiKTeX\tex\latex\hyperref\hyperref.sty
+Package: hyperref 2012/02/06 v6.82o Hypertext links for LaTeX
+
+(d:\CTEX\MiKTeX\tex\generic\oberdiek\hobsub-hyperref.sty
+Package: hobsub-hyperref 2011/04/23 v1.4 Bundle oberdiek, subset hyperref (HO)
+
+(d:\CTEX\MiKTeX\tex\generic\oberdiek\hobsub-generic.sty
+Package: hobsub-generic 2011/04/23 v1.4 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2011/04/23 v1.4 Subsetting bundle oberdiek (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package hobsub Info: Skipping package `ifluatex' (already loaded).
+Package hobsub Info: Skipping package `ifvtex' (already loaded).
+Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package hobsub Info: Skipping package `etexcmds' (already loaded).
+Package hobsub Info: Skipping package `kvsetkeys' (already loaded).
+Package hobsub Info: Skipping package `kvdefinekeys' (already loaded).
+Package hobsub Info: Skipping package `pdftexcmds' (already loaded).
+Package: pdfescape 2011/04/04 v1.12 Provides string conversions (HO)
+Package: bigintcalc 2011/01/30 v1.2 Expandable big integer calculations (HO)
+Package: bitset 2011/01/30 v1.1 Data type bit set (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provides unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2011/01/30 v1.0 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/04/23 v1.7 Hooks at very end of document (HO)
+Package hobsub Info: Skipping package `atbegshi' (already loaded).
+Package: refcount 2010/12/01 v3.2 Data extraction from references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options of hyperref/bookmark (HO)
+)
+\@linkdim=\dimen159
+\Hy@linkcounter=\count186
+\Hy@pagecounter=\count187
+
+(d:\CTEX\MiKTeX\tex\latex\hyperref\pd1enc.def
+File: pd1enc.def 2012/02/06 v6.82o Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count188
+
+(d:\CTEX\MiKTeX\tex\latex\00miktex\hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 3925.
+Package hyperref Info: Hyper figures OFF on input line 4046.
+Package hyperref Info: Link nesting OFF on input line 4051.
+Package hyperref Info: Hyper index ON on input line 4054.
+Package hyperref Info: Plain pages OFF on input line 4061.
+Package hyperref Info: Backreferencing OFF on input line 4066.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4284.
+\c@Hy@tempcnt=\count189
+LaTeX Info: Redefining \url on input line 4637.
+\Fld@menulength=\count190
+\Field@Width=\dimen160
+\Fld@charsize=\dimen161
+Package hyperref Info: Hyper figures OFF on input line 5757.
+Package hyperref Info: Link nesting OFF on input line 5762.
+Package hyperref Info: Hyper index ON on input line 5765.
+Package hyperref Info: backreferencing OFF on input line 5772.
+Package hyperref Info: Link coloring ON on input line 5775.
+Package hyperref Info: Link coloring with OCG OFF on input line 5782.
+Package hyperref Info: PDF/A mode OFF on input line 5787.
+LaTeX Info: Redefining \ref on input line 5827.
+LaTeX Info: Redefining \pageref on input line 5831.
+\Hy@abspage=\count191
+\c@Item=\count192
+\c@Hfootnote=\count193
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(d:\CTEX\MiKTeX\tex\latex\hyperref\hpdftex.def
+File: hpdftex.def 2012/02/06 v6.82o Hyperref driver for pdfTeX
+\Fld@listcount=\count194
+\c@bookmark@seq@number=\count195
+
+(d:\CTEX\MiKTeX\tex\latex\oberdiek\rerunfilecheck.sty
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip109
+)
 (d:\CTEX\MiKTeX\tex\latex\fancyhdr\fancyhdr.sty
-\fancy@headwidth=\skip46
-\f@ncyO@elh=\skip47
-\f@ncyO@erh=\skip48
-\f@ncyO@olh=\skip49
-\f@ncyO@orh=\skip50
-\f@ncyO@elf=\skip51
-\f@ncyO@erf=\skip52
-\f@ncyO@olf=\skip53
-\f@ncyO@orf=\skip54
+\fancy@headwidth=\skip110
+\f@ncyO@elh=\skip111
+\f@ncyO@erh=\skip112
+\f@ncyO@olh=\skip113
+\f@ncyO@orh=\skip114
+\f@ncyO@elf=\skip115
+\f@ncyO@erf=\skip116
+\f@ncyO@olf=\skip117
+\f@ncyO@orf=\skip118
 )
 (d:\CTEX\MiKTeX\tex\latex\titlesec\titlesec.sty
 Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
-\ttl@box=\box29
-\beforetitleunit=\skip55
-\aftertitleunit=\skip56
-\ttl@plus=\dimen122
-\ttl@minus=\dimen123
-\ttl@toksa=\toks22
-\titlewidth=\dimen124
-\titlewidthlast=\dimen125
-\titlewidthfirst=\dimen126
+\ttl@box=\box42
+\beforetitleunit=\skip119
+\aftertitleunit=\skip120
+\ttl@plus=\dimen162
+\ttl@minus=\dimen163
+\ttl@toksa=\toks23
+\titlewidth=\dimen164
+\titlewidthlast=\dimen165
+\titlewidthfirst=\dimen166
 )
 (E:\MyNotes\Reinforcement_Learning\Reinforcement_Learning.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
 
 (d:\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count103
-\scratchdimen=\dimen127
-\scratchbox=\box30
-\nofMPsegments=\count104
-\nofMParguments=\count105
-\everyMPshowfont=\toks23
-\MPscratchCnt=\count106
-\MPscratchDim=\dimen128
-\MPnumerator=\count107
-\makeMPintoPDFobject=\count108
-\everyMPtoPDFconversion=\toks24
+\scratchcounter=\count196
+\scratchdimen=\dimen167
+\scratchbox=\box43
+\nofMPsegments=\count197
+\nofMParguments=\count198
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count199
+\MPscratchDim=\dimen168
+\MPnumerator=\count200
+\makeMPintoPDFobject=\count201
+\everyMPtoPDFconversion=\toks25
 )
-\AtBeginShipoutBox=\box31
+\AtBeginShipoutBox=\box44
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             http://www.ctan.org/tex-archive/ 
 (lastpage)             macros/latex/contrib/pageslts/ 
 (lastpage)             or
 (lastpage)             http://www.ctan.org/tex-archive/ 
 (lastpage)             install/macros/latex/contrib/pageslts.tds.zip
-(lastpage)             ! on input line 47.
+(lastpage)             ! on input line 73.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -414,6 +867,24 @@ Package lastpage Info: Please have a look at the pageslts package at
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+Package hyperref Info: Link coloring ON on input line 73.
+(d:\CTEX\MiKTeX\tex\latex\hyperref\nameref.sty
+Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
+
+(d:\CTEX\MiKTeX\tex\generic\oberdiek\gettitlestring.sty
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+Normal \count register pool exhausted, switching to extended pool.
+\c@section@level=\count277
+)
+LaTeX Info: Redefining \ref on input line 73.
+LaTeX Info: Redefining \pageref on input line 73.
+LaTeX Info: Redefining \nameref on input line 73.
+
+(E:\MyNotes\Reinforcement_Learning\Reinforcement_Learning.out)
+(E:\MyNotes\Reinforcement_Learning\Reinforcement_Learning.out)
+\@outlinefile=\write3
+
 (d:\CTEX\MiKTeX\tex\latex\cjk\standard.bdg
 File: standard.bdg 2008/12/29 4.8.2
 )
@@ -423,42 +894,43 @@ File: extended.enc 2008/12/29 4.8.2
 (d:\CTEX\MiKTeX\tex\latex\cjk\extended.chr
 File: extended.chr 2008/12/29 4.8.2
 )
-LaTeX Font Info:    Try loading font information for T1+fau on input line 50.
+LaTeX Font Info:    Try loading font information for T1+fau on input line 76.
 
 (d:\CTEX\MiKTeX\tex\latex\emerald\t1fau.fd
 File: t1fau.fd 2006/01/25 Fontinst v1.926 font definitions for T1/fau.
 )
 
 LaTeX Font Warning: Font shape `T1/fau/bx/n' undefined
-(Font)              using `T1/fau/m/n' instead on input line 74.
+(Font)              using `T1/fau/m/n' instead on input line 100.
 
-LaTeX Font Info:    Try loading font information for C19+song on input line 75.
-
+LaTeX Font Info:    Try loading font information for C19+song on input line 101
+.
 (d:\CTEX\CTeX\tex\latex\CJK\GB\c19song.fd
 File: c19song.fd 2009/09/23 4.8.2
 )
-LaTeX Font Info:    Try loading font information for OMS+fau on input line 77.
-LaTeX Font Info:    No file OMSfau.fd. on input line 77.
+LaTeX Font Info:    Try loading font information for OMS+fau on input line 104.
+
+LaTeX Font Info:    No file OMSfau.fd. on input line 104.
 
 
 LaTeX Font Warning: Font shape `OMS/fau/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbullet' on input line 77.
+(Font)              for symbol `textbullet' on input line 104.
 
 
-Overfull \hbox (9.18976pt too wide) in paragraph at lines 106--108
+Overfull \hbox (9.18976pt too wide) in paragraph at lines 133--135
 \C19/song/m/n/12/54 N \C19/song/m/n/12/61 ¥ \C19/song/m/n/12/41 u \C19/song/m/n
 /12/59 y \C19/song/m/n/12/63 ˘ \C19/song/m/n/12/52 Ÿ \C19/song/m/n/12/55 ¢ ¥ \C
 19/song/m/n/12/42 ä \C19/song/m/n/12/46 ‚ \C19/song/m/n/12/40  \C19/song/m/n/1
-2/55 ™\T1/fau/m/n/12 3[]\C19/song/m/n/12/40  \C19/song/m/n/12/60 / \C19/song/m
-/n/12/55 ™ \C19/song/m/n/12/26 ß \C19/song/m/n/12/48 | \C19/song/m/n/12/62 ^ \C
-19/song/m/n/12/63 ˝ \C19/song/m/n/12/55 ¢ \C19/song/m/n/12/40  \C19/song/m/n/1
-2/48 · \C19/song/m/n/12/45 = \C19/song/m/n/12/44 £ \C19/song/m/n/12/37 $\OML/l
-lcmm/m/it/12 r[]$\C19/song/m/n/12/43 ⁄ \C19/song/m/n/12/59 e \C19/song/m/n/12/4
-2 á \C19/song/m/n/12/65 G \C19/song/m/n/12/57  \C19/song/m/n/12/40  \C19/song
-/m/n/12/64 ä \C19/song/m/n/12/43 º \C19/song/m/n/12/55 Í$\OML/llcmm/m/it/12 V\O
-T1/llcmss/m/n/12 (\OML/llcmm/m/it/12 s[]\OT1/llcmss/m/n/12 )$\C19/song/m/n/12/4
-8 5
+2/55 ™[][]\T1/fau/m/n/12 3[][]\C19/song/m/n/12/40  \C19/song/m/n/12/60 / \C19/
+song/m/n/12/55 ™ \C19/song/m/n/12/26 ß \C19/song/m/n/12/48 | \C19/song/m/n/12/6
+2 ^ \C19/song/m/n/12/63 ˝ \C19/song/m/n/12/55 ¢ \C19/song/m/n/12/40  \C19/song
+/m/n/12/48 · \C19/song/m/n/12/45 = \C19/song/m/n/12/44 £ \C19/song/m/n/12/37 $
+\OML/llcmm/m/it/12 r[]$\C19/song/m/n/12/43 ⁄ \C19/song/m/n/12/59 e \C19/song/m/
+n/12/42 á \C19/song/m/n/12/65 G \C19/song/m/n/12/57  \C19/song/m/n/12/40  \C1
+9/song/m/n/12/64 ä \C19/song/m/n/12/43 º \C19/song/m/n/12/55 Í$\OML/llcmm/m/it/
+12 V\OT1/llcmss/m/n/12 (\OML/llcmm/m/it/12 s[]\OT1/llcmss/m/n/12 )$\C19/song/m/
+n/12/48 5
  []
 
 
@@ -467,49 +939,108 @@ Package Fancyhdr Warning: \headheight is too small (15.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-<background.png, id=1, 2559.5625pt x 3312.375pt>
+<background.png, id=15, 2559.5625pt x 3312.375pt>
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 132.
+Package pdftex.def Info: background.png used on input line 154.
 (pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
  [1{d:/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}
 
  <E:/MyNotes/Reinforcement_Learning/background.png>]
+Package epstopdf Info: Source file: <sarsaQ.eps>
+(epstopdf)                    date: 2017-07-23 21:36:03
+(epstopdf)                    size: 16525 bytes
+(epstopdf)             Output file: <sarsaQ-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-07-23 21:38:45
+(epstopdf)                    size: 10557 bytes
+(epstopdf)             Command: <epstopdf --outfile=sarsaQ-eps-converted-to.pdf
+ sarsaQ.eps>
+(epstopdf)             \includegraphics on input line 162.
+Package epstopdf Info: Output file is already uptodate.
+
+<sarsaQ-eps-converted-to.pdf, id=64, 594.22pt x 57.21375pt>
+File: sarsaQ-eps-converted-to.pdf Graphic file (type pdf)
+
+<use sarsaQ-eps-converted-to.pdf>
+Package pdftex.def Info: sarsaQ-eps-converted-to.pdf used on input line 162.
+(pdftex.def)             Requested size: 489.10307pt x 47.09453pt.
+
+Overfull \hbox (1.76147pt too wide) in paragraph at lines 159--164
+[]\T1/fau/m/n/12 Sarsa\C19/song/m/n/12/56 é \C19/song/m/n/12/41 { \C19/song/m/n
+/12/43  \C19/song/m/n/12/45 O \C19/song/m/n/12/40  \C19/song/m/n/12/55 ¥ \C19
+/song/m/n/12/40 ƒ \C19/song/m/n/12/65 ä \C19/song/m/n/12/64 ä \C19/song/m/n/12/
+43 º \C19/song/m/n/12/55 Í\T1/fau/m/n/12 (Q\C19/song/m/n/12/43 º \C19/song/m/n/
+12/55 Í\T1/fau/m/n/12 )\C19/song/m/n/12/41  ö \C19/song/m/n/12/65 G \C19/song/
+m/n/12/57  \C19/song/m/n/12/64 ä \C19/song/m/n/12/43 º \C19/song/m/n/12/55 Í \
+C19/song/m/n/12/26 ß \C19/song/m/n/12/61 è \C19/song/m/n/12/46 “ \C19/song/m/n/
+12/55 ¥ \C19/song/m/n/12/56 ` \C19/song/m/n/12/26 ß \C19/song/m/n/12/43  \C19/
+song/m/n/12/45 O \C19/song/m/n/12/40  \C19/song/m/n/12/55 ¥ \C19/song/m/n/12/3
+7 ¸ \C19/song/m/n/12/49 —$\OML/llcmm/m/it/12 $\C19/song/m/n/12/59 e \C19/song/
+m/n/12/26 ß
+ []
+
+File: background.png Graphic file (type png)
+<use background.png>
+Package pdftex.def Info: background.png used on input line 193.
+(pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
+ [2 <E:/MyNotes/Reinforcement_Learning/sarsaQ-eps-converted-to.pdf>]
+
+LaTeX Font Warning: Font shape `T1/llcmtt/m/n' will be
+(Font)              scaled to size 15.0pt on input line 236.
+
+Package mdframed Info: mdframed inside float 
+ mdframed uses option nobreak mdframed on input line 263.
+Package mdframed Info: mdframed inside minipage 
+ mdframed uses option nobreak mdframed on input line 263.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 263.
+Package mdframed Info: mdframed inside float 
+ mdframed uses option nobreak mdframed on input line 301.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 301.
+LaTeX Font Info:    Font shape `OMS/llcmss/m/n' in size <12> not available
+(Font)              Font shape `OMS/llcmsy/m/n' tried instead on input line 307
+.
+File: background.png Graphic file (type png)
+<use background.png>
+Package pdftex.def Info: background.png used on input line 340.
+(pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
+ [3]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 200.
+Package pdftex.def Info: background.png used on input line 369.
 (pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
- [2]
+ [4]
 
 AED: lastpage setting LastPage
 File: background.png Graphic file (type png)
 <use background.png>
-Package pdftex.def Info: background.png used on input line 204.
+Package pdftex.def Info: background.png used on input line 392.
 (pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
- [3]
+ [5]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 392.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 392.
+
 (E:\MyNotes\Reinforcement_Learning\Reinforcement_Learning.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 392.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 392.
+Package rerunfilecheck Info: File `Reinforcement_Learning.out' has not changed.
+
+(rerunfilecheck)             Checksum: 35ABB26A09BE0CF7C3F6803100A36519;118.
+
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 5015 strings out of 495354
- 61083 string characters out of 3183860
- 144526 words of memory out of 3000000
- 8074 multiletter control sequences out of 15000+200000
- 34840 words of font info for 115 fonts, out of 3000000 for 9000
+ 14419 strings out of 495354
+ 219984 string characters out of 3183860
+ 329179 words of memory out of 3000000
+ 17278 multiletter control sequences out of 15000+200000
+ 39132 words of font info for 120 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 32i,14n,43p,385b,611s stack positions out of 5000i,500n,10000p,200000b,50000s
-<d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/
-chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTe
-X/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun
-.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truety
-pe/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/
-CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/sim
-sun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/tru
-etype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CT
-EX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/
-simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/
+ 38i,14n,43p,881b,632s stack positions out of 5000i,500n,10000p,200000b,50000s
+{d:/CTEX/MiKTeX/fonts/enc/dvips/cm-super/cm-super-t1.enc}<d:/CTEX/CTeX/fonts/
 truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:
 /CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chine
 se/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fon
@@ -519,15 +1050,26 @@ inese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/
 fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.t
 tf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype
 /chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CT
-eX/fonts/truetype/chinese/simsun.ttf>{d:/CTEX/MiKTeX/fonts/enc/dvips/fontname/8
-r.enc}<d:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/CTEX/MiKTeX
-/fonts/type1/emerald/faumw.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts/lcmex
-8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts/lcmmi8.pfb><d:/CTEX/MiKTeX/fon
-ts/type1/public/lxfonts/lcmsy8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts/l
-eclq8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts/llcmss8.pfb>
-Output written on Reinforcement_Learning.pdf (3 pages, 576789 bytes).
+eX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsu
+n.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truet
+ype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX
+/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/si
+msun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/tr
+uetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/C
+TEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese
+/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts
+/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d
+:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chin
+ese/simsun.ttf>{d:/CTEX/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<d:/CTEX/MiKTeX/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/CTEX/MiKTeX/fonts/type1/emerald/f
+aumw.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts/lcmex8.pfb><d:/CTEX/MiKTeX/
+fonts/type1/public/lxfonts/lcmmi8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfont
+s/lcmsy8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts/leclb8.pfb><d:/CTEX/MiK
+TeX/fonts/type1/public/lxfonts/leclq8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lx
+fonts/llcmss8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/cm-super/sfltt8.pfb>
+Output written on Reinforcement_Learning.pdf (5 pages, 672034 bytes).
 PDF statistics:
- 171 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 245 PDF objects out of 1000 (max. 8388607)
+ 28 named destinations out of 1000 (max. 500000)
+ 27 words of extra memory for PDF output out of 10000 (max. 10000000)
 

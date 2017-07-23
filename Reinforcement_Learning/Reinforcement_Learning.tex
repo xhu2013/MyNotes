@@ -18,6 +18,32 @@
 \usepackage{lastpage}
 \usepackage[left=2.7cm,right=1.7cm,top=1.65cm,bottom=1.0cm]{geometry}
 
+
+
+
+
+%插入带方框的文字
+\usepackage{mdframed}
+\usepackage{enumerate}
+%\usepackage{multirow}
+
+%插入eps
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{subfigure}
+
+%插入网址
+\usepackage{url}
+
+%插入超连接
+\usepackage[colorlinks,linkcolor=blue]{hyperref}
+
+
+
+
+
+
+
 % configure page header
 \usepackage{fancyhdr}
 \setlength{\headheight}{15pt}
@@ -72,6 +98,7 @@ keepaspectratio]{background.png}%
 
 \section{Reinforcement Learning}
 \subsection{Foundation}
+\href{http://www.cnblogs.com/jinxulin/p/5116332.html}{增强学习（五）----- 时间差分学习(Q learning, Sarsa learning)}
 \winsub{动态规划算法的特性：}
 \begin{itemize}
 	\item 需要环境模型，即状态转移概率$P_{sa}$.
@@ -91,7 +118,7 @@ Monte Carlo的状态值函数更新公式如下：
 V(s_t)\leftarrow V(s_t)+\alpha[R_t-V(s_t)]
 \label{monteCarloStateValue}
 \end{equation}
-其中$R_t$是每个episode结束后获得的实际累积回报，$\alpha$ 是学习率，这个式子的直观的理解就是用实际累积回报$R_t$ 作为状态值函数$V(s_t)$的估计值。具体做法是对每个episode，考察实验中$s_t$的实际累积回报$R_t$和当前估计$V(s_t)$的偏差值，并用该偏差值乘以学习率来更新得到$V(S_t)$的新估值。
+其中$R_t$是每个episode结束后获得的实际累积回报，$\alpha$ 是学习率，这个式子的直观的理解就是用实际累积回报$R_t$ 作为状态值函数$V(s_t)$ 的估计值。具体做法是对每个episode，考察实验中$s_t$的实际累积回报$R_t$ 和当前估计$V(s_t)$的偏差值，并用该偏差值乘以学习率来更新得到$V(S_t)$的新估值。
 
 \winsub{TD(0)}
 把等式\ref{monteCarloStateValue}中$R_t$换成$r_{t+1}+\gamma V(s_{t+1})$，就得到了TD(0)的状态值函数更新公式：
@@ -106,6 +133,85 @@ V^{\pi}(s)=E_{\pi}[r(s^{'}|s,a)+\gamma V^{\pi}(s^{'})]
 \end{equation}
 容易发现这其实是根据等式\ref{stateValue}的形式，利用真实的立即回报$r_{t+1}$和下个状态的值函数$V(s_{t+1})$来更新$V(s_t)$，这种方式就称为时间差分(temporal difference)。由于没有状态转移概率，所以要利用多次实验来得到期望状态值函数估值。类似MC方法，在足够多的实验后，状态值函数的估计是能够收敛于真实值的。
 
+\winsub{策略会计(TD prediction)}
+%\smallskip
+\bigskip
+\hrule
+\bigskip
+输入：待估计的策略$\pi$ \\
+任意初始化所有$V(s)$，(e.g., $V(s)=0, \forall s \in s^{+}$) \\
+Repeat(对所有episode)：\\
+\indent 初始化状态$s$ \\
+\indent Repeat(对每步状态转移)：\\
+\indent \indent $\alpha \leftarrow$策略$\pi$下状态$s$采取的动作 \\
+\indent \indent 采取动作$a$，观察回报$r$，和下一个状态$s^{'}$ \\
+\indent \indent $V(s)\leftarrow V(s)+\alpha[r+\lambda V(s^{'})-V(s)]$ \\
+\indent \indent $s\leftarrow s^{'}$ \\
+\indent Until $s_t$ is terminal \\
+          Until 所有$V(s)$收敛 \\
+输出$V^{\pi}(s)$
+\bigskip
+\hrule
+
+\winsub{Sarsa算法}
+强化学习算法可以分为在策略(on-policy)和离策略(off-policy)两类，sarsa算法属于on-policy算法。
+
+Sarsa算法估计的是动作值函数(Q函数)而非状态值函数，也就是说，估计的是策略$\pi$下，任意状态$s$上所有可执行的动作$a$的动作值函数$Q^{\pi}(s,a)$，Q函数同样可以利用TD Prediction算法估计。如下就是一个状态-动作对序列的片段及相应的回报值。
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth ]{sarsaQ.eps}
+\end{figure}
+
+给出Sarsa的动作值函数更新公式如下：
+\begin{equation}
+Q(s_t,a_t)\leftarrow Q(s_t,a_t)+\alpha [r_{t+1}+\lambda Q(s_{t+1},a_{t+1})-Q(s_t,a_t)]
+\label{sarsaActionValue}
+\end{equation}
+可见公式\ref{sarsaActionValue}与公式\ref{tdStateValue}的形式基本一致。需要注意的是，对于每个非终止的状态$s_t$，在到达下个状态$s_{t+1}$后，都可以利用上述公式更新$Q(s_t,A_t)$，而如果$s_t$是终止状态，则要令$Q(s_{t+1}=0,a_{t+1})$。由于动作值函数的每次更新都与$(s_t,a_t,r_{t+1},s_{t+1},a_{t+1})$相关，因此算法被命名为sarsa算法。sarsa算法的完整流程图如下：
+\bigskip
+\hrule
+\bigskip
+\rm{
+\noindent Initialize $Q(s,a)$ arbitrarily \\
+Repeat (for each episode): \\
+\indent Initialize $S$ \\
+\indent Choose $A$ from $S$ using policy derived from $Q$ (e.g., $\epsilon$-greedy) \\
+\indent Repeat (for each step of episode): \\
+\indent \indent Take action $A$, observe $R$,$S'$ \\
+\indent \indent Choose $A'$ from $S'$ using policy derived from $Q$ (e.g., $\epsilon$-greedy) \\
+\indent \indent $Q(S,A)\leftarrow Q(S,A)+\alpha [R+\gamma Q(S',A')-Q(S,A)]$ \\
+\indent \indent $S\leftarrow S'$; $A\leftarrow A'$;\\
+\indent until $S$ is terminal
+}
+\bigskip
+\hrule
+\bigskip
+\noindent 算法最终得到所有状态-动作对的Q函数，并根据Q函数输出最优策略$\pi$。
+
+\winsub{Q-learning}
+在sarsa算法中，选择动作时遵循策略和更新动作值函数时遵循的策略是相同的，即$\epsilon$-greedy的策略，而在Q-learning中，动作值函数更新则不同于选取动作时遵循的策略，这种方式称为离策略(off-policy)。Q-learning的动作值函数更新公式如下：
+\begin{equation}
+Q(s_t,a_t)\leftarrow Q(s_t,a_t)+\alpha [r_{t+1}+\lambda \max \limits_{a}Q(s_{t+1},a)-Q(s_t,a_t)]
+\label{qLearningActionValue}
+\end{equation}
+可以看到，Q-learning与sarsa算法最大的不同在于更新Q值的时候，直接使用了最大的$Q(s_{t+1,a})$值——相当于采用了$Q(s_{t+1},a)$值最大的动作，并且与当前执行的策略，即选取动作$a_t$时采用的策略无关。Off-policy方式简化了证明算法分析和收敛性证明的难度，使得它的收敛性很早就得到了证明。Q-learning的完整流程图如下：
+\bigskip
+\hrule
+\bigskip
+\rm{
+\noindent Initialize $Q(s,a)$ arbitrarily\\
+Repeat (for each episode):\\
+\indent Initialize $S$ \\
+\indent Repeat (for each step of episode):
+\indent \indent Choose $A$ from $S$ using policy derived from $Q$ (e.g., $\epsilon$-greedy)\\
+\indent \indent Take action $A$, observe $R$, $S'$ \\
+\indent \indent $Q(S,A)\leftarrow Q(S,A)+\alpha [R+\gamma \max \limits_{a}Q(S',a)-Q(S,A)]$ \\
+\indent \indent $S\leftarrow S'$ \\
+\indent until $S$ is terminal
+}
+\bigskip
+\hrule
+\bigskip
 
 
 
@@ -114,6 +220,88 @@ V^{\pi}(s)=E_{\pi}[r(s^{'}|s,a)+\gamma V^{\pi}(s^{'})]
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+\url[xxxx]{http://www.cnblogs.com/jinxulin/p/5116332.html}
+
+\href{http://baidu.com/}{Baidu}
+
+$\max \limits_{a<x<b}\{f(x)\}$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{figure}[!htb]
+	\begin{mdframed}
+XXX
+	\end{mdframed}
+	\caption{XXX}
+	\label{xxx}
+\end{figure}
+\indent adfasd
+
+\indent \indent adfasd
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{figure}[!htb]
+	\begin{mdframed}
+		{\bf Round 1:} Participant $U_i$ performs the following steps:
+		\begin{enumerate}[1)]
+			\item Choose $x_i \in Z_q^*$ and compute $X_i=g^{x_i}$.
+			\item Broadcast message $(U_i,X_i)$.
+		\end{enumerate}
+		{\bf Round 2:} Upon receiving messages $(U_{i-1},X_{i-1})$ and $(U_{i+1},X_{i+1})$, each $U_i$ does as following:
+		\begin{enumerate}[1)]
+			\item Compute $Y_i^L=X_{i-1}^{x_i}$, $Y_i^R=X_{i+1}^{x_i}$, $Y_i=Y_i^R/Y_i^L$.
+			\item Broadcast message $(U_i,Y_i)$.
+		\end{enumerate}
+		{\bf Session Key Generation:} Upon receiving all messages $(U_j,Y_j)_{j\in \{1,\cdots ,n\},j\neq i}$, each $U_i$ carries out the following steps:
+		\begin{enumerate}[1)]
+			\item Compute orderly $\hat{Y}_{i+1}^R=Y_{i+1}\cdot Y_i^R$, $\hat{Y}_{i+2}^R=Y_{i+2}\cdot \hat{Y}_{i+1}^R$, $\cdots$, $\hat{Y}_{i+(n-1)}^R=Y_{i+(n-1)}\cdot \hat{Y}_{i+(n-2)}^R$.
+			\item Check $Y_i^L\stackrel{?}{=} \hat{Y}_{i+(n-1)}^R$. If it is true, continue; Otherwise, abort.
+			\item Generate the session key $sk=\hat{Y}_1^R \cdot \hat{Y}_2^R \cdot \cdots \cdot \hat{Y}_n^R=g^{x_1x_2+x_2x_3+\cdots+x_nx_1}$.
+		\end{enumerate}
+	\end{mdframed}
+	\caption{One unauthenticated GKA Protocol}
+	\label{figureungka}
+\end{figure}
 
 \begin{itemize}
 	\item aaa.

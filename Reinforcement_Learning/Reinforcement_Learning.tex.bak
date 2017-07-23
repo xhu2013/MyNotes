@@ -4,7 +4,7 @@
 % don't forget to change the date and other info in the header!!
 %
 % convert to bitmap with:
-% convert -density 300x300 notes_template.pdf -resize 800x notes_template.png 
+% convert -density 300x300 notes_template.pdf -resize 800x notes_template.png
 
 \documentclass[12pt]{article}
 \usepackage{CJK}
@@ -18,15 +18,39 @@
 \usepackage{lastpage}
 \usepackage[left=2.7cm,right=1.7cm,top=1.65cm,bottom=1.0cm]{geometry}
 
+
+
+
+
+
+\usepackage{mdframed}
+\usepackage{enumerate}
+%\usepackage{multirow}
+
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{subfigure}
+
+
+
+
+
+
+
+
+
+
+
+
 % configure page header
 \usepackage{fancyhdr}
 \setlength{\headheight}{15pt}
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
-\lhead{\normalfont\ECFAugie \large{MATH 3E NOTES}}
-\chead{\normalfont\ECFAugie \large{W. SCHMIDT}\hspace{1.4cm}}
-\rhead{\normalfont\ECFAugie \large{\MakeUppercase{1/27/11}}\hspace{1.5cm}\thepage\hspace{0.1cm}/\hspace{0.1cm}\pageref{LastPage}\hspace{-1.5cm}}
+\lhead{\normalfont\ECFAugie \large{RL NOTES}}
+\chead{\normalfont\ECFAugie \large{Y. C}\hspace{1.4cm}}
+\rhead{\normalfont\ECFAugie \large{\MakeUppercase{07/23/17}}\hspace{1.5cm}\thepage\hspace{0.1cm}/\hspace{0.1cm}\pageref{LastPage}\hspace{-1.5cm}}
 
 % background image
 \newcommand\BackgroundPic{
@@ -66,6 +90,140 @@ keepaspectratio]{background.png}%
 %%%%%%%%%%%%%%%%%%%%%%
 % start writing here %
 %%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\section{Reinforcement Learning}
+\subsection{Foundation}
+\winsub{动态规划算法的特性：}
+\begin{itemize}
+	\item 需要环境模型，即状态转移概率$P_{sa}$.
+	\item 状态值函数的估计是自举的(bootstrapping)，即当前状态值函数的更新依赖于已知的其他状态值函数.
+\end{itemize}
+
+\winsub{蒙特卡罗方法的特点：}
+\begin{itemize}
+	\item 可以从经验中学习不需要环境模型.
+    \item 状态值函数的估计是相互独立的.
+    \item 只能用于episode tasks.
+\end{itemize}
+
+\winsub{Monte Carlo}
+Monte Carlo的状态值函数更新公式如下：
+\begin{equation}
+V(s_t)\leftarrow V(s_t)+\alpha[R_t-V(s_t)]
+\label{monteCarloStateValue}
+\end{equation}
+其中$R_t$是每个episode结束后获得的实际累积回报，$\alpha$ 是学习率，这个式子的直观的理解就是用实际累积回报$R_t$ 作为状态值函数$V(s_t)$ 的估计值。具体做法是对每个episode，考察实验中$s_t$的实际累积回报$R_t$ 和当前估计$V(s_t)$的偏差值，并用该偏差值乘以学习率来更新得到$V(S_t)$的新估值。
+
+\winsub{TD(0)}
+把等式\ref{monteCarloStateValue}中$R_t$换成$r_{t+1}+\gamma V(s_{t+1})$，就得到了TD(0)的状态值函数更新公式：
+\begin{equation}
+V(s_t)\leftarrow V(s_t)+\alpha[r_{t+1}+\gamma V(s_{t+1})-V(s_t)]
+\label{tdStateValue}
+\end{equation}
+为什么修改成这种形式呢，回忆一下状态值函数的定义：
+\begin{equation}
+V^{\pi}(s)=E_{\pi}[r(s^{'}|s,a)+\gamma V^{\pi}(s^{'})]
+\label{stateValue}
+\end{equation}
+容易发现这其实是根据等式\ref{stateValue}的形式，利用真实的立即回报$r_{t+1}$和下个状态的值函数$V(s_{t+1})$来更新$V(s_t)$，这种方式就称为时间差分(temporal difference)。由于没有状态转移概率，所以要利用多次实验来得到期望状态值函数估值。类似MC方法，在足够多的实验后，状态值函数的估计是能够收敛于真实值的。
+
+
+
+
+\winsub{策略会计(TD prediction)}
+%\smallskip
+\bigskip
+\hrule
+\bigskip
+输入：待估计的策略$\pi$ \\
+任意初始化所有$V(s)$，(e.g., $V(s)=0, \forall s \in s^{+}$) \\
+Repeat(对所有episode)：\\
+\indent 初始化状态$s$ \\
+\indent Repeat(对每步状态转移)：\\
+\indent \indent $\alpha \leftarrow$策略$\pi$下状态$s$采取的动作 \\
+\indent \indent 采取动作$a$，观察回报$r$，和下一个状态$s^{'}$ \\
+\indent \indent $V(s)\leftarrow V(s)+\alpha[r+\lambda V(s^{'})-V(s)]$ \\
+\indent \indent $s\leftarrow s^{'}$ \\
+\indent Until $s_t$ is terminal \\
+          Until 所有$V(s)$收敛 \\
+输出$V^{\pi}(s)$
+\bigskip
+\hrule
+
+\winsub{Sarsa算法}
+Sarsa算法估计的是动作值函数(Q函数)而非状态值函数，也就是说，估计的是策略$\pi$下，任意状态$s$上所有可执行的动作$a$的动作值函数$Q^{\pi}(s,a)$，Q函数同样可以利用TD Prediction算法估计。如下就是一个状态-动作对序列的片段及相应的回报值。
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth ]{sarsaQ.eps}
+\end{figure}
+给
+
+
+
+\begin{figure}[!htb]
+	\begin{mdframed}
+XXX
+	\end{mdframed}
+	\caption{XXX}
+	\label{xxx}
+\end{figure}
+\indent adfasd
+
+\indent \indent adfasd
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{figure}[!htb]
+	\begin{mdframed}
+		{\bf Round 1:} Participant $U_i$ performs the following steps:
+		\begin{enumerate}[1)]
+			\item Choose $x_i \in Z_q^*$ and compute $X_i=g^{x_i}$.
+			\item Broadcast message $(U_i,X_i)$.
+		\end{enumerate}
+		{\bf Round 2:} Upon receiving messages $(U_{i-1},X_{i-1})$ and $(U_{i+1},X_{i+1})$, each $U_i$ does as following:
+		\begin{enumerate}[1)]
+			\item Compute $Y_i^L=X_{i-1}^{x_i}$, $Y_i^R=X_{i+1}^{x_i}$, $Y_i=Y_i^R/Y_i^L$.
+			\item Broadcast message $(U_i,Y_i)$.
+		\end{enumerate}
+		{\bf Session Key Generation:} Upon receiving all messages $(U_j,Y_j)_{j\in \{1,\cdots ,n\},j\neq i}$, each $U_i$ carries out the following steps:
+		\begin{enumerate}[1)]
+			\item Compute orderly $\hat{Y}_{i+1}^R=Y_{i+1}\cdot Y_i^R$, $\hat{Y}_{i+2}^R=Y_{i+2}\cdot \hat{Y}_{i+1}^R$, $\cdots$, $\hat{Y}_{i+(n-1)}^R=Y_{i+(n-1)}\cdot \hat{Y}_{i+(n-2)}^R$.
+			\item Check $Y_i^L\stackrel{?}{=} \hat{Y}_{i+(n-1)}^R$. If it is true, continue; Otherwise, abort.
+			\item Generate the session key $sk=\hat{Y}_1^R \cdot \hat{Y}_2^R \cdot \cdots \cdot \hat{Y}_n^R=g^{x_1x_2+x_2x_3+\cdots+x_nx_1}$.
+		\end{enumerate}
+	\end{mdframed}
+	\caption{One unauthenticated GKA Protocol}
+	\label{figureungka}
+\end{figure}
+
+\begin{itemize}
+	\item aaa.
+	\item bbb.
+\end{itemize}
+
+\begin{enumerate}
+	\item AAA.
+	\item BBB.
+	\begin{itemize}
+		\item b1.
+		\item b2.
+	\end{itemize}
+	BBB.
+	\item 	CCC.
+\end{enumerate}
 
 % section
 \winsec{section name goes here}
@@ -134,7 +292,6 @@ the third line
 \frac{\pi}{2} \; % fraction
 \sqrt{\theta} \; % root
 n = 1,2,3 \ldots 4}
-
 
 
 \end{CJK*}
