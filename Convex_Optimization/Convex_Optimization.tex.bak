@@ -245,13 +245,33 @@ with $\theta_1+\dots+\theta_k=1,\theta_i|geq0$
 {\bf conic (nonnegative) combination} of $x_1$ and $x_2$: any point of the form
 $$x=\theta_1 x_1+\theta_2 x_2$$
 withe $\theta_1\geq 0, \theta_2 \geq 0$
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.3\columnwidth ]{conicCombination.eps}
+\end{figure}
+\windef{convex cone}
+{\bf convex cone}: set that contains all conic combinations of points in the set
 
+\winsub{Hyperplanes and halfspaces}
+\windef{hyperplane}
+{\bf hyperplane}: set of the form $\{x|a^Tx=b\}\indent (a\neq 0)$
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.3\columnwidth ]{hyperplane}
+\end{figure}
 
+\windef{halfspace}
+{\bf halfspace}: set of the form $\{x|a^Tx\leq b\}\indent (a\neq 0)$
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.3\columnwidth ]{halfspace}
+\end{figure}
 
-
-
-
-
+{\bf remark}
+\begin{itemize}
+\item $a$ is the normal vector
+\item hyperplanes are affine and convex; halfspaces are convex
+\end{itemize}
 
 
 

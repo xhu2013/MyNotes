@@ -1,0 +1,588 @@
+% windsor's engineering notepad template
+% uses emerald and lxfonts packages from ctan
+%
+% don't forget to change the date and other info in the header!!
+%
+% convert to bitmap with:
+% convert -density 300x300 notes_template.pdf -resize 800x notes_template.png
+
+\documentclass[12pt]{article}
+\usepackage{CJK}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{emerald}
+\usepackage{lxfonts}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{eso-pic}
+\usepackage{lastpage}
+\usepackage[left=2.7cm,right=1.7cm,top=1.65cm,bottom=1.0cm]{geometry}
+
+
+
+
+%插入带方框的文字
+\usepackage{mdframed}
+\usepackage{enumerate}
+\usepackage{multirow}
+
+%插入eps
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{subfigure}
+
+%插入网址
+\usepackage{url}
+
+%插入超连接
+\usepackage[colorlinks,linkcolor=blue]{hyperref}
+
+
+
+
+
+
+
+
+
+
+
+% configure page header
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\lhead{\normalfont\ECFAugie \large{\MakeUppercase{07/27/17}}}
+\chead{\normalfont\ECFAugie \large{Y. C}\hspace{1.4cm}}
+\rhead{\normalfont\ECFAugie \large{\hspace{1cm} Convex Set NOTES}\hspace{0.5cm}\thepage\hspace{0.1cm}/\hspace{0.1cm}\pageref{LastPage}\hspace{-1.5cm}}
+
+% background image
+\newcommand\BackgroundPic{
+\put(0,0){
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight,
+keepaspectratio]{background.png}%
+\vfill
+}}}
+
+% configure section titles
+\usepackage{titlesec}
+\titleformat{\section}{\Large}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+
+\begin{document}
+\begin{CJK*}{GBK}{song}
+\AddToShipoutPicture{\BackgroundPic}
+\normalfont\ECFAugie
+
+% custom commands
+\newcommand{\windef}[1]{\subsection*{\underline{DEF:} \normalsize{#1}}} % definition
+\newcommand{\winex}[1]{\subsection*{\underline{EX:} \normalsize{#1}}} % example
+\newcommand{\winsec}[1]{\section*{\underline{#1}}} % section
+\newcommand{\winres}[1]{\begin{math}\Rightarrow\left\{\begin{matrix}#1\end{matrix}\right.\end{math}\hspace{0.2cm}} % result
+\newcommand{\winsys}[1]{\begin{math}\left\{\begin{matrix}#1\end{matrix}\right.\end{math}} % system
+\newcommand{\winero}[1]{\begin{math}\xrightarrow{#1}\end{math}} % row operation
+\newcommand{\winmat}[1]{\begin{math}\begin{bmatrix}#1\end{bmatrix}\end{math}} % matrix
+\newcommand{\winsub}[1]{\subsection*{$\star$\hspace{0.2cm} #1}} % dot
+\newcommand{\step}[1]{\begin{math}\xrightarrow{\text{#1}}\end{math}} % step in a process
+\newcommand{\winrtwo}{\begin{math}\text{R}^\text{2}\end{math}}
+\newcommand{\winrthree}{\begin{math}\text{R}^\text{3}\end{math}}
+\newcommand{\wineq}[1]{\begin{equation}\notag#1\end{equation}}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% start writing here %
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\href{http://blog.csdn.net/frog_in_a_well/article/details/18885403}{凸优化（convex optimization）第二讲：convex set}
+\winsub{Affine set}
+affine set表示经过两点的一条线，这条线满足：
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.5\columnwidth]{affineset.png}
+\end{figure}
+
+相较于后面我们要讨论的convex set，这里少了一些限制，是一个更广意义的直线，当$\theta$取任意实数时，这条直线在无限的空间中延伸扩展。
+
+当我们取$\theta$大于1时，此时，$x_1$占的权重较大，$x_2$较小，点就在靠近$x_1$的方向上，当$\theta$小于0 时，此时$x_2$ 点的权重较大，点就在靠近$x_2$的方向上。
+\windef{Affine set标准定义：}
+包含了所有经过affine set中任意两点的直线的set。
+
+{\bf affine set: contains the line through any two distinct points in the set}
+\winex{什么是affine set:}
+$$\{x|Ax=b\}$$
+方程级的解空间。
+
+如果我们有两个点可以解决上面的方程，那么他们的解的组合也是方程的解：推倒过程如下：
+$$A(\theta x_1+(1-\theta)x_2)=\theta A x_1+(1-\theta)A x_2=\theta b+(1-\theta)b=b$$
+根据定义，我想在线性代数中的column space, row space, null space, left null space 也是affine set, 因为他们满足任意两个向量的线性组合也在这个space中。
+\winsub{Convex set}
+Convex set就是在affine set的基础之上多了一些条件，那条直线，变成了线段，我们通过限定$\theta$的取值范围来限定set的取值为两点之间的线段。数学描述如下：
+{\bf line segment} between $x_1$ and $x_2$: all points
+$$x=\theta x_1 +(1-\theta)x_2$$
+with $0\leq \theta \leq 1$
+{\bf convex set}: contains line segment between any two points in the set
+$$x_1,x_2\in C, 0\leq \theta \leq \Rightarrow \theta x_1+(1-\theta)x_2\in C$$
+通过限定$\theta$取值范围为0到1，我们能够得到：
+$$x_1\leq \theta x_1 +(1-\theta)x_2\leq x_2 \indent (x_1\leq x_2)$$
+反之亦然。
+
+下面是一些关于convex set的例子：
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth]{convexset.png}
+\end{figure}
+
+第一个图是一个正六边形，它是convex的，因为它内部的任意两点的连线也被包含在该图形的内部。
+
+第二图不是convex的，因为当我们连接set中的两点时，出现了未被包含在set的点，即上图中红色方框中的区域。
+
+第三个图不是convex的，原因同二。
+\winsub{Convex combination}
+Convex combination是符合以下要求的形式：
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth]{convexcombination.png}
+\end{figure}
+
+表示的是$k$个点以不同的权重相加生成一个新的点，权重是非负的，且$\theta$相加之和为1。
+\winsub{Convex hull}
+Convex hull包含了set中所有点的convex combination组合出的所有的新点。其数学表示如下：
+$${\bf conv} C=\{\theta_1 x_1+\dots \theta_k x_k|x_i\in C, \theta_i \geq 0, i=1,\dots,k, \theta_1+\dots+\theta_k=1\}$$
+我们再来看看几何直观上的感受：
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth]{convexhull.png}
+\end{figure}
+
+第一个图表示的是set中的点集通过convex combination过程形成的一个灰色区域，而这个区域就是convex hull。
+
+第二个图是原来的肾形区域(non-convex)通过convex combination过程形成的另外一个灰色区域(convex)。
+
+这个由基础点集生成一个convex空间的概念类似于线性代数中的column vector通过线性的运算来span column space。
+
+那convex hull的作用是什么呢？{\bf 就是将non-convex set变成最小的包含原来non-convex set的convex set}。
+\winsub{Conic combination}
+conic combination指的是由set中的任意两点通过线性组合产生一个新点，线性组合是非负的。
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth]{coniccombination.png}
+\end{figure}
+
+几何意义是一个通过vector $x_1$，$x_2$产生锥形区域。在线性代数中即为两个vector的线性组合生成的空间中非负组合的那一块。
+\winsub{Conic cone}
+Conic cone是包含原来set中所有点经过conic combination 组合产生的点的set。
+
+这个set对应至前面我们的affine set-convex set-convex hull 概念链条中的affine set，是一个比较general的概念。
+\winsub{Conic hull}
+conic hull是包含了原来set中所有的最小的conic cone。
+$$\{\theta_1 x_1+\dots+\theta_k x_k|x_i\in C,\theta_i\geq 0,i=1,\dots,k\}$$
+\winex{例子：}
+以下是两个conic hull的例子： conic cone可以想象为在以下的hull基础上增加了一些元素。
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth]{conichull.png}
+\end{figure}
+\winsub{一些重要的例子}
+
+通过之前的定义，我们不难得出以下结论：
+
+\begin{enumerate}[1.]
+\item 空集和包含一个占的点集是affine且convex的。
+\item 一条直线是affine的，如果这条线过原点，那么它还是convex cone。
+\item 一条线段是convex的，但不是affince的(除非其为一个点)。
+\item 一条射线convex的，但不是affine的。
+$$\{x_0 +\theta v|\theta\geq 0\}$$
+\item 任何的subspace是affine的，也是convex cone。
+\end{enumerate}
+\winsub{超平面和半空间}
+关于超平面，这里有详细的讲解：\url{http://bubblexc.com/y2011/310/}
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth]{hyperplanehalfspace.png}
+\end{figure}
+
+这里要注意的是$a$和$b$的值，通过调整$b$的值我们可以调整超平面距离原点的距离，调整$a$的值来调整超平面的方向。
+
+超平面是affine和convex的。
+
+半空间是将超平面中的等式改变为不等式，用所确定的超平面来分离空间，使之成为两个半空间。
+
+半空间是convex的，但不是affine的。
+\winsub{欧拉球和椭球}
+\windef{欧拉球：}
+ 表示为离中心点距离小于等于$r$(半径)的点的集合，数学表示如下：
+ \begin{figure}[!htb]
+ \centering
+ \includegraphics[width=\columnwidth]{euclideanball.png}
+ \end{figure}
+
+ 当然也能表示成另外一种形式：中心点加上一个norm小于1 的向量的$r$倍。
+ \windef{椭球}
+ 椭球的公式如下：
+ \begin{figure}[!htb]
+ \centering
+ \includegraphics[width=\columnwidth]{ellipsoid.png}
+ \end{figure}
+
+ $P$是一个对称正定矩阵，椭球的轴长，由正定矩阵的特征值的平方根给出。
+
+ 另外一种表示方式是：
+ \begin{figure}[!htb]
+ \centering
+ \includegraphics[width=\columnwidth]{otherrepresentationellipsoid.png}
+ \end{figure}
+
+ unit ball经过线性变换加上改变中心点形成了一个椭球。
+
+ \begin{figure}[!htb]
+ \centering
+ \includegraphics[width=\columnwidth]{normballsandnormcones1.png}
+ \end{figure}
+
+ norm是一种function的表示，这种function有以下性质：
+ \begin{enumerate}[1.]
+ \item $x$的norm大于等于0，当且仅当$x=0$时，$x$的norm等于0。
+ \item 一个向量$x$的$t$倍的norm等于$t$倍的$x$的norm
+ \item 两个向量的norm符合三角不等式定理，其几何意义如有上图的平行四边形法则。
+ \end{enumerate}
+
+ Norm外面的symb表示的是symb次方的symb次根。
+ \winsub{Norm ball和norm cone}
+ Norm ball表示的是离center点一定距离$r$的点。
+
+ Norm cone表示的是norm的值小于$t$的点，对于二维的平面，随着$t$的增大，圆形是逐渐变大的，见下面的圆锥体即为二维平面的norm cone。
+ \begin{figure}[!htb]
+ \centering
+ \includegraphics[width=\columnwidth]{normballsandnormcones2.png}
+ \end{figure}
+
+ norm cone是convex的。
+ \winsub{Polyhedra多面体}
+ Polyhedral在几何上的意义是表示有限个线性不等式或等式的解的可行域，数学表示如下：
+ \begin{figure}[!htb]
+ \centering
+ \includegraphics[width=\columnwidth]{polyhedra.png}
+ \end{figure}
+
+要注意的是$A$是$m*n$个元素的矩阵，表示的是$m$个不等式，每个不等式中有$n$个元素(constrain variable)。$C$ 表示$p$个含有$n$个限制变量的等式。以及挨个元素对比大小的符号，是表示比较两个vector中的每个元素的大小。
+
+其中$Ax$中的每一行表示的是一个超平面，每个不等式表示的是一个半空间，而整个可行的区域是由以上的等式和不等式共同决定的，就是这些半空间（不等式）和超平面（等式）交集。这些都是线性规划的内容。
+\winsub{Positive semidefinite cone}
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth]{positivesemidefinitecone.png}
+\end{figure}
+
+$S$表示的是对称的矩阵，下面如果有$+$号，表示的是对称半正定矩阵，如果有两个加号就是对称正定矩阵。
+
+下图示例展示了一个半正定矩阵确定的cone：
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth]{positivesemidefinitecone2.png}
+\end{figure}
+
+关于用矩阵来表示二次多项式，有如下形成：
+$$x^TAx \  {\bf in}\  {\bf R}^2\indent ax^2+2bxy+cy^2=\begin{bmatrix}x & y \end{bmatrix}\begin{bmatrix}a & b \\ b & c\end{bmatrix}\begin{bmatrix}x \\ y\end{bmatrix}$$
+对应至二次多项式，上图中的条件就好理解了，具体的推导可以参见gilbert strang的《Linear Algebra and Its Applications 4ed》第344页。
+
+对应到多维的是这样：
+$$x^TAx\ {\bf in}\ {\bf R}^n\indent \begin{bmatrix}x_1 & x_2 &  \cdot & x_n\end{bmatrix}\begin{bmatrix}a_{11} & a_{12} & \cdot & a_{1n}\\ a_{21} & a_{22} & \cdot & a_{2n}\\ \cdot & \cdot & \cdot & \cdot \\ a_{n1} & a_{n2} & \cdot & a_{nn}\end{bmatrix}\begin{bmatrix}x_1\\ x_2 \\ \cdot \\ x_n\end{bmatrix}=\sum\limits_{i=1}^{n}\sum\limits_{j=1}^{n}a_{ij}x_ix_j$$
+\winsub{Operations that preserve convexity保持凸性的运算交集}
+有限个凸集的交集一定是凸集。扩展到无限多的凸集也一样。
+
+\winex{例子：}
+多边形有限个半空间和超平面的交集，因为半空间和超平面是凸的，那么多边形也是凸的。
+
+所有的凸集$S$都是一系列半空间的交集。数学表示如下：
+$$S=\bigcap \{{\cal H}|{\cal H} \ {\rm halfspace}, S\subseteq {\cal H}\}$$
+\winex{例子：}
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth]{operationsthatpreserveconvexity1.png}
+\end{figure}
+
+对于上例，我们可以将$p(t)$看做是两个vector的内积，一个vector是$x$，另外一个是$\cos{kt}$，那么这样一个内积确定的超平面的绝对值小于1，即$p(t)$小于等于1，大于等于负1。$p(t)$小于等于1确定了一个半空间，大于等于负1确定了另外一个半空间(halfspace)，最终我们得到的是两个半空间的交集，因为半空间是凸的，所以我们得到的最终结果也是凸的。其几何意义表示如下：
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth]{operationsthatpreserveconvexity2.png}
+\end{figure}
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth]{operationsthatpreserveconvexity3.png}
+\end{figure}
+
+上图可以看出最终的区域是所有满足不等式的vector $x$所确定的半空间的交集，即为中间区域$S$，是convex的。
+\winsub{Affine function 仿射函数}
+将$n$维的convex set映射至$m$维的运算结果也是convex的。
+
+一个通过映射得到的convex set，它的反函数也是convex set。
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth]{affinefunction.png}
+\end{figure}
+
+以下运算也可以保持凸性：
+
+\noindent scaling
+$$\alpha S=\{\alpha x|x\in S\}$$
+translation
+$$S+a=\{x+a|x\in S\}$$
+projection
+$$T=\{x_1\in {\bf R}^m|(x_1,x_2)\in S \ {\rm for} \ {\rm some} \ x_2\in {\bf R}^n \}$$
+\winsub{透视函数}
+透视函数的直观理解如下：$x_3=0$为一个不透光隔板，只有在原点有一个小孔，光透过小孔投射至$x_3=-1$的隔板上，如果上面的光点所构成的set是convex的，那么投射至下方的光点构成的set也是convex的。更加直观的想象我们通过一个针孔照相机去拍摄一个convex的对象，那么生成的图像也是convex的。
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth]{teshifunction.png}
+\end{figure}
+
+数学描述如下：
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth]{perspectivefunction.png}
+\end{figure}
+\winsub{generalized inequality}
+{\bf proper cones}
+
+当$K$满足如下条件，我们说$K$是proper cone
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth]{propercone.png}
+\end{figure}
+
+我们用这样的proper cone来定义generalize inequality。
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth]{generalizeinequality1.png}
+\end{figure}
+
+$y$大于等于$x$，表示成为$y$与$x$的差值属于一个proper cone $K$。
+
+如果$y$严格大于$x$，那么表示成为以下：
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth]{generalizeinequality2.png}
+\end{figure}
+
+对于矩阵的元素间的比较，有：
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth]{generalizeinequality3.png}
+\end{figure}
+\winsub{generalized inequality属性}
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth]{generalizeinequality4.png}
+\end{figure}
+
+以上的比较全为vector间的元素比较。
+\begin{itemize}
+\item 加持性：$y$大于$x$，$v$大于$u$，那么$y+v$大于$x+u$。
+\item 传递性：$y$大于$x$，$z$大于$y$，那么$z$大于$x$。
+\item 非负scaling：$y$大于$x$，$a$大于0，那么$a*x$小于$a*y$。
+\item 反身性：$x$小于等于$x$中的元素。
+\item 反对称性：如果$x$大于等于$y$，$y$大于等于$x$，那么$x$等于$y$。
+\item 极限保持性：如果$x_i$小于等于$y_i$，对于$i$等于1，2，3直到无穷大都成立，那么$x$小于等于$y$。
+\end{itemize}
+
+对于严格小于，有以下性质：
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth]{generalizeinequality5.png}
+\end{figure}
+\winsub{极小值和最小值：}
+符号$\preceq$，$\prec$是继承至传统的小于符号，我们已经在上面看到了不传统的大小比较性质可以直接继承用来方便我们的表示，但是有些性质主不能适用了，比如传统的比较是线性的排序，任何的两个元素都是可以比较的，比如两个元素$x$，$y$，要不就是$x$大于等于$y$，要不就是$y$大于等于$x$，总能分出个胜负，但是当我们用于generalized inequality时，大小就不那么明显了。
+\windef{Minimum}
+Minimum的定义如下：
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth]{minimum.png}
+\end{figure}
+
+$S$中的任意一点$y$都大于等于$x$，那么$x$就是$S$中的minimum点。Minimum我们一般认为是最小值点，即在一个set中是唯一的。但是minimal极小值点可以是多个的。
+\winsub{Minimal}
+极小值minimal的定义如下：
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth]{minimal.png}
+\end{figure}
+
+极小值 就是在$S$中找不出来小于或者等于$x$却又不是$x$的元素。
+
+用传统的表示方法如下：
+
+对于最小值$x$，有：
+$$S\subseteq x+K$$
+这里的$x+K$表示的是所有大于等于$x$的值，$K$是proper cone。
+
+对于极小值$x$，有：
+$$(x-K)\cap S=\{x\}$$
+表示的是所有小于$x$的值与$S$的交集只有$x$自己。
+
+对于最小值minimum和极小值minimal的直观表示如下：
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth]{minimumminimal.png}
+\end{figure}
+
+左边的图深色区域表示的是convex set $S_1$，浅灰色区域是最小值$+K$，那么我们的任务是从$S_1$中找出一个点使得$S_1$中所有的点都大于等于它，这个点就是$x_1$。右边的图深色区域表示的是convex set $S_2$，浅灰色区域是$x-K$，即小于$x$的值，根据定义小于极小值的值与$S$的交点只有极小值，那么极小值就是$x_2$。这里我们发现极小值并不唯一，因为当我们取$x_2$所在直线边缘的其他点，也满足这样的要求。
+\winsub{Separating hyperplane theorem超平面分割理论}
+\windef{Separating hyperplane}
+对于两个在空间中不相交的set，我们总能找到合适的超平面来分割它们，图形如下所示：
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth]{separatinghyperplane.png}
+\end{figure}
+
+严格的分割面只是将上述的大小等于或者小于等于符号换成大于或者小于。
+\windef{Support hyperplanes}
+支持超平面就是经过set边缘的超平面，对于convex set，在set的边缘的每一点都有这样的支持超平面。
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth]{supporthyperplanes.png}
+\end{figure}
+
+这里要注意的是有些点的支持超平面不唯一，特别是像一些不可导的点，想象下正方形的四个角。
+\winsub{dual cone and generalized inequality}
+\windef{dual cone}
+dual cone的定义如下：假设$x$属于一个cone $K$，那么dual cone就是那些与所有$x$相乘大于等于0的向量所构成的cone。
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth]{dualcone1.png}
+\end{figure}
+
+直观的感受如下：
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth]{dualcone2.png}
+\end{figure}
+
+左图的$y$与$K$中的所有向量的夹角小于90度，所以根据乘积法则，它们的乘积始终大于0，所以$y$属于$K$的dual cone中的一员。右图的$z$与$K$中的部分向量的夹角大于90 度，所以部分的乘积小于0，则$z$不属于$K$的dual cone。So，我们画出它的dual cone是如下样子滴，两条红线所夹的区域两条红色的线是分别与$K$的边界成90度的线，如果大于了90度就会出现与原来cone乘积小于0的情况。
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth]{dualcone3.png}
+\end{figure}
+
+所以我们可以想象一下，如果original cone $K$是比较苗条的，那么dual cone就比较粗胖。如果original cone是二维空间的一个half space，那么dual cone就是一条与分割超平面垂直的向量。
+
+下面是一些例子：
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth]{dualcone4.png}
+\end{figure}
+
+如果$K$是第一象限，那么其dual cone也是第一象限，推广至任何成90度的cone的dual cone都是它们自身，这也叫做自身对偶性。
+
+半正定矩阵的dual cone也是半正定矩阵。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\begin{table}[!htb]
+%	\begin{center}
+
+%		\begin{tabular}{l l}
+%                $   $ & $  $\\
+%			   $   $ & $  $\\
+%                $   $ & $  $\\
+%			   $   $ & $  $\\
+%                $   $ & $  $\\
+%			   $   $ & $  $\\
+%                $   $ & $  $\\
+%		\end{tabular}
+%	\end{center}
+%\end{table}
+
+
+
+% section
+%\winsec{section name goes here}
+
+% term definition
+%\winsub{term definition}
+%\windef{term - and it's definition}
+
+% example
+%\winsub{an example}
+%\winex{example heading}
+
+% system of equations
+%\winsub{a system of equations}
+%\winsys{
+%2x+4y=2 \\
+%2x+6y=3}
+
+% matrix
+%\winsub{working a multistep problem}
+%\winmat{
+%a & b & c \\
+%d & e & f \\
+%g & h & i }
+% row operation
+%\winero{R_1+R_2}
+% matrix
+%\winmat{
+%a & b & c \\
+%d & e & f \\
+%g & h & i }
+% result
+%\winres{
+%x = 1 \\
+%y = 2 \\
+%z = 3}
+
+% vector in 3-space
+%\winsub{a vector in \winrthree}
+%v = \winmat{
+%x \\
+%y \\
+%z }
+
+%\winsub{a multi-step process}
+%A \step{do stuff} B \step{more stuff} C
+
+% numbered list
+%\winsub{an enumerated list}
+%\begin{enumerate}
+%\item{this is the first item in an enumerated list}
+%\item{this is the second item in an enumerated list}
+%\end{enumerate}
+
+% manual line breaks
+%\winsub{manually broken lines}
+%the first line\\
+%the second line\\
+%the third line
+
+% equation
+%\winsub{some math}
+%\wineq{
+%\int_a^b \! f(x) \; dx % definite
+%\int \! f(x) \, dx \; % indefinite
+%\frac{\pi}{2} \; % fraction
+%\sqrt{\theta} \; % root
+%n = 1,2,3 \ldots 4}
+
+
+
+\end{CJK*}
+\end{document}
