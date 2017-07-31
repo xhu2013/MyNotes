@@ -1,0 +1,346 @@
+% windsor's engineering notepad template
+% uses emerald and lxfonts packages from ctan
+%
+% don't forget to change the date and other info in the header!!
+%
+% convert to bitmap with:
+% convert -density 300x300 notes_template.pdf -resize 800x notes_template.png
+
+\documentclass[12pt]{article}
+\usepackage{CJK}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{emerald}
+\usepackage{lxfonts}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{eso-pic}
+\usepackage{lastpage}
+\usepackage[left=2.7cm,right=1.7cm,top=1.65cm,bottom=1.0cm]{geometry}
+
+
+
+
+%插入带方框的文字
+\usepackage{mdframed}
+\usepackage{enumerate}
+\usepackage{multirow}
+
+%插入eps
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{subfigure}
+
+%插入网址
+\usepackage{url}
+
+%插入超连接
+\usepackage[colorlinks,linkcolor=blue]{hyperref}
+
+%插入代码
+\usepackage{listings}
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+
+
+
+
+
+
+
+
+
+
+
+% configure page header
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\lhead{\normalfont\ECFAugie \large{\MakeUppercase{07/30/17}}}
+\chead{\normalfont\ECFAugie \large{Y. C}\hspace{1.4cm}}
+\rhead{\normalfont\ECFAugie \large{\hspace{1cm} Image NOTES}\hspace{0.5cm}\thepage\hspace{0.1cm}/\hspace{0.1cm}\pageref{LastPage}\hspace{-1.5cm}}
+
+% background image
+\newcommand\BackgroundPic{
+\put(0,0){
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight,
+keepaspectratio]{background.png}%
+\vfill
+}}}
+
+% configure section titles
+\usepackage{titlesec}
+\titleformat{\section}{\Large}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+
+\begin{document}
+\begin{CJK*}{GBK}{kai}
+\AddToShipoutPicture{\BackgroundPic}
+\normalfont\ECFAugie
+
+% custom commands
+\newcommand{\windef}[1]{\subsection*{\underline{DEF:} \normalsize{#1}}} % definition
+\newcommand{\winex}[1]{\subsection*{\underline{EX:} \normalsize{#1}}} % example
+\newcommand{\winsec}[1]{\section*{\underline{#1}}} % section
+\newcommand{\winres}[1]{\begin{math}\Rightarrow\left\{\begin{matrix}#1\end{matrix}\right.\end{math}\hspace{0.2cm}} % result
+\newcommand{\winsys}[1]{\begin{math}\left\{\begin{matrix}#1\end{matrix}\right.\end{math}} % system
+\newcommand{\winero}[1]{\begin{math}\xrightarrow{#1}\end{math}} % row operation
+\newcommand{\winmat}[1]{\begin{math}\begin{bmatrix}#1\end{bmatrix}\end{math}} % matrix
+\newcommand{\winsub}[1]{\subsection*{$\star$\hspace{0.2cm} #1}} % dot
+\newcommand{\step}[1]{\begin{math}\xrightarrow{\text{#1}}\end{math}} % step in a process
+\newcommand{\winrtwo}{\begin{math}\text{R}^\text{2}\end{math}}
+\newcommand{\winrthree}{\begin{math}\text{R}^\text{3}\end{math}}
+\newcommand{\wineq}[1]{\begin{equation}\notag#1\end{equation}}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% start writing here %
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\section{Line detection}
+
+\winsec{Hough变换之直线检测}
+\href{http://blog.csdn.net/ws_20100/article/details/51159434}{Hough 变换之直线检测}
+\winsub{Hough Transform的算法思想}
+{\bf 在直角坐标系和极坐标系中，点、线是对偶关系。}
+
+即直角坐标系中的点是极坐标系中的线，直角坐标系中的线是极坐标系中的点。反之也成立。
+
+如下图\ref{rc2pc}所示，想要检测图像中的直线，可以转化为检测极坐标中点$(\theta,r)$。
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.75\columnwidth]{rc2pc.png}
+\caption{rectangular coordinate vs polar coordinate}
+\label{rc2pc}
+\end{figure}
+
+\winsub{Hough空间的表示}
+如下图\ref{houghspace}所示，图像中直线的表示，由斜率和截距表示，而极坐标中用$(\theta,r)$表示，并且存在下式关系：
+$$r=\cos{(\theta)}\cdot x+\sin{(\theta)}\cdot y$$
+对于点$(x_0,y_0)$，代入上式，在极坐标中就是一条线(很多对$(\theta,r)$点)：
+$$r=\cos{(\theta)}\cdot x_0+\sin{(\theta)}\cdot y_0$$
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.5\columnwidth]{houghspace.png}
+\caption{$r$-$\theta$}
+\label{houghspace}
+\end{figure}
+
+{\bf $r$，$\theta$就是一对Hough空间的变量表示。}
+
+旋转的$\theta$不容易表示，若将$r$，$\theta$看成直角坐标空间。一个点$(x_0,y_0)$就是一个正弦曲线。
+$$r=\cos{(\theta)}\cdot x_0+\sin{(\theta)}\cdot y_0$$
+
+如下图\ref{houghspace2}所示，左图直角坐标系中的一个点，对应于右图$r-\theta$空间的一条正弦曲线。
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.75\columnwidth]{houghspace2.png}
+\caption{point vs curve}
+\label{houghspace2}
+\end{figure}
+
+如下图\ref{houghspace3}，直角坐标系中的多个点，对应于$r-\theta$空间的多条正弦曲线。
+
+{\bf 直角坐标系的三点共线，对应于$r-\theta$空间的多线共点。}
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.75\columnwidth]{houghspace3.png}
+\caption{three points vs three curves, but one point of intersection}
+\label{houghspace3}
+\end{figure}
+
+因此，我们可以通过检测$r-\theta$空间的交集点，来检测原始空间的线段。
+
+接下来，就是要考虑将$r$，$\theta$离散化，形成离散化的Hough空间，类似于一个矩阵/图像(如下图\ref{houghspace4})，用于统计交点的个数。
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.5\columnwidth]{houghspace4.png}
+\caption{discretization of hough space}
+\label{houghspace4}
+\end{figure}
+
+\winsub{Hough变换代码分析}
+以下是使用Matlab进行直线检测的代码。
+
+{\bf Hough Transform}
+
+首先预处理，转为二值图像：
+
+\begin{lstlisting}
+I = imread('road.jpg');
+I = rgb2gray(I);
+BW = edge(I,'canny');
+\end{lstlisting}
+
+然后进行霍夫变换：
+\begin{lstlisting}
+[H,T,R] = hough(BW,'RhoResolution',0.5,'Theta',-90:0.5:89.5);
+imshow(H,[],'XData',T,'YData',R,'InitialMagnification','fit');
+xlabel('\theta'), ylabel('\rho');
+axis on, axis normal, hold on;
+\end{lstlisting}
+
+检测Hough域极值点
+\begin{lstlisting}
+P  = houghpeaks(H,50,'threshold',ceil(0.3*max(H(:))));
+x = T(P(:,2));
+y = R(P(:,1));
+plot(x,y,'s','color','white');
+\end{lstlisting}
+
+检测直线
+\begin{lstlisting}
+% Find lines and plot them
+lines = houghlines(BW,T,R,P,'FillGap',7,'MinLength',100);
+figure, imshow(I), hold on
+max_len = 0;
+for k = 1:length(lines)
+    xy = [lines(k).point1; lines(k).point2];
+    plot(xy(:,1),xy(:,2),'LineWidth',2,'Color','green');
+
+    % plot beginnings and ends of lines
+    plot(xy(1,1),xy(1,2),'x','LineWidth',2,'Color','yellow');
+    plot(xy(2,1),xy(2,2),'x','LineWidth',2,'Color','red');
+
+    % determine the endpoints of the longest line segment
+    len = norm(lines(k).point1 - lines(k).point2);
+    if ( len > max_len)
+        max_len = len;
+        xy_long = xy;
+    end
+end
+
+% highlight the longest line segment
+plot(xy_long(:,1),xy_long(:,2),'LineWidth',2,'Color','cyan');
+\end{lstlisting}
+
+实验结果
+
+$r-\theta$空间及前50个极值点：
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.5\columnwidth]{result1.png}
+\caption{$r=\theta$ space}
+\label{result1}
+\end{figure}
+
+最终车道直线检测结果：
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.75\columnwidth]{result2.png}
+\caption{Results}
+\label{result2}
+\end{figure}
+
+[注]所有的代码可以在此处免费下载：\url{http://download.csdn.net/detail/ws_20100/9492054}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\begin{table}[!htb]
+%	\begin{center}
+
+%		\begin{tabular}{l l}
+%                $   $ & $  $\\
+%			   $   $ & $  $\\
+%                $   $ & $  $\\
+%			   $   $ & $  $\\
+%                $   $ & $  $\\
+%			   $   $ & $  $\\
+%                $   $ & $  $\\
+%		\end{tabular}
+%	\end{center}
+%\end{table}
+
+
+
+% section
+%\winsec{section name goes here}
+
+% term definition
+%\winsub{term definition}
+%\windef{term - and it's definition}
+
+% example
+%\winsub{an example}
+%\winex{example heading}
+
+% system of equations
+%\winsub{a system of equations}
+%\winsys{
+%2x+4y=2 \\
+%2x+6y=3}
+
+% matrix
+%\winsub{working a multistep problem}
+%\winmat{
+%a & b & c \\
+%d & e & f \\
+%g & h & i }
+% row operation
+%\winero{R_1+R_2}
+% matrix
+%\winmat{
+%a & b & c \\
+%d & e & f \\
+%g & h & i }
+% result
+%\winres{
+%x = 1 \\
+%y = 2 \\
+%z = 3}
+
+% vector in 3-space
+%\winsub{a vector in \winrthree}
+%v = \winmat{
+%x \\
+%y \\
+%z }
+
+%\winsub{a multi-step process}
+%A \step{do stuff} B \step{more stuff} C
+
+% numbered list
+%\winsub{an enumerated list}
+%\begin{enumerate}
+%\item{this is the first item in an enumerated list}
+%\item{this is the second item in an enumerated list}
+%\end{enumerate}
+
+% manual line breaks
+%\winsub{manually broken lines}
+%the first line\\
+%the second line\\
+%the third line
+
+% equation
+%\winsub{some math}
+%\wineq{
+%\int_a^b \! f(x) \; dx % definite
+%\int \! f(x) \, dx \; % indefinite
+%\frac{\pi}{2} \; % fraction
+%\sqrt{\theta} \; % root
+%n = 1,2,3 \ldots 4}
+
+
+
+\end{CJK*}
+\end{document}
