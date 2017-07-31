@@ -1,0 +1,606 @@
+% windsor's engineering notepad template
+% uses emerald and lxfonts packages from ctan
+%
+% don't forget to change the date and other info in the header!!
+%
+% convert to bitmap with:
+% convert -density 300x300 notes_template.pdf -resize 800x notes_template.png
+
+\documentclass[12pt]{article}
+\usepackage{CJK}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{emerald}
+\usepackage{lxfonts}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{eso-pic}
+\usepackage{lastpage}
+\usepackage[left=2.7cm,right=1.7cm,top=1.65cm,bottom=1.0cm]{geometry}
+
+
+
+
+%插入带方框的文字
+\usepackage{mdframed}
+\usepackage{enumerate}
+\usepackage{multirow}
+
+%插入eps
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{subfigure}
+
+%插入网址
+\usepackage{url}
+
+%插入超连接
+\usepackage[colorlinks,linkcolor=blue]{hyperref}
+
+%插入代码
+\usepackage{listings}
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+
+
+
+
+
+
+
+
+
+
+
+% configure page header
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\lhead{\normalfont\ECFAugie \large{\MakeUppercase{07/30/17}}}
+\chead{\normalfont\ECFAugie \large{Y. C}\hspace{1.4cm}}
+\rhead{\normalfont\ECFAugie \large{\hspace{1cm} Convex Opt. NOTES}\hspace{0.5cm}\thepage\hspace{0.1cm}/\hspace{0.1cm}\pageref{LastPage}\hspace{-1.5cm}}
+
+% background image
+\newcommand\BackgroundPic{
+\put(0,0){
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight,
+keepaspectratio]{background.png}%
+\vfill
+}}}
+
+% configure section titles
+\usepackage{titlesec}
+\titleformat{\section}{\Large}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+
+\begin{document}
+\begin{CJK*}{GBK}{kai}
+\AddToShipoutPicture{\BackgroundPic}
+\normalfont\ECFAugie
+
+% custom commands
+\newcommand{\windef}[1]{\subsection*{\underline{DEF:} \normalsize{#1}}} % definition
+\newcommand{\winex}[1]{\subsection*{\underline{EX:} \normalsize{#1}}} % example
+\newcommand{\winsec}[1]{\section*{\underline{#1}}} % section
+\newcommand{\winres}[1]{\begin{math}\Rightarrow\left\{\begin{matrix}#1\end{matrix}\right.\end{math}\hspace{0.2cm}} % result
+\newcommand{\winsys}[1]{\begin{math}\left\{\begin{matrix}#1\end{matrix}\right.\end{math}} % system
+\newcommand{\winero}[1]{\begin{math}\xrightarrow{#1}\end{math}} % row operation
+\newcommand{\winmat}[1]{\begin{math}\begin{bmatrix}#1\end{bmatrix}\end{math}} % matrix
+\newcommand{\winsub}[1]{\subsection*{$\star$\hspace{0.2cm} #1}} % dot
+\newcommand{\step}[1]{\begin{math}\xrightarrow{\text{#1}}\end{math}} % step in a process
+\newcommand{\winrtwo}{\begin{math}\text{R}^\text{2}\end{math}}
+\newcommand{\winrthree}{\begin{math}\text{R}^\text{3}\end{math}}
+\newcommand{\wineq}[1]{\begin{equation}\notag#1\end{equation}}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% start writing here %
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\section{Convex sets}
+\href{http://blog.csdn.net/u010366427/article/details/51867027}{凸优化学习笔记(1)——凸集}
+
+\winsec{凸集}
+\winsub{凸集(convex sets)}
+
+\indent 如果在集合$C$中的任意两点满足：
+$$\theta x_1+(1-\theta)x_2\in C$$
+其中$0\leq \theta \leq 1$，则集合$C$为凸集。
+
+\winsub{重要例子}
+
+\begin{enumerate}[1)]
+\item 超平面和半空间(hyperplanes and halfspaces)
+
+超平面定义为$\{x|a^Tx=b\}$，半空间被定义为$\{x|a^Tx\leq b\}$。从直观上看，超平面在空间中为一块板子，划分的两边则分别为半空间。图\ref{hyperplanesandhalfplanes}
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.5\columnwidth]{hyperplanesandhalfplanes.png}
+\caption{Hyperplanes and Halfplanes}
+\label{hyperplanesandhalfplanes}
+\end{figure}
+\item 球和椭球
+
+球的形式为
+$$\{x|\|x-x_c\|_2\leq r\}=\{x|(x-x_c)^T(x-x_c)\leq r^2\}$$
+
+椭球的形式为
+$$\{x|(x-x_c)^TP^{-1}(x-x_c)\leq 1\}$$
+其中$P$是对称的正定矩阵。图\ref{ellipsoids}
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.6\columnwidth]{ellipsoids.png}
+\caption{Ellipsoids}
+\label{ellipsoids}
+\end{figure}
+\item 范数球和范数锥
+
+范数球为：
+$$\{x|\|x-x_c\|\leq r\}$$
+
+范数锥为：
+$$\{(x,t)|\|x\|\leq t\}$$
+
+图\ref{normcones}
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.6\columnwidth]{normcones.png}
+\caption{Norm cones}
+\label{normcones}
+\end{figure}
+
+\item 多面体
+
+$$\{x|a_j^Tx\leq b_j, j=1,\dots,m, c_j^Tx\leq d_j, j=1,\dots,p\}$$
+
+图\ref{polyhedra}
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.5\columnwidth]{polyhedra.png}
+\caption{Polyhedra}
+\label{polyhedra}
+\end{figure}
+
+\item 半正定锥
+
+满足如下条件的集合${\bf S}_+^n$是凸集：$\theta_1,\theta_2\leq 0$并且$A,B\in {\bf S}_+^n$，则$\theta_1A+\theta_2B\in {\bf S}_+^n$。 其中${\bf S}_+^n$是半正定矩阵。图\ref{positivesemidefinitecone}
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.5\columnwidth]{positivesemidefinitecone.png}
+\caption{Positive semidefinite cone}
+\label{positivesemidefinitecone}
+\end{figure}
+\end{enumerate}
+
+\winsub{保凸运算}
+
+\begin{enumerate}[1)]
+\item 交集
+
+如果$A$与$B$均为凸集，则$A$与$B$的交集也为凸集。
+
+\item 仿射函数
+
+仿射函数即线性函数加常数。如果$x$为凸集，则$f(x)=Ax+b$为凸集。仿射函数的逆函数也保凸。
+
+\item 线性分式以及透视函数
+
+透视函数即$P(z,t)=z/t$，这里$z$是$n-1$维向量，$t$ 是最后一维分量。例如$P(x_1,x_2,x_3)=\{x_1/x_3, x_2/x_3\}$，$P$的定义域是正定对称矩阵。从几何上看，透视函数类似小孔成像，是从高维到低维的映射。图\ref{perspectivefunction}
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.75\columnwidth]{perspectivefunction.png}
+\caption{Perspective function}
+\label{perspectivefunction}
+\end{figure}
+
+线性分式即$f(x)=(Ax+b)/(c^Tx+d)$其定义域为$\{x|c^T+d>0\}$。其逆函数也保凸。线性分式可看做在原集合内做拉伸，故而保凸。图\ref{linearfractionalfunction}
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.75\columnwidth]{linearfractionalfunction.png}
+\caption{Linear-fractional function}
+\label{linearfractionalfunction}
+\end{figure}
+
+\end{enumerate}
+
+\winsub{广义不等式}
+
+\noindent 广义不等式即定义了拥有多个分量的变量之间的比较：
+$$x\geq_k y \Longleftrightarrow x-y\in k$$
+$$x>_k y\Longleftrightarrow x-y \in int{(k)}$$
+$int{(k)}$即$k$的内部的眯。注意$k$必须为凸的、闭的、有非空内部且不包含直线。
+
+\winsub{minimum and minimal}
+
+\noindent Minimum即能和集合内所有点进行比较，且最小。Minimal即在集合内能比较的所有点中最小。图\ref{minimumandminimal}
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.75\columnwidth]{minimumandminimal.png}
+\caption{Minimum and minimal}
+\label{minimumandminimal}
+\end{figure}
+
+\noindent 左图为minimum，右图为minimal。
+
+\winsub{分割面与支撑面}
+
+\indent 分割面即能将两个集合分开的超平面，有严格不严格之分，严格即两个集合没有交点。两个凸集一定存在一个分割面。
+
+支撑面即集合边缘有个点使得$a^Tx\leq a^Tx_0$成立。其中$x$是集合内的点，$a\neq 0$。
+
+
+
+\section{Convex functions}
+\href{http://blog.csdn.net/u010366427/article/details/51879112}{凸优化学习笔记(2)——凸函数}
+\winsec{凸函数}
+\winsub{基本性质及例子}
+
+满足如下条件的从$n$维映射到1维的函数称凸函数：
+$$f(\theta x+(1-\theta)y)\leq\theta f(x)+(1-\theta)f(y)$$
+其中$0\leq \theta\leq 1$。凸函数的一维导数有如下性质：
+$$f(y)\geq f(x)+\nabla f(x)^T(y-x)$$
+可以注意到其实等号右边是$f$在$x$上的一阶泰勒展开式。另外，凸函数的二阶导数大于或等于0。凸函数举例如下：
+\begin{enumerate}[1)]
+\item 指数函数$e^{ax}$
+\item 幂函数$x^a$，其中$x$大于或等于0，当$a$不属于0-1范围内时为凸函数，否则为凹函数
+\item 绝对值的幂函数$|x|^a$，其中$a>1$
+\item 对数函数$\log x$
+\item 负熵$x\log x$
+\item 范数
+\item 最大值函数$\max(x)$
+\item 二次-线性分式函数$f(x,y)=x^2/y$，$y$大于0
+\item 指数和的对数$f(x)=\log(e^{x_1}+e^{x_2}+,\dots,e^{x_n})$，这其实是一个soft-max
+\item 几何平均$f(x)=(\prod_{i=1}^{n}x_i)^{1/n}$
+\item 行列式的对数$\log|A|$，其中$A$矩阵正定
+\end{enumerate}
+
+另外还有两个概念。下水平集：即函数值小于某个阈值对应的定义域。上镜图：即$\{(x,t)|t\geq f(x)\}$，这是一片函数之上的区域。同时，凸函数满足jensen不等式。
+\winsub{保凸运算}
+
+\begin{enumerate}[1)]
+\item 非负加权和，即把多个函数乘上一个非负的权重加起来。
+\item 复合仿射
+$$g(x)=f(Ax+b)$$
+如果$f$是凸的，则$g$是凸的。如果$f$是凹的，$g$也是凹的。即对自变量仿射后保凸。
+\item 逐点最大，即多个函数中相同自变量取其中最大者，该运算保凸。
+\item 复合
+    \begin{itemize}
+    \item[ ] 设$f(x)=h(g(x))$，则有如下情况：
+    \item[ ] 如果$h$是凸函数且非减，$g$是凸函数，则$f$是凸函数。
+    \item[ ] 如果$h$是凸函数且非增，$g$是凹函数，则$f$是凸函数。
+    \item[ ] 如果$h$是凹函数且非减，$g$是凹函数，则$f$是凹函数。
+    \item[ ] 如果$h$是凹函数且非增，$g$是凸函数，则$f$是凹函数。
+    \end{itemize}
+    $f$的拓展函数与上相同。
+
+\item 下界
+$$g(x)=\inf_{(y\in C)}f(x,y)$$
+如果$f$在$(x,y)$中是凸的，则$g$也是凸的。
+\item 透视函数
+$$g(x,t)=tf(x/t)$$
+其中$t$大于0。如果$f$是凸的，则$g$是凸的，如果$f$ 是凹的，$g$也是凹的。
+\end{enumerate}
+\winsub{共轭函数}
+
+共轭函数表达式是：
+$$f^*(y)=\sup_x(y^Tx-f(x))$$
+其中$\sup$是求上界。其含义是，给定$y$时平面$y^Tx$到$f(x)$ 的最大距离。下图\ref{conjugatefunction}的虚线即平面$y^Tx$，$y^Tx$到$f(x)$的最大距离出现在$f(x)$斜率为$y$的切线上。任何函数的共轭函数都是凸的，因为从表达中可以看到$f^*(y)$是$y$的仿射。
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.5\columnwidth]{conjugatefunction.png}
+\caption{conjugate function}
+\label{conjugatefunction}
+\end{figure}
+
+共轭函数的求法是令$xy-f(x)$，带入$f(x)$的表达式中并对$x$ 求导，使求导结果等于0(即求$f(x)$与$xy$距离的最值)，把$x$ 的结果回代进$f^*(y)=xy-f(x)$即可。
+\winsub{拟凸函数}
+
+如果一个函数的下水平集(sublevel sets)是凸集，则该函数是拟凸函数。例如：
+\begin{enumerate}[1)]
+\item 对数函数$\log x$
+\item 上取整函数$ceil(x)=\inf{\{z\in Z|z\geq x\}}$
+\item 向量的长度
+\item $f(x_1,x_2)=x_1x_2$，由于该矩阵的Hessian矩阵不是正定，也不是负定，但是其下水平集是凸集。
+\item 线性分式$f(x)=(a^Tx+b)/(c^Tx+d)$
+\end{enumerate}
+
+对于一个函数来说，如果满足其非减，或非增，或存在一个占函数小于该点非增，大于该点非减，则该函数为拟凸的。图\ref{quasiconvexfunction}
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.6\columnwidth]{quasiconvexfunction.png}
+\caption{quasiconvex function}
+\label{quasiconvexfunction}
+\end{figure}
+
+\winsub{对数凸函数}
+如果函数的值域大于0，并且$\log f(x)$是凸的，则该函数成对数凸函数。对数凹函数同理。例如：
+\begin{enumerate}[1)]
+\item 仿射函数
+\item 幂函数$f(x)=x^a$，其中$x$大于0且$a$小于等于0。若$a$大于等于0则为对数凹函数
+\item 指数函数
+\item 高斯分布的累积分布函数
+\item Gamma函数
+\item 矩阵的行列式
+\item 矩阵的行列式除以迹
+\end{enumerate}
+
+需要注意，两个对数凸函数相乘依然是对数凸函数，相加却未必。两个对数凸函数的卷积运算是对数凸函数。对数凸函数的积分运算是对数凸函数。
+
+\section{Convex optimization problems}
+\href{http://blog.csdn.net/u010366427/article/details/51906763}{凸优化学习笔记(3)——优化问题}
+\winsec{凸优化问题}
+\winsub{优化问题的基本形成}
+\begin{table}[!htb]
+	\begin{center}
+
+		\begin{tabular}{l l}
+			   {\rm minimize} & $f_0(x)$\\
+                {\rm subject to}  & $f_i(x)\leq b_i,i=1,\dots,m$ \\
+                & $h_i(x)=0, i=1,\dots,p$
+		\end{tabular}
+	\end{center}
+\end{table}
+
+需要注意的是除了显式的约束外，每个函数还有隐式的定义域约束。整个问题的定义域是所有函数的定义域的交集。对于每个这样的问题，其最优解定义为：
+$$p^*=\inf \{f_0(x)|f_i(x)\leq 0, i=1,\dots,m,h_i(x)=0,i=1,\dots,p\}$$
+局部最优解定义为半径为${\bf R}$的定义域范围内的最小值。如果这是个最小问题，则$f_0(x)$称为损失函数，如果是最大问题，则称为效用函数。
+\winsub{凸优化}
+
+凸优化问题定义为如下形式：
+\begin{table}[!htb]
+\centering
+\begin{tabular}{l l}
+{\rm minimize} & $f_0(x)$\\
+{\rm subject to} & $f_i(x)\leq 0, i=1,\dots,m$\\
+& $a^Tx=0, i=1,\dots,p$
+\end{tabular}
+\end{table}
+
+\noindent 其中，$f_0,\dots,f_m$都是凸函数。非正式地说，对于一个一般的优化问题，1)目标函数是凸函数；2)不等式约束是凸函数；3) 等式约束是仿射函数，则这个问题是凸优化问题。同时，从以上的定义可以注意到，凸优化问题的可行域一定是凸集。如果目标函数是拟凸函数，则这个问题是拟凸问题。
+
+如果点$x$满足如下等式，则该点是最优解：
+$$\nabla f(x)^T(y-x)\geq 0$$
+
+体现在几何上，即图\ref{convexoptimizationproblems}
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.6\columnwidth]{convexoptimizationproblems.png}
+\caption{Convex optimization problems}
+\label{convexoptimizationproblems}
+\end{figure}
+
+有时间为了简化理论分析，可以将问题转化为线性的目标函数:
+\begin{table}[!htb]
+\centering
+\begin{tabular}{l l}
+{\rm minimize} & $t$\\
+{\rm subject to} & $f_i(x)\leq 0, i=1,\dots,m$\\
+& $a^Tx=0, i=1,\dots,p$\\
+& $f_0(x)-t\leq 0$
+\end{tabular}
+\end{table}
+
+同时，可以通过如下方式求解拟凸问题：
+$$f_0(x)\leq \Longleftrightarrow \phi_t(x)\leq 0$$
+\begin{table}[!htb]
+\centering
+\begin{tabular}{l l}
+{\rm find} & $x$\\
+{\rm subject to} & $f_i(x)\leq 0, i=1,\dots,m$\\
+& $a^Tx=0, i=1,\dots,p$\\
+& $\phi_t(x)\leq 0$
+\end{tabular}
+\end{table}
+
+\noindent 该方法通过在可行域上不停二分查找，找到一个恰好有可行域的$t$，并行解聘的$x$即为次优解。
+
+\winsub{线性规划问题(LP)}
+
+问题可描述为：
+\begin{table}[!htb]
+\centering
+\begin{tabular}{l l}
+{\rm minimize} & $c^Tx+d$\\
+{\rm subject to} & $Gx\leq h$\\
+& $Ax=b$
+\end{tabular}
+\end{table}
+
+如下问题可以转换为线性规划，图\ref{linearprogram}：
+\begin{enumerate}[1)]
+\item 营养搭配问题，即每个食物有其价格和营养含量，目标是组合这些食物，在花费最少的情况下满足每一种营养需求。
+\item 多边形的切比雪夫中心，即寻找多边形内半径最大圆的中心点。
+\item 多个仿射函数最大值。
+\item 分片线性极小化。
+\end{enumerate}
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.6\columnwidth]{linearprogram.png}
+\caption{Linear program}
+\label{linearprogram}
+\end{figure}
+
+\winsub{二次规划(QP)}
+
+\begin{table}[!htb]
+\centering
+\begin{tabular}{l l}
+{\rm minimize} & $(1/2)x^TPx+q^Tx+r$\\
+{\rm subject to} & $Gx\leq h$\\
+& $Ax=b$
+\end{tabular}
+\end{table}
+\noindent 其中$P$为正定矩阵。如果其不等式约束为二次约束，则该问题为二次约束的二次规划(QCQP)：
+\begin{table}[!htb]
+\centering
+\begin{tabular}{l l}
+{\rm minimize} & $(1/2)x^TPx+q^Tx+r$\\
+{\rm subject to} & $(1/2)x^TP_ix+q_i^Tx+r_i, i=1,\dots,m$\\
+& $Ax=b$
+\end{tabular}
+\end{table}
+
+二次规划有如下问题：
+\begin{enumerate}[1)]
+\item 最小二乘及回归
+\item 求两个平面之间的距离
+\item 求方差下界
+\item $x$带随机损失的线性规划，即把随机损失的平方作为最小化项加入目标函数中
+\end{enumerate}
+
+二阶锥规划(QCQP)：
+\begin{table}[!htb]
+\centering
+\begin{tabular}{l l}
+{\rm minimize} & $f^Tx$\\
+{\rm subject to} & $\|A_ix+b\|_2\leq c_i^Tx+d$\\
+& $Fx=g$
+\end{tabular}
+\end{table}
+
+该规划可用于常数未知的线性规划，解法1是设置协方差矩阵$P$表示参数随机的程序，然后把约束条件设为容忍其极大损失；解法2是设置方差服从正态分布，通过0.95或者0.99等置信度确定约束范围。图\ref{quadraticprogram}
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.6\columnwidth]{quadraticprogram.png}
+\caption{Quadratic program}
+\label{quadraticprogram}
+\end{figure}
+
+\winsub{几何规划}
+
+\indent 单项式函数定义为：
+$$f(x)=cx_1^{a_1}x_2^{a_2}\dots x_n^{a_n}$$
+
+多项式函数则定义为多个单项式函数的和：
+$$f(x)=\sum_{k=1}^{K}c_kx_1^{a_{1k}}x_2^{a_{2k}}\dots x_n^{a_{nk}}$$
+其中$x$为正。定义几何规划为：
+\begin{table}[!htb]
+\centering
+\begin{tabular}{l l}
+{\rm minimize} & $f_0(x)$\\
+{\rm subject to} & $f_i(x)\leq 1, i=1,\dots,m$\\
+& $h_i(x)=1, i=1,\dots,p$
+\end{tabular}
+\end{table}
+
+\noindent 其中，$f_i$为多项函数，$h_i$为单项式函数。几何规划不是凸函数，但可以转换成凸函数，首先令$y_i=\log{x_i}$
+，然后在$f_i$外套$\log$函数，则该问题的指数均转换为仿射函数。
+
+\winsub{广义不等式约束}
+
+\indent 把约束扩展到广义不等式上，即认为$f_i$的映射结果是一个向量，因此$f_i$所在的不等式是一个广义不等式。这里记录一个半定规划：
+\begin{table}[!htb]
+\centering
+\begin{tabular}{l l}
+{\rm minimize} & $c^Tx$\\
+{\rm subject to} & $x_1F_1+x_2F_2+\dots+x_nF_n\leq G$\\
+& $Ax=b$
+\end{tabular}
+\end{table}
+
+可以看出，该问题包含SOCP，而SOCP包含QCQP，QCQP包含LP。
+
+
+
+
+
+
+
+
+
+
+
+%\begin{table}[!htb]
+%	\begin{center}
+
+%		\begin{tabular}{l l}
+%                $   $ & $  $\\
+%			   $   $ & $  $\\
+%                $   $ & $  $\\
+%			   $   $ & $  $\\
+%                $   $ & $  $\\
+%			   $   $ & $  $\\
+%                $   $ & $  $\\
+%		\end{tabular}
+%	\end{center}
+%\end{table}
+
+
+
+% section
+%\winsec{section name goes here}
+
+% term definition
+%\winsub{term definition}
+%\windef{term - and it's definition}
+
+% example
+%\winsub{an example}
+%\winex{example heading}
+
+% system of equations
+%\winsub{a system of equations}
+%\winsys{
+%2x+4y=2 \\
+%2x+6y=3}
+
+% matrix
+%\winsub{working a multistep problem}
+%\winmat{
+%a & b & c \\
+%d & e & f \\
+%g & h & i }
+% row operation
+%\winero{R_1+R_2}
+% matrix
+%\winmat{
+%a & b & c \\
+%d & e & f \\
+%g & h & i }
+% result
+%\winres{
+%x = 1 \\
+%y = 2 \\
+%z = 3}
+
+% vector in 3-space
+%\winsub{a vector in \winrthree}
+%v = \winmat{
+%x \\
+%y \\
+%z }
+
+%\winsub{a multi-step process}
+%A \step{do stuff} B \step{more stuff} C
+
+% numbered list
+%\winsub{an enumerated list}
+%\begin{enumerate}
+%\item{this is the first item in an enumerated list}
+%\item{this is the second item in an enumerated list}
+%\end{enumerate}
+
+% manual line breaks
+%\winsub{manually broken lines}
+%the first line\\
+%the second line\\
+%the third line
+
+% equation
+%\winsub{some math}
+%\wineq{
+%\int_a^b \! f(x) \; dx % definite
+%\int \! f(x) \, dx \; % indefinite
+%\frac{\pi}{2} \; % fraction
+%\sqrt{\theta} \; % root
+%n = 1,2,3 \ldots 4}
+
+
+
+\end{CJK*}
+\end{document}
