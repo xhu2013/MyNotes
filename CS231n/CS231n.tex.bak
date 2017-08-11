@@ -1,0 +1,298 @@
+% windsor's engineering notepad template
+% uses emerald and lxfonts packages from ctan
+%
+% don't forget to change the date and other info in the header!!
+%
+% convert to bitmap with:
+% convert -density 300x300 notes_template.pdf -resize 800x notes_template.png
+
+\documentclass[12pt]{article}
+\usepackage{CJK}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{emerald}
+\usepackage{lxfonts}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{eso-pic}
+\usepackage{lastpage}
+\usepackage[left=2.7cm,right=1.7cm,top=1.65cm,bottom=1.0cm]{geometry}
+
+
+
+
+
+%插入带方框的文字
+\usepackage{mdframed}
+\usepackage{enumerate}
+\usepackage{multirow}
+
+%插入eps
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{subfigure}
+
+%插入网址
+\usepackage{url}
+
+%插入超连接
+\usepackage[colorlinks,linkcolor=blue]{hyperref}
+
+
+
+
+\usepackage{pythonhighlight}
+
+
+
+
+
+
+% configure page header
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\lhead{\normalfont\ECFAugie \large{MATH 3E NOTES}}
+\chead{\normalfont\ECFAugie \large{W. SCHMIDT}\hspace{1.4cm}}
+\rhead{\normalfont\ECFAugie \large{\MakeUppercase{1/27/11}}\hspace{1.5cm}\thepage\hspace{0.1cm}/\hspace{0.1cm}\pageref{LastPage}\hspace{-1.5cm}}
+
+% background image
+\newcommand\BackgroundPic{
+\put(0,0){
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight,
+keepaspectratio]{background.png}%
+\vfill
+}}}
+
+% configure section titles
+\usepackage{titlesec}
+\titleformat{\section}{\Large}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+
+\begin{document}
+\begin{CJK*}{GBK}{kai}
+\AddToShipoutPicture{\BackgroundPic}
+\normalfont\ECFAugie
+
+% custom commands
+\newcommand{\windef}[1]{\subsection*{\underline{DEF:} \normalsize{#1}}} % definition
+\newcommand{\winex}[1]{\subsection*{\underline{EX:} \normalsize{#1}}} % example
+\newcommand{\winsec}[1]{\section*{\underline{#1}}} % section
+\newcommand{\winres}[1]{\begin{math}\Rightarrow\left\{\begin{matrix}#1\end{matrix}\right.\end{math}\hspace{0.2cm}} % result
+\newcommand{\winsys}[1]{\begin{math}\left\{\begin{matrix}#1\end{matrix}\right.\end{math}} % system
+\newcommand{\winero}[1]{\begin{math}\xrightarrow{#1}\end{math}} % row operation
+\newcommand{\winmat}[1]{\begin{math}\begin{bmatrix}#1\end{bmatrix}\end{math}} % matrix
+\newcommand{\winsub}[1]{\subsection*{$\star$\hspace{0.2cm} #1}} % dot
+\newcommand{\step}[1]{\begin{math}\xrightarrow{\text{#1}}\end{math}} % step in a process
+\newcommand{\winrtwo}{\begin{math}\text{R}^\text{2}\end{math}}
+\newcommand{\winrthree}{\begin{math}\text{R}^\text{3}\end{math}}
+\newcommand{\wineq}[1]{\begin{equation}\notag#1\end{equation}}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% start writing here %
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+\winsec{获得授权翻译斯坦福CS231n课程笔记系列}
+
+\href{https://zhuanlan.zhihu.com/p/20870307}{获得授权翻译斯坦福CS231n课程笔记系列}
+
+\winsec{CS231n课程笔记翻译：Python Numpy教程}
+
+\href{https://zhuanlan.zhihu.com/p/20878530}{CS231n 课程笔记翻译：Python Numpy教程}
+
+\href{http://scipy.github.io/old-wiki/pages/NumPy_for_Matlab_Users}{numpy for Matlab users}
+
+
+%\begin{python}
+%def f(x):
+%    return x
+%\end{python}
+
+\winsec{CS231n课程笔记翻译：图像分类笔记（上）}
+
+\href{https://zhuanlan.zhihu.com/p/20894041}{CS231n 课程笔记翻译：图像分类笔记（上）}
+
+\winsub{图像分类}
+
+\windef{图像分类}所谓图像分类问题，就是已有固定的分类标签集合，然后对于输入的图像，从分类标签集合中找出一个分类标签，最后把分类标签分配给该输入图像。
+
+{\bf 困难和挑战：}视角变化(Viewpoint variation)、大小变化(Scale variation)、形变(Deformation)、遮挡(Occlusion)、光照条件(Illumination conditions)、背景干扰(Background clutter)、类内差异(Intra-class variation)
+
+\windef{数据驱动方法}给计算机很多数据，然后实现学习算法，让计算机学习到每个类的外形。这种方法，就是数据驱动方法。
+
+数据驱动方法的第一步就是收集已经做好分类标注的图片来作为训练集。
+
+{\bf 图像分类流程：}输入(输入训练集)
+$\Longrightarrow$学习(训练分类哭或者学习模型)$\Longrightarrow$评价(评价分类器)
+
+\winsub{Nearest Neighbor分类器}
+
+{\bf 图像分类数据集：}\href{http://www.cs.toronto.edu/~kriz/cifar.html}{CIFAR-10}
+
+\windef{Nearest Neighbor算法}Nearest Neightbor算法将会拿差测试图片和训练集中每一张图片比较，然后将它认为最相似的那个训练集图片的标签赋给这张测试图片。
+
+\begin{itemize}
+\item {\bf L1距离} $$d_1(I_1,I_2)=\sum_p{|I_1^p-I_2^p|}$$
+\item {\bf L2距离} $$d_2(I_1,I_2)=\sqrt{\sum_p{(I_1^p-I_2^p)^2}}$$
+\end{itemize}
+
+\winex{Nearest Neighbor for CIFAR-10}
+基于CIFAR-10数据的Kaggle算法竞赛排行榜：\href{https://www.kaggle.com/c/cifar-10/leaderboard}{CIFAR-10 - Object Recognition in Images}
+
+\winsub{K-Nearest Neighbor分类器}
+
+\windef{K-Nearest Neighbor分类器}其思想：与其只找最相近的那1个图片的标签，不如找最相似的k个图片的标签，然后让他们针对测试图片进行投票，最后把票数最高的标签作为对测试图片的预测。
+
+\winsec{CS231n课程笔记翻译：图像分类笔记（下）}
+
+\href{https://zhuanlan.zhihu.com/p/20900216}{CS231n 课程笔记翻译：图像分类笔记（下）}
+
+\winsub{用于超参数调优的验证集}
+
+\windef{超参数(hyperparameter)}
+k-NN分类器需要设定k值，那么选择哪个k值最合适的呢？对于不同的距离函数，比如L1范数和L2范数等，那么选哪个好？还有不少选择需要考虑到(比如：点积)。所有这些选择，被称为{\bf 超参数(hyperparameter)}。
+
+{\bf Remark: }决不能使用测试集来进行调优。
+
+测试数据集只使用一次，即在训练完成后评价最终的模型时使用。
+
+当你在设计机器学习算法的时候，应该把测试集看做非常珍贵的资源，不到最后一步，绝不使用它。如果你使用测试集来调优，而且算法看起来效果不错，那么真正的危险在于：算法实际部署后，性能可能会远低于预期。这种情况，称之为算法对测试集{\bf 过拟合}。
+
+从训练集中取出一部分数据用来调优，我们称之为{\bf 验证集（validation set）}。验证集其实就是作为假的测试集来调优。
+
+把训练集分成训练集和验证集。使用验证集来对所有超参数调优。最后只在测试集上跑一次并报告结果。
+
+
+当训练集数量较小时（因此验证集的数量更小），使用{\bf 交叉验证}的方法。
+
+\winsub{Nearest Neighbor分类器的优劣}
+
+实现简单，训练时间短，测试时间长。但在实际应用中，更关注测试效率。
+
+\winsec{CS231n课程笔记翻译：线性分类笔记（上）}
+
+\href{https://zhuanlan.zhihu.com/p/20918580}{CS231n 课程笔记翻译：线性分类笔记（上）}
+
+\winsub{线性分类}
+
+\begin{enumerate}[]
+  \item {\bf 评分函数(score function)：}原始图像数据到类别分值的映射。
+  \item {\bf 损失函数(loss function)：}用来量化预测分类标签的得分与真实标签之间一致性的。
+\end{enumerate}
+
+\winsub{从图像到标签分值的参数化映射}
+
+{\bf 线性分类器}
+$$f(x_i,W,b)=Wx_i+b$$
+
+\winsub{理解线性分类器}
+
+{\bf 将图像看做高维度的点}
+
+{\bf 将线性分类器看做模板匹配}
+
+{\bf 偏差和权重的合并技巧}
+$$f(x_i,W,b)=Wx_i+b\Longrightarrow f(x_i,W)=Wx_i$$
+
+{\bf 图像数据预处理}：零均值的中心化
+
+\winsec{CS231n课程笔记翻译：线性分类笔记（中）}
+
+\href{https://zhuanlan.zhihu.com/p/20945670}{CS231n 课程笔记翻译：线性分类笔记（中）}
+
+\winsub{损失函数 Loss function}
+
+
+
+
+
+
+
+
+
+
+
+
+% section
+%\winsec{section name goes here}
+
+% term definition
+%\winsub{term definition}
+%\windef{term - and it's definition}
+
+% example
+%\winsub{an example}
+%\winex{example heading}
+
+% system of equations
+%\winsub{a system of equations}
+%\winsys{
+%2x+4y=2 \\
+%2x+6y=3}
+%
+% matrix
+%\winsub{working a multistep problem}
+%\winmat{
+%a & b & c \\
+%d & e & f \\
+%g & h & i }
+% row operation
+%\winero{R_1+R_2}
+% matrix
+%\winmat{
+%a & b & c \\
+%d & e & f \\
+%g & h & i }
+% result
+%\winres{
+%x = 1 \\
+%y = 2 \\
+%z = 3}
+
+% vector in 3-space
+%\winsub{a vector in \winrthree}
+%v = \winmat{
+%x \\
+%y \\
+%z }
+
+%\winsub{a multi-step process}
+%A \step{do stuff} B \step{more stuff} C
+
+% numbered list
+%\winsub{an enumerated list}
+%\begin{enumerate}
+%\item{this is the first item in an enumerated list}
+%\item{this is the second item in an enumerated list}
+%\end{enumerate}
+
+% manual line breaks
+%\winsub{manually broken lines}
+%the first line\\
+%the second line\\
+%the third line
+
+% equation
+%\winsub{some math}
+%\wineq{
+%\int_a^b \! f(x) \; dx % definite
+%\int \! f(x) \, dx \; % indefinite
+%\frac{\pi}{2} \; % fraction
+%\sqrt{\theta} \; % root
+%n = 1,2,3 \ldots 4}
+
+
+
+
+\end{CJK*}
+\end{document}
