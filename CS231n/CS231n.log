@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.3.5)  11 AUG 2017 01:46
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.3.5)  11 AUG 2017 23:29
 entering extended mode
 **E:/MyNotes/CS231n/CS231n.tex
 (E:/MyNotes/CS231n/CS231n.tex
@@ -1010,31 +1010,106 @@ C19/kai/bx/n/12/45 d[][] \C19/kai/bx/n/12/43 º[][] \C19/kai/bx/n/12/55 Í[][]\T1
 lcmss/bx/n/12 Objective\T1/fau/bx/n/12 )\C19/kai/bx/n/12/48 5
  []
 
+File: background.png Graphic file (type png)
+<use background.png>
+Package pdftex.def Info: background.png used on input line 233.
+(pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
+ [3]
+
+LaTeX Warning: The counter will not be printed.
+             The label is:  on input line 239.
+
+File: background.png Graphic file (type png)
+<use background.png>
+Package pdftex.def Info: background.png used on input line 256.
+(pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
+ [4] <svmvssoftmax.png, id=89, 602.25pt x 293.095pt>
+File: svmvssoftmax.png Graphic file (type png)
+
+<use svmvssoftmax.png>
+Package pdftex.def Info: svmvssoftmax.png used on input line 267.
+(pdftex.def)             Requested size: 366.8273pt x 178.52829pt.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is:  on input line 274.
+
+File: background.png Graphic file (type png)
+<use background.png>
+Package pdftex.def Info: background.png used on input line 287.
+(pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
+ [5 <E:/MyNotes/CS231n/svmvssoftmax.png>]
+Overfull \hbox (17.97952pt too wide) in paragraph at lines 288--289
+\C19/kai/bx/n/12/57 N \C19/kai/bx/n/12/37 Î \C19/kai/bx/n/12/55 Í \C19/kai/bx/n
+/12/45 8 \C19/kai/bx/n/12/40  \C19/kai/bx/n/12/64 ü \C19/kai/bx/n/12/48 ˛ \C19
+/kai/bx/n/12/43 – \C19/kai/bx/n/12/44 Ä \C19/kai/bx/n/12/25 " \C19/kai/bx/n/12/
+56 õ \C19/kai/bx/n/12/55 î \C19/kai/bx/n/12/43 º \C19/kai/bx/n/12/55 Í \C19/kai
+/bx/n/12/62 k \C19/kai/bx/n/12/40 ı \C19/kai/bx/n/12/64 ´ \C19/kai/bx/n/12/36 á
+ \C19/kai/bx/n/12/37  \C19/kai/bx/n/12/43 ⁄ \C19/kai/bx/n/12/37 ÿ \C19/kai/bx/
+n/12/57 ” \C19/kai/bx/n/12/40  \C19/kai/bx/n/12/55 ¢ \C19/kai/bx/n/12/59 y \C1
+9/kai/bx/n/12/41 ê \C19/kai/bx/n/12/55 ™\T1/fau/m/n/12 (\C19/kai/bx/n/12/48 ~ \
+C19/kai/bx/n/12/54 X \C19/kai/bx/n/12/26 µ\T1/fau/m/n/12 Softmax\C19/kai/bx/n/1
+2/44 Ω\T1/fau/m/n/12 SVM)\C19/kai/bx/n/12/25 " 
+ []
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is:  on input line 297.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is:  on input line 332.
+
+File: background.png Graphic file (type png)
+<use background.png>
+Package pdftex.def Info: background.png used on input line 334.
+(pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
+ [6]
+
+LaTeX Warning: The counter will not be printed.
+             The label is:  on input line 350.
+
+File: background.png Graphic file (type png)
+<use background.png>
+Package pdftex.def Info: background.png used on input line 379.
+(pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
+ [7]
+Overfull \hbox (33.72746pt too wide) detected at line 382
+\OML/llcmm/m/it/12 \OT1/llcmss/m/n/12 (\OML/llcmm/m/it/12 x\OT1/llcmss/m/n/12 
+) = [] \OMS/llcmsy/m/n/12 ! [] \OT1/llcmss/m/n/12 = [] = ([])([]) = (1 \OMS/llc
+msy/m/n/12   \OML/llcmm/m/it/12 \OT1/llcmss/m/n/12 (\OML/llcmm/m/it/12 x\OT1/l
+lcmss/m/n/12 ))\OML/llcmm/m/it/12 \OT1/llcmss/m/n/12 (\OML/llcmm/m/it/12 x\OT1
+/llcmss/m/n/12 )
+ []
+
 
 AED: lastpage setting LastPage
 File: background.png Graphic file (type png)
 <use background.png>
-Package pdftex.def Info: background.png used on input line 312.
+Package pdftex.def Info: background.png used on input line 471.
 (pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
- [3]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 312.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 312.
+ [8]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 471.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 471.
  (E:\MyNotes\CS231n\CS231n.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 312.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 312.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 471.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 471.
 Package rerunfilecheck Info: File `CS231n.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 15769 strings out of 495354
- 240235 string characters out of 3183860
- 360361 words of memory out of 3000000
- 18631 multiletter control sequences out of 15000+200000
- 42033 words of font info for 140 fonts, out of 3000000 for 9000
+ 16061 strings out of 495354
+ 245749 string characters out of 3183860
+ 360402 words of memory out of 3000000
+ 18899 multiletter control sequences out of 15000+200000
+ 45337 words of font info for 151 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  38i,14n,48p,849b,675s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/s
@@ -1048,16 +1123,17 @@ OWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf>
 kai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/F
 onts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/W
 INDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.t
-tf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf>{d:/CTEX/MiKTeX/fo
-nts/enc/dvips/fontname/8r.enc}<d:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cm
-sy10.pfb><d:/CTEX/MiKTeX/fonts/type1/emerald/faumw.pfb><d:/CTEX/MiKTeX/fonts/ty
-pe1/public/lxfonts/lcmex8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts/lcmmi8
-.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts/lcmsy8.pfb><d:/CTEX/MiKTeX/font
-s/type1/public/lxfonts/leclb8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts/ll
-cmss8.pfb>
-Output written on CS231n.pdf (3 pages, 578115 bytes).
+tf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/
+simkai.ttf>{d:/CTEX/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<d:/CTEX/MiKTeX/font
+s/type1/public/amsfonts/cm/cmsy10.pfb><d:/CTEX/MiKTeX/fonts/type1/emerald/faumw
+.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts/lcmex8.pfb><d:/CTEX/MiKTeX/font
+s/type1/public/lxfonts/lcmmi8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts/lc
+msy8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts/leclb8.pfb><d:/CTEX/MiKTeX/
+fonts/type1/public/lxfonts/leclq8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfont
+s/llcmss8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts/lmsbm8.pfb>
+Output written on CS231n.pdf (8 pages, 748989 bytes).
 PDF statistics:
- 200 PDF objects out of 1000 (max. 8388607)
- 11 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 270 PDF objects out of 1000 (max. 8388607)
+ 33 named destinations out of 1000 (max. 500000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
