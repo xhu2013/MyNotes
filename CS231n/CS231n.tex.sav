@@ -398,6 +398,192 @@ $$\sigma (x)=\frac{1}{1+e^{-x}}\rightarrow \frac{d \sigma (x)}{dx}=\frac{e^{-x}}
 
 {\bf 矩阵相乘的梯度：}可能最有技巧的操作是矩阵相乘（也适用于矩阵和向量，向量和向量相乘）的乘法操作。
 
+\winsec{CS231n课程笔记翻译：神经网络笔记1（上）}
+
+\href{https://zhuanlan.zhihu.com/p/21462488}{CS231n 课程笔记翻译：神经网络笔记1（上）}
+
+\winsub{快速简介}
+
+\winsub{单个神经元建模}
+
+\winsub{生物动机与连接}
+
+生物神经元从它的{\bf 树突}获得输入信号，然后沿着它唯一的{\bf 轴突(axon)}产生输出信号。
+
+{\bf 激活函数(activation function)}$f$常选择使用{\bf sigmoid 函数}$\sigma$，该函数输入实数值（求和后的信号强度），然后将输入值压缩到0-1之间。
+
+每个神经元都对它的输入和权重进行点积，然后加上偏差，最后使用非线性函数（或称为激活函数）。
+
+\winsub{作为线性分类器的单个神经元}
+
+\begin{enumerate}[]
+  \item {\bf 二分类Softmax分类器}
+  \item {\bf 二分类SVM分类器}
+  \item {\bf 理解正则化}
+\end{enumerate}
+
+一个单独的神经元可以用来实现一个二分类分类器，比如二分类的Softmax或者SVM分类器。
+
+\winsub{常用激活函数}
+
+\begin{enumerate}[]
+  \item {\bf Sigmoid}$$\sigma(x)=1/(1+e^{-x})$$
+  \item {\bf Tanh}$$tanh(x)=2\sigma(2x)-1$$
+  \item {\bf ReLU}$$f(x)=\max{(0,x)}$$
+  \item {\bf Leaky ReLU}$$f(x)=\mathbb{I}(x<0)(\alpha x)+\mathbb{(}(x>=0)(x)$$
+  \item {\bf Maxout}$$\max{(w_1^Tx+b_1,w_2^T+b_2)}$$
+\end{enumerate}
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth]{sigmoidtanh.png}
+\caption{左边是Sigmoid非线性函数，将实数压缩到$[0,1]$之间。右边是tanh函数，将实数压缩到$[-1,1]$。}
+\label{sigmoidtanh}
+\end{figure}
+
+Sigmoid非线性函数有两个主要缺点：
+\begin{itemize}
+  \item Sigmoid函数饱和使梯度消失。
+  \item Sigmoid函数的输出不是零中心的。
+\end{itemize}
+
+Tanh非线性函数也存在饱和问题，但是它的输出是零中心的。
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\columnwidth]{relu.png}
+\caption{左边是ReLU(校正线性单元：Rectified Linear Unit)激活函数，当$x=0$时函数值为0。当$x>0$函数的斜率为1。右边是从\href{http://www.cs.toronto.edu/~fritz/absps/imagenet.pdf}{Krizhevsky} 等的论文中截取的图表，指明使用ReLU比使用tanh的收敛快6倍。}
+\label{relu}
+\end{figure}
+
+ReLU有以下优缺点：
+\begin{itemize}
+  \item 优点：相较于sigmoid和tanh函数，ReLU对于随机梯度下降的收敛有巨大的加速作用。据称这是由它的线性，非饱和的公式导致的。
+  \item 优点：sigmoid和tanh神经元含有指数运算等耗费计算资源的操作，而ReLU可以简单地通过对一个矩阵进行阈值计算得到。
+  \item 缺点：在训练的时候，ReLU单元比较脆弱并且可能“死掉”。
+\end{itemize}
+
+Leaky ReLU是为解决“ReLU死亡”问题的尝试。有些研究者的论文指出Leaky ReLU激活函数表现很不错，但是其效果并不是很稳定。
+
+Maxout是对ReLU和leaky ReLU的一般化归纳，ReLU和Leaky ReLU都是这个公式的特殊情况(比如ReLU就是当$w_1,b_1=0$ 的时候)。这样Maxout神经元就拥有ReLU单元的所有优点(线性操作和不饱和)，而没有它的缺点(死亡的ReLU单元)。然而和ReLU对比，它每个神经元的参数数量增加了一倍，这就导致整体参数的数量激增。
+
+{\bf 一句话}：“那么该用那种呢？”用ReLU非线性函数。
+
+\winsec{CS231n课程笔记翻译：神经网络笔记1（下）}
+
+\href{https://zhuanlan.zhihu.com/p/21513367}{CS231n 课程笔记翻译：神经网络笔记1（下）}
+
+\winsub{神经网络结构}
+
+\winsub{灵活地组织层}
+
+全连接层中的神经元与其前后两层的神经元是完全成对连接的，但是在同一个全连接层内的神经元之间没有连接。
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.75\columnwidth]{fullyconnectedlayer.png}
+\caption{左边是一个2层神经网络，隐层由4个神经元(也可称为单元(unit))组成，输出层由2个神经元组成，输入层是3 个神经元。右边是一个3层神经网络，两个含4个神经元的隐层。注意：层与层之间的神经元是全连接的，但是层内的神经元不连接。}
+\label{fullyconnectedlayer}
+\end{figure}
+
+输出层的神经元一般是不会有激活函数的。
+
+用来度量神经网络的尺寸的标准主要有两个：一个是神经元的个数，另一个是参数的个数。
+
+\winsub{前向传播计算举例}
+
+全连接层的前向传播一般就是先进行一个矩阵乘法，然后加上偏置并运用激活函数。
+
+\winsub{表达能力}
+
+拥有至少一个隐层的神经网络是一个通用的近似器。在研究中已经证明，给出任意连续函数$f(x)$和任意$\epsilon >0$，均存在一个至少含1个隐层的神经网络$g(x)$(并且网络中有合理选择的非线性激活函数，比如sigmoid)，对于$\forall x$，使得$|f(x)-g(x)|<\epsilon$。换句话说，神经网络可以近似任何连续函数。
+
+既然一个隐层就能近似任何函数，那为什么还要构建更多层来将网络做得更深？答案是：虽然一个2层网络在数学理论上能完美地近似所有连续函数，但在实际操作中效果相对较差。
+
+在实践中3层的神经网络会比2层的表现好，然而继续加深(做到4，5，6层)很少有太大帮助。卷积神经网络的情况却不同，在卷积神经网络中，对于一个良好的识别系统来说，深度是一个极端重要的因素(比如数十(以10为量级)个可学习的层)。
+
+\winsub{设置层的数量和尺寸}
+
+当增加层的数量和尺寸时，网络的容量上升了。即神经元们可以合作表达许多复杂函数，所以表达函数的空间增加。
+
+\href{http://cs.stanford.edu/people/karpathy/convnetjs/demo/classify2d.html}{ConvnetJS demo}
+
+\windef{过拟合(Overfitting)}
+过拟合(Overfitting)是网络对数据中的噪声有很强的拟合能力，而没有重视数据间(假设)的潜在基本关系。
+
+不要减少网络神经元数目的主要原因在于小网络更难使用梯度下降等局部方法来进行训练：虽然小型网络的损失函数的局部极小值更少，也比较容易收敛到这些局部极小值，但是这些最小值一般都很差，损失值很高。相反，大网络拥有更多的局部极小值，但就实际损失值来看，这些局部极小值表现更好，损失更小。
+
+正则化强度是控制神经网络过拟合的好方法。
+
+不应该因为害怕出现过拟合而使用小网络。相反，应该进尽可能使用大网络，然后使用正则化技巧来控制过拟合。
+
+\winsec{CS231n课程笔记翻译：神经网络笔记 2}
+
+\href{https://zhuanlan.zhihu.com/p/21560667}{CS231n 课程笔记翻译：神经网络笔记 2}
+
+\winsub{设置数据和模型}
+
+神经元在计算内积后进行非线性激活函数计算，神经网络将神经元组织成各个层。这些做法共同定义了评分函数(s core function)的新形式，该形式是从前面线性分类章节中的简单线性映射发展而来的。具体来说，神经网络就是进行了一系列的线性映射与非线性激活函数交织的运算。
+
+\winsub{数据预处理}
+
+数据预处理有3个常用的符号，数据矩阵$X$，假设其尺寸是$[N \times D]$($N$是数据样本的数量，$D$是数据的维度)。
+
+\windef{均值减法(Mean subtraction)}对数据中每个独立特征减去平均值，从几何上可以理解为在每个维度上都将数据云的中心都迁移到原点。
+
+\windef{归一化(Normalization)}将数据的所有维度都归一化，使其数值范围都近似相等。
+
+有两种常用方法可以实现归一化。第一种是先对数据做零中心化(zero-centered)处理，然后每个维度都除以其标准差。第二种方法是对每个维度都做归一化，使得每个维度的最大和最小值是1和-1。
+
+\windef{PCA和白化(Whitening)}先对数据进行零中心化处理，然后计算协方差矩阵，它展示了数据中的相关性结构。
+
+白化操作的输入是特征基准上的数据，然后对每个维度除以其特征值来对数值范围进行归一化。该变换的几何解释是：如果数据服从多变量的高斯分布，那么经过白化后，数据的分布将会是一个均值为零，且协方差相等的矩阵。
+
+进行预处理很重要的一点是：任何预处理策略(比如数据均值)都只能在训练集数据上进行计算，算法训练完毕后再应用到验证集或者测试集上。
+
+\winsub{权重初始化}
+
+\begin{enumerate}[]
+  \item {\bf 错误：全零初始化。}如果权重被初始化为同样的值，神经元之间就失去了不对称性的源头。
+  \item {\bf 小随机数初始化。}权重初始值要非常接近0又不能等于0。如果神经元刚开始的时候是随机且不相等的，那么它们将计算出不同的更新，并将自身变成整个网络的不同部分。
+  \item {\bf 使用$1/\sqrt(n)$校准方差。}除以输入数据量的平方根来调整其数值范围，这样神经元输出的方差就归一化到1了。
+  \item {\bf 稀疏初始化(Sparse initialization)。}
+  \item {\bf 偏置(biases)的初始化。}通常将偏置初始化为0，这是因为随机小数值权重矩阵已经打破了对称性。
+  \item {\bf 批量归一化(Batch Normalization)。}批量归一化可以理解为在网络的每一层之前都做预处理，只是这种操作以另一种方式与网络集成在了一起。
+\end{enumerate}
+
+\winsub{正则化 Regularization}
+
+\begin{enumerate}[]
+  \item {\bf L2正则化}对于网络中的每个权重$w$，向目标函数中增加一个$\frac{1}{2}\lambda w^2$。L2正则化可以直观理解为它对于大数值的权重向量进行严厉惩罚，倾向于更加分散的权重向量。使网络更倾向于使用所有输入特征，而不是严重依赖输入特征中某些小部分特征。
+  \item {\bf L1正则化}对于每个$w$，都向目标函数增加一个$\lambda |w|$。L1和L2正则化也可以进行组合：$\lambda_1|w|+\lambda_2w^2$，这也被称作Elastic net regularizaton。L1正则化有一个有趣的性质，它会让权重向量在最优化的过程中变得稀疏(即非常接近0)。
+  \item {\bf 最大范式约束(Max norm constraints)}给每个神经元中权重向量的量级设定上限，并使用投影梯度下降来确保这一约束。
+  \item {\bf 随机失活(Dropout)}
+  \item {\bf 前向传播中的噪音}
+  \item {\bf 偏置正则化}
+  \item {\bf 每层正则化}
+\end{enumerate}
+
+\winsub{损失函数}
+
+\begin{enumerate}[]
+  \item {\bf 分类问题}
+  \item {\bf 问题：类别数目巨大}
+  \item {\bf 属性(Attribute)分类}
+  \item {\bf 回归问题}
+  \item {\bf 结构化预测(structured prediction)}
+\end{enumerate}
+
+\winsec{CS231n课程笔记翻译：神经网络笔记3（上）}
+
+\href{https://zhuanlan.zhihu.com/p/21741716}{CS231n 课程笔记翻译：神经网络笔记3（上）}
+
+
+
+
+
+
+
 
 
 
