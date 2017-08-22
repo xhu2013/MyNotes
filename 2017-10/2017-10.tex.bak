@@ -174,12 +174,7 @@ Using the above equations, it is easy to solve for the $x_t$ and $\lambda_t$ ser
 $$\lambda_t=\lambda_{t+1}+\frac{(p-\lambda_{t+1})^2}{4}$$
 $$x_{t+1}=x_t\frac{2-p+\lambda_{t+1}}{2}$$
 and using the initial and turn-T conditions, the $x_t$ series can be solved explicitly, giving $u_t$.
-\end{mdframed}
-\caption{Discrete-time version}
-\end{figure}
 
-\begin{figure}[!htb]
-\begin{mdframed}
 2. Continuous-time version
 
 The manager maximizes profit $\Pi$:
@@ -200,8 +195,8 @@ $$\dot{\lambda}(t)=-\frac{(p-\lambda(t))^2}{4}$$
 $$u(t)=x(t)\frac{p-\lambda(t)}{2}$$
 and using the initial and turn-T conditions, the functions can be solved to yield
 $$x(t)=\frac{(4-pt+pT)^2}{(4+pT)^2}x_0$$
+
 \end{mdframed}
-\caption{Continuous-time version}
 \end{figure}
 
 
