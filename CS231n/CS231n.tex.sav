@@ -238,12 +238,12 @@ $\max{(0,-)}$º¯Êý£¬Ëü³£±»³ÆÎª{\bf ÕÛÒ¶ËðÊ§(hinge loss)}¡£ ÓÐÊ±ºò»áÌýµ½ÈËÃÇÊ¹ÓÃÆ½
 
 \begin{enumerate}[]
   \item {\bf ÉèÖÃ$\Delta$}
-  \item {\bf Óë¶þÔªÖ§³ÖÏòÁ¿»ú(Binary Support Vector Machine)µÄ¹ØÏµ£º}¶þÔªÖ§³ÖÏòÁ¿»ú¶ÔµÚ$i$¸öÊý¾ÝµÄËðÊ§¼ÆËã¹«Ê½ÊÇ£º$$L_i=C\max{(0,1-y_iw^Tx_i)}+R(W)$$ÆäÖÐ£¬$C$ ÊÇÒ»¸ö³¬²ÎÊý£¬²¢ÇÒ$y_i\in \{-1,1\}$¡£¹«Ê½ÖÐµÄ$C$ºÍ¶àÀàSVM¹«Ê½ÖÐµÄ$\lambda$¶¼¿ØÖÆ×ÅÍ¬ÑùµÄÈ¨ºâ£¬¶øÇÒËüÃÇÖ®¼äµÄ¹ØÏµÊÇ$C\propto \frac{1}{\lambda}$¡£
+  \item {\bf Óë¶þÔªÖ§³ÖÏòÁ¿»ú(Binary Support Vector Machine)µÄ¹ØÏµ£º}¶þÔªÖ§³ÖÏòÁ¿»ú¶ÔµÚ$i$¸öÊý¾ÝµÄËðÊ§¼ÆËã¹«Ê½ÊÇ£º$$L_i=C\max{(0,1-y_iw^Tx_i)}+R(W)$$ÆäÖÐ£¬$C$ ÊÇÒ»¸ö³¬²ÎÊý£¬²¢ÇÒ$y_i\in \{-1,1\}$¡£¹«Ê½ÖÐµÄ$C$ ºÍ¶àÀàSVM¹«Ê½ÖÐµÄ$\lambda$¶¼¿ØÖÆ×ÅÍ¬ÑùµÄÈ¨ºâ£¬¶øÇÒËüÃÇÖ®¼äµÄ¹ØÏµÊÇ$C\propto \frac{1}{\lambda}$¡£
   \item {\bf ±¸×¢£ºÔÚ³õÊ¼ÐÎÊ½ÖÐ½øÐÐ×îÓÅ»¯}
   \item {\bf ±¸×¢£ºÆäËû¶àÀàSVM¹«Ê½}
 \end{enumerate}
 
-\winsub{CS231n¿Î³Ì±Ê¼Ç·­Òë£ºÏßÐÔ·ÖÀà±Ê¼Ç£¨ÏÂ£©}
+\winsec{CS231n¿Î³Ì±Ê¼Ç·­Òë£ºÏßÐÔ·ÖÀà±Ê¼Ç£¨ÏÂ£©}
 
 \href{https://zhuanlan.zhihu.com/p/21102293}{CS231n ¿Î³Ì±Ê¼Ç·­Òë£ºÏßÐÔ·ÖÀà±Ê¼Ç£¨ÏÂ£©}
 
@@ -452,7 +452,7 @@ Tanh·ÇÏßÐÔº¯ÊýÒ²´æÔÚ±¥ºÍÎÊÌâ£¬µ«ÊÇËüµÄÊä³öÊÇÁãÖÐÐÄµÄ¡£
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=\columnwidth]{relu.png}
-\caption{×ó±ßÊÇReLU(Ð£ÕýÏßÐÔµ¥Ôª£ºRectified Linear Unit)¼¤»îº¯Êý£¬µ±$x=0$Ê±º¯ÊýÖµÎª0¡£µ±$x>0$º¯ÊýµÄÐ±ÂÊÎª1¡£ÓÒ±ßÊÇ´Ó\href{http://www.cs.toronto.edu/~fritz/absps/imagenet.pdf}{Krizhevsky} µÈµÄÂÛÎÄÖÐ½ØÈ¡µÄÍ¼±í£¬Ö¸Ã÷Ê¹ÓÃReLU±ÈÊ¹ÓÃtanhµÄÊÕÁ²¿ì6±¶¡£}
+\caption{×ó±ßÊÇReLU(Ð£ÕýÏßÐÔµ¥Ôª£ºRectified Linear Unit)¼¤»îº¯Êý£¬µ±$x=0$Ê±º¯ÊýÖµÎª0¡£µ±$x>0$º¯ÊýµÄÐ±ÂÊÎª1¡£ ÓÒ±ßÊÇ´Ó\href{http://www.cs.toronto.edu/~fritz/absps/imagenet.pdf}{Krizhevsky} µÈµÄÂÛÎÄÖÐ½ØÈ¡µÄÍ¼±í£¬Ö¸Ã÷Ê¹ÓÃReLU±ÈÊ¹ÓÃtanhµÄÊÕÁ²¿ì6±¶¡£}
 \label{relu}
 \end{figure}
 
@@ -577,6 +577,196 @@ MaxoutÊÇ¶ÔReLUºÍleaky ReLUµÄÒ»°ã»¯¹éÄÉ£¬ReLUºÍLeaky ReLU¶¼ÊÇÕâ¸ö¹«Ê½µÄÌØÊâÇé¿ö(±
 \winsec{CS231n¿Î³Ì±Ê¼Ç·­Òë£ºÉñ¾­ÍøÂç±Ê¼Ç3£¨ÉÏ£©}
 
 \href{https://zhuanlan.zhihu.com/p/21741716}{CS231n ¿Î³Ì±Ê¼Ç·­Òë£ºÉñ¾­ÍøÂç±Ê¼Ç3£¨ÉÏ£©}
+
+\winsub{Ñ§Ï°¹ý³Ì}
+
+\begin{enumerate}[]
+  \item Éñ¾­ÍøÂçµÄ¾²Ì¬²¿·Ö£ºÈçºÎ´´½¨ÍøÂçµÄÁ¬½Ó¡¢Êý¾ÝºÍËðÊ§º¯Êý¡£
+  \item Éñ¾­ÍøÂçµÄ¶¯Ì¬²¿·Ö£¬¼´Éñ¾­ÍøÂçÑ§Ï°²ÎÊýºÍËÑË÷×îÓÅ³¬²ÎÊýµÄ¹ý³Ì¡£
+\end{enumerate}
+
+\winsub{ÌÝ¶È¼ì²é}
+
+{\bf Ê¹ÓÃÖÐÐÄ»¯¹«Ê½¡£}ÔÚÊ¹ÓÃÓÐÏÞ²îÖµ½üËÆÀ´¼ÆËãÊýÖµÌÝ¶ÈµÄÊ±ºò£¬³£¼ûµÄ¹«Ê½ÊÇ£º
+$$\frac{df(x)}{dx}=\frac{f(x+h)-f(x)}{h}\ (bad, do not use)$$
+ÆäÖÐ$h$ÊÇÒ»¸öºÜÐ¡µÄÊý×Ö£¬ÔÚÊµ¼ùÖÐ½üËÆÎª$1e-5$¡£ÔÚÊµ¼ùÖÐÖ¤Ã÷£¬Ê¹ÓÃÖÐÐÄ»¯¹«Ê½Ð§¹û¸üºÃ£º
+$$\frac{df(x)}{d(x)}=\frac{f(x+h)-f(x-h)}{2h}\ (use instead)$$
+Ò»¸ö¹«Ê½µÄÎó²î½üËÆ$O(h)$£¬µÚ¶þ¸ö¹«Ê½µÄÎó²î½üËÆ$O(h^2)$(ÊÇ¸ö¶þ½×½üËÆ)¡£
+
+{\bf Ê¹ÓÃÏà¶ÔÎó²îÀ´±È½Ï¡£}
+$$\frac{|f_a^{'}-f_n^{'}|}{\max{(|f_a^{'}|,|f_n^{'}|)}}$$
+
+ÔÚÊµ¼ùÖÐ£º
+\begin{itemize}
+  \item Ïà¶ÔÎó²î$>le-2$£ºÍ¨³£¾ÍÒâÎ¶×ÅÌÝ¶È¿ÉÄÜ³ö´í¡£
+  \item $1e-2>$Ïà¶ÔÎó²î$>1e-4$£ºÒª¶ÔÕâ¸öÖµ¸Ðµ½²»Êæ·þ²ÅÐÐ¡£
+  \item $1e-4>$Ïà¶ÔÎó²î£ºÕâ¸öÖµµÄÏà¶ÔÎó²î¶ÔÓÚÓÐ²»¿Éµ¼µãµÄÄ¿±êº¯ÊýÊÇOKµÄ¡£µ«Èç¹ûÄ¿±êº¯ÊýÖÐÃ»ÓÐkink(Ê¹ÓÃtanhºÍsoftmax)£¬ÄÇÃ´Ïà¶ÔÎó²îÖµ»¹ÊÇÌ«¸ß¡£
+  \item $1e-7$»òÕß¸üÐ¡£ººÃ½á¹û£¬¿ÉÒÔ¸ßÐËÒ»°ÑÁË¡£
+\end{itemize}
+
+{\bf Ê¹ÓÃË«¾«¶È¡£}
+
+{\bf ±£³ÖÔÚ¸¡µãÊýµÄÓÐÐ§·¶Î§¡£}
+
+{\bf Ä¿±êº¯ÊýµÄ²»¿Éµ¼µã(kinks)¡£}
+ÔÚ¼ÆËãËðÊ§µÄ¹ý³ÌÖÐÊÇ¿ÉÒÔÖªµÀ²»¿Éµ¼µãÓÐÃ»ÓÐ±»Ô½¹ýµÄ¡£ÔÚ¾ßÓÐ$\max{(x,y)}$ÐÎÊ½µÄº¯ÊýÖÐ³ÖÐø¸ú×ÙËùÓÐ¡°Ó®¼Ò¡±µÄÉí·Ý£¬¾Í¿ÉÒÔÊµÏÖÕâÒ»µã¡£ÆäÊµ¾ÍÊÇ¿´ÔÚÇ°Ïò´«²¥Ê±£¬µ½µ×$x$ºÍ$y$Ë­¸ü´ó¡£Èç¹ûÔÚ¼ÆËã$f(x+h)$ºÍ$f(x-h)$µÄÊ±ºò£¬ÖÁÉÙÓÐÒ»¸ö¡°Ó®¼Ò¡±µÄÉí·Ý±äÁË£¬ÄÇ¾ÍËµÃ÷²»¿Éµ¼µã±»Ô½¹ýÁË£¬ÊýÖµÌÝ¶È»á²»×¼È·¡£
+
+{\bf Ê¹ÓÃÉÙÁ¿Êý¾Ýµã¡£}½â¾ö²»¿Éµ¼µãÎÊÌâµÄÒ»¸ö°ì·¨ÊÇÊ¹ÓÃ¸üÉÙµÄÊý¾Ýµã¡£
+
+{\bf ½÷É÷ÉèÖÃ²½³¤$h$¡£}ÔÚÊµ¼ùÖÐ$h$²¢²»ÊÇÔ½Ð¡Ô½ºÃ£¬ÒòÎªµ±$h$ÌØ±ðÐ¡µÄÊ±ºò£¬¾Í¿ÉÄÜ¾Í»áÓöµ½ÊýÖµ¾«¶ÈÎÊÌâ¡£
+
+{\bf ÔÚ²Ù×÷µÄÌØÐÔÄ£Ê½ÖÐÌÝ¶È¼ì²é¡£}ÌÝ¶È¼ì²éÊÇÔÚ²ÎÊý¿Õ¼äÖÐµÄÒ»¸öÌØ¶¨(ÍùÍù»¹ÊÇËæ»úµÄ)µÄµ¥¶Àµã½øÐÐµÄ¡£¼´Ê¹ÊÇÔÚ¸ÃµãÉÏÌÝ¶È¼ì²é³É¹¦ÁË£¬Ò²²»ÄÜÂíÉÏÈ·±£È«¾ÖÉÏÌÝ¶ÈµÄÊµÏÖ¶¼ÊÇÕýÈ·µÄ¡£
+
+{\bf ²»ÒªÈÃÕýÔò»¯ÍÌÃ»Êý¾Ý¡£}ÏÈ¹ØµôÕýÔò»¯¶ÔÊý¾ÝËðÊ§×öµ¥¶À¼ì²é£¬È»ºó¶ÔÕýÔò»¯×öµ¥¶À¼ì²é¡£
+
+{\bf ¼ÇµÃ¹Ø±ÕËæ»úÊ§»î(dropout)ºÍÊý¾ÝÀ©ÕÅ(augmentation)¡£}Ò»¸ö¸üºÃµÄ½â¾ö·½°¸¾ÍÊÇÔÚ¼ÆËã$f(x+h)$ºÍ$f(x-h)$Ç°Ç¿ÖÆÔö¼ÓÒ»¸öÌØ¶¨µÄËæ»úÖÖ×Ó£¬ÔÚ¼ÆËã½âÎöÌÝ¶ÈÊ±Ò²Í¬ÑùÈç´Ë¡£
+
+{\bf ¼ì²éÉÙÁ¿µÄÎ¬¶È¡£}
+
+\winsub{Ñ§Ï°Ö®Ç°£ººÏÀíÐÔ¼ì²éµÄÌáÊ¾Óë¼¼ÇÉ}
+
+\begin{itemize}
+  \item {\bf Ñ°ÕÒÌØ¶¨Çé¿öµÄÕýÈ·ËðÊ§Öµ¡£}
+  \item Ìá¸ßÕýÔò»¯Ç¿¶ÈÊ±µ¼ÖÂËðÊ§Öµ±ä´ó¡£
+  \item {\bf ¶ÔÐ¡Êý¾Ý×Ó¼¯¹ýÄâºÏ¡£}
+\end{itemize}
+
+\winsub{¼ì²éÕû¸öÑ§Ï°¹ý³Ì}
+
+\winsub{ËðÊ§º¯Êý}
+
+\winsub{ÑµÁ·¼¯ºÍÑéÖ¤¼¯×¼È·ÂÊ}
+
+\winsub{È¨ÖØ¸üÐÂ±ÈÀý}
+
+\winsub{Ã¿²ãµÄ¼¤»îÊý¾Ý¼°ÌÝ¶È·Ö²¼}
+
+Ò»¸ö²»ÕýÈ·µÄ³õÊ¼»¯¿ÉÄÜÈÃÑ§Ï°¹ý³Ì±äÂý£¬ÉõÖÁ³¹µ×Í£Ö¹¡£»¹ºÃ£¬Õâ¸öÎÊÌâ¿ÉÒÔ±È½Ï¼òµ¥µØÕï¶Ï³öÀ´¡£ÆäÖÐÒ»¸ö·½·¨ÊÇÊä³öÍøÂçÖÐËùÓÐ²ãµÄ¼¤»îÊý¾ÝºÍÌÝ¶È·Ö²¼µÄÖù×´Í¼¡£Ö±¹ÛµØËµ£¬¾ÍÊÇÈç¹û¿´µ½ÈÎºÎÆæ¹ÖµÄ·Ö²¼Çé¿ö£¬ÄÇ¶¼²»ÊÇºÃÕ×Í·¡£
+
+\winsub{µÚÒ»²ã¿ÉÊÓ»¯}
+
+\winsec{CS231n¿Î³Ì±Ê¼Ç·­Òë£ºÉñ¾­ÍøÂç±Ê¼Ç3£¨ÏÂ£©}
+
+\href{https://zhuanlan.zhihu.com/p/21798784}{CS231n ¿Î³Ì±Ê¼Ç·­Òë£ºÉñ¾­ÍøÂç±Ê¼Ç3£¨ÏÂ£©}
+
+\winsub{²ÎÊý¸üÐÂ}
+
+\winsub{Ëæ»úÌÝ¶ÈÏÂ½µ¼°¸÷ÖÖ¸üÐÂ·½·¨}
+
+\begin{itemize}
+  \item {\bf ÆÕÍ¨¸üÐÂ}
+  \item {\bf ¶¯Á¿(Momentum)¸üÐÂ}
+\end{itemize}
+
+ÆÕÍ¨¸üÐÂÑØ×Å¸ºÌÝ¶È·½Ïò¸Ä±ä²ÎÊý(ÒòÎªÌÝ¶ÈÖ¸ÏòµÄÊÇÉÏÉý·½Ïò£¬µ«ÊÇÎÒÃÇÍ¨³£Ï£Íû×îÐ¡»¯ËðÊ§º¯Êý)¡£
+
+\winsub{Ñ§Ï°ÂÊÍË»ð}
+
+\begin{itemize}
+  \item {\bf Ëæ²½ÊýË¥¼õ¡£}Ã¿½øÐÐ¼¸¸öÖÜÆÚ¾Í¸ù¾ÝÒ»Ð©ÒòËØ½µµÍÑ§Ï°ÂÊ¡£
+  \item {\bf Ö¸ÊýË¥¼õ¡£}ÊýÑ§¹«Ê½ÊÇ$\alpha=\alpha_0e^{-kt}$£¬ÆäÖÐ$\alpha_0,k$ÊÇ³¬²ÎÊý£¬$t$ÊÇµü´ú´ÎÊý(Ò²¿ÉÒÔÊ¹ÓÃÖÜÆÚ×÷Îªµ¥Î»)¡£
+  \item {\bf 1/tË¥¼õ¡£}ÊýÑ§¹«Ê½ÊÇ$\alpha=\alpha_0/(1+kt)$£¬ÆäÖÐ$\alpha_0,k$ÊÇ³¬²ÎÊý£¬$t$ÊÇµü´ú´ÎÊý¡£
+\end{itemize}
+
+\winsub{¶þ½×·½·¨}
+
+ÔÚÉî¶ÈÍøÂç±³¾°ÏÂ£¬µÚ¶þÀà³£ÓÃµÄ×îÓÅ»¯·½·¨ÊÇ»ùÓÚÅ£¶Ù·¨µÄ£¬Æäµü´úÈçÏÂ£º
+$$x\leftarrow x-[Hf(x)]^{-1}\nabla f(x)$$
+ÕâÀï$Hf(x)$ÊÇHessian¾ØÕó£¬ËüÊÇº¯ÊýµÄ¶þ½×Æ«µ¼ÊýµÄÆ½·½¾ØÕó¡£$\nabla f(x)$ÊÇÌÝ¶ÈÏòÁ¿¡£Ö±¹ÛÀí½âÉÏ£¬Hessian¾ØÕóÃèÊöÁËËðÊ§º¯ÊýµÄ¾Ö²¿ÇúÂÊ£¬´Ó¶øÊ¹µÃ¿ÉÒÔ½øÐÐ¸ü¸ßÐ§µÄ²ÎÊý¸üÐÂ¡£¾ßÌåÀ´Ëµ£¬¾ÍÊÇ³ËÒÔHessian×ªÖÃ¾ØÕó¿ÉÒÔÈÃ×îÓÅ»¯¹ý³ÌÔÚÇúÂÊÐ¡µÄÊ±ºò´ó²½Ç°½ø£¬ÔÚÇúÂÊ´óµÄÊ±ºòÐ¡²½Ç°½ø¡£
+
+\winsub{Öð²ÎÊýÊÊÓ¦Ñ§Ï°ÂÊ·½·¨}
+
+\begin{enumerate}[]
+  \item {\bf Adagrad}
+  \item {\bf RMSprop}
+  \item {\bf Adam}
+\end{enumerate}
+
+\winsub{³¬²ÎÊýµ÷ÓÅ}
+
+Éñ¾­ÍøÂç×î³£ÓÃµÄÉèÖÃÓÐ£º
+\begin{itemize}
+  \item ³õÊ¼Ñ§Ï°ÂÊ¡£
+  \item Ñ§Ï°ÂÊË¥¼õ·½Ê½(ÀýÈçÒ»¸öË¥¼õ³£Á¿)¡£
+  \item ÕýÔò»¯Ç¿¶È(L2³Í·££¬Ëæ»úÊ§»îÇ¿¶È)¡£
+\end{itemize}
+
+\begin{enumerate}[]
+  \item {\bf ÊµÏÖ¡£}
+  \item {\bf ±ÈÆð½»²æÑéÖ¤×îºÃÊ¹ÓÃÒ»¸öÑéÖ¤¼¯¡£}
+  \item {\bf ³¬²ÎÊý·¶Î§¡£}
+  \item {\bf Ëæ»úËÑË÷ÓÅÓÚÍø¸ñËÑË÷¡£}
+  \item {\bf ¶ÔÓÚ±ß½çÉÏµÄ×îÓÅÖµÒªÐ¡ÐÄ¡£}
+  \item {\bf ´Ó´Öµ½Ï¸µØ·Ö½×¶ÎËÑË÷¡£}
+  \item {\bf ±´Ò¶Ë¹³¬²ÎÊý×îÓÅ»¯}
+\end{enumerate}
+
+\winsub{ÆÀ¼Û}
+
+\winsub{Ä£ÐÍ¼¯³É}
+
+ÔÚÊµ¼ùµÄÊ±ºò£¬ÓÐÒ»¸ö×ÜÊÇÄÜÌáÉýÉñ¾­ÍøÂç¼¸¸ö°Ù·Öµã×¼È·ÂÊµÄ°ì·¨£¬¾ÍÊÇÔÚÑµÁ·µÄÊ±ºòÑµÁ·¼¸¸ö¶ÀÁ¢µÄÄ£ÐÍ£¬È»ºóÔÚ²âÊÔµÄÊ±ºòÆ½¾ùËüÃÇÔ¤²â½á¹û¡£¼¯³ÉµÄÄ£ÐÍÊýÁ¿Ôö¼Ó£¬Ëã·¨µÄ½á¹ûÒ²µ¥µ÷ÌáÉý(µ«ÌáÉýÐ§¹ûÔ½À´Ô½ÉÙ)¡£»¹ÓÐÄ£ÐÍÖ®¼äµÄ²îÒì¶ÈÔ½´ó£¬ÌáÉýÐ§¹û¿ÉÄÜÔ½ºÃ¡£
+
+½øÐÐ¼¯³ÉÓÐÒÔÏÂ¼¸ÖÖ·½·¨£º
+\begin{itemize}
+  \item {\bf Í¬Ò»¸öÄ£ÐÍ£¬²»Í¬µÄ³õÊ¼»¯¡£}
+  \item {\bf ÔÚ½»²æÑéÖ¤ÖÐ·¢ÏÖ×îºÃµÄÄ£ÐÍ¡£}
+  \item {\bf Ò»¸öÄ£ÐÍÉèÖÃ¶à¸ö¼ÇÂ¼µã¡£}
+  \item {\bf ÔÚÑµÁ·µÄÊ±ºòÅÜ²ÎÊýµÄÆ½¾ùÖµ¡£}
+\end{itemize}
+
+\winsub{×Ü½á}
+
+ÑµÁ·Ò»¸öÉñ¾­ÍøÂçÐèÒª£º
+\begin{itemize}
+  \item ÀûÓÃÐ¡ÅúÁ¿Êý¾Ý¶ÔÊµÏÖ½øÐÐÌÝ¶È¼ì²é£¬»¹Òª×¢Òâ¸÷ÖÖ´íÎó¡£
+  \item ½øÐÐºÏÀíÐÔ¼ì²é£¬È·ÈÏ³õÊ¼ËðÊ§ÖµÊÇºÏÀíµÄ£¬ÔÚÐ¡Êý¾Ý¼¯ÉÏÄÜµÃµ½100\%µÄ×¼È·ÂÊ¡£
+  \item ÔÚÑµÁ·Ê±£¬¸ú×ÙËðÊ§º¯ÊýÖµ£¬ÑµÁ·¼¯ºÍÑéÖ¤¼¯×¼È·ÂÊ£¬Èç¹ûÔ¸Òâ£¬»¹¿ÉÒÔ¸ú×Ù¸üÐÂµÄ²ÎÊýÁ¿Ïà¶ÔÓÚ×Ü²ÎÊýÁ¿µÄ±ÈÀý(Ò»°ãÔÚ$1e-3$×óÓÒ)£¬È»ºóÈç¹ûÊÇ¶ÔÓÚ¾í»ýÉñ¾­ÍøÂç£¬¿ÉÒÔ½«µÚÒ»²ãµÄÈ¨ÖØ¿ÉÊÓ»¯¡£
+  \item ÍÆ¼öµÄÁ½¸ö¸üÐÂ·½·¨ÊÇSGD+Nesterov¶¯Á¿·½·¨£¬»òÕßAdam·½·¨¡£
+  \item Ëæ×ÅÑµÁ·½øÐÐÑ§Ï°ÂÊË¥¼õ¡£±ÈÈç£¬ÔÚ¹Ì¶¨¶àÉÙ¸öÖÜÆÚºóÈÃÑ§Ï°ÂÊ¼õ°ë£¬»òÕßµ±ÑéÖ¤¼¯×¼È·ÂÊÏÂ½µµÄÊ±ºò¡£
+  \item Ê¹ÓÃËæ»úËÑË÷(²»ÒªÓÃÍø¸ñËÑË÷)À´ËÑË÷×îÓÅµÄ³¬²ÎÊý¡£·Ö½×¶Î´Ó´Ö(±È½Ï¿íµÄ³¬²ÎÊý·¶Î§ÑµÁ·1-5 ¸öÖÜÆÚ)µ½Ï¸(Õ­·¶Î§ÑµÁ·ºÜ¶à¸öÖÜÆÚ)µØÀ´ËÑË÷¡£
+  \item ½øÐÐÄ£ÐÍ¼¯³ÉÀ´»ñµÃ¶îÍâµÄÐÔÄÜÌá¸ß¡£
+\end{itemize}
+
+\winsec{Ë¹Ì¹¸£CS231n¿Î³Ì×÷Òµ\# 2¼ò½é}
+
+\href{https://zhuanlan.zhihu.com/p/21941485}{Ë¹Ì¹¸£CS231n¿Î³Ì×÷Òµ\# 2¼ò½é}
+
+\winsec{Ë¹Ì¹¸£CS231n¿Î³Ì×÷Òµ\# 3¼ò½é}
+
+\href{https://zhuanlan.zhihu.com/p/21946525}{Ë¹Ì¹¸£CS231n¿Î³Ì×÷Òµ\# 3¼ò½é}
+
+\winsec{CS231n¿Î³Ì±Ê¼Ç·­Òë£º¾í»ýÉñ¾­ÍøÂç±Ê¼Ç}
+
+\href{https://zhuanlan.zhihu.com/p/22038289}{CS231n ¿Î³Ì±Ê¼Ç·­Òë£º¾í»ýÉñ¾­ÍøÂç±Ê¼Ç}
+
+\winsub{¾í»ýÉñ¾­ÍøÂç(CNNs / ConvNets)}
+
+¾í»ýÉñ¾­ÍøÂçµÄ½á¹¹»ùÓÚÒ»¸ö¼ÙÉè£¬¼´ÊäÈëÊý¾ÝÊÇÍ¼Ïñ¡£
+
+\winsub{½á¹¹¸ÅÊö}
+
+¾í»ýÉñ¾­ÍøÂçÕë¶ÔÊäÈëÈ«²¿ÊÇÍ¼ÏñµÄÇé¿ö£¬½«½á¹¹µ÷ÕûµÃ¸ü¼ÓºÏÀí£¬»ñµÃÁË²»Ð¡µÄÓÅÊÆ¡£Óë³£¹æÉñ¾­ÍøÂç²»Í¬£¬¾í»ýÉñ¾­ÍøÂçµÄ¸÷²ãÖÐµÄÉñ¾­ÔªÊÇ3Î¬ÅÅÁÐµÄ£º{\bf ¿í¶È}¡¢{\bf ¸ß¶È}ºÍ{\bf }Éî¶È(ÕâÀïµÄ{\bf Éî¶È}Ö¸µÄÊÇ¼¤»îÊý¾ÝÌåµÄµÚÈý¸öÎ¬¶È£¬¶ø²»ÊÇÕû¸öÍøÂçµÄÉî¶È£¬Õû¸öÍøÂçµÄÉî¶ÈÖ¸µÄÊÇÍøÂçµÄ²ãÊý)¡£
+
+²ãÖÐµÄÉñ¾­Ôª½«Ö»ÓëÇ°Ò»²ãÖÐµÄÒ»Ð¡¿éÇøÓòÁ¬½Ó£¬¶ø²»ÊÇ²ÉÈ¡È«Á¬½Ó·½Ê½¡£
+
+\begin{figure}
+\centering
+\includegraphics[width=0.75\columnwidth]{convnets.png}
+\caption{×ó±ßÊÇÒ»¸ö3²ãµÄÉñ¾­ÍøÂç¡£ÓÒ±ßÊÇÒ»¸ö¾í»ýÉñ¾­ÍøÂç£¬Í¼ÀýÖÐÍøÂç½«ËüµÄÉñ¾­Ôª¶¼ÅÅÁÐ³É3¸öÎ¬¶È(¿í¡¢¸ßºÍÉî¶È)¡£¾í»ýÉñ¾­ÍøÂçµÄÃ¿Ò»²ã¶¼½«3DµÄÊäÈëÊý¾Ý±ä»¯ÎªÉñ¾­Ôª3DµÄ¼¤»îÊý¾Ý²¢Êä³ö¡£ÔÚÕâ¸öÀý×ÓÖÐ£¬ºìÉ«µÄÊäÈë²ã×°µÄÊÇÍ¼Ïñ£¬ËùÒÔËüµÄ¿í¶ÈºÍ¸ß¶È¾ÍÊÇÍ¼ÏñµÄ¿í¶ÈºÍ¸ß¶È£¬ËüµÄÉî¶ÈÊÇ3(´ú±íÁËºì¡¢ÂÌ¡¢À¶3ÖÖÑÕÉ«Í¨µÀ)¡£}
+\label{convnets}
+\end{figure}
+
+¾í»ýÉñ¾­ÍøÂçÊÇÓÉ²ã×é³ÉµÄ¡£Ã¿Ò»²ã¶¼ÓÐÒ»¸ö¼òµ¥µÄAPI£ºÓÃÒ»Ð©º¬»òÕß²»º¬²ÎÊýµÄ¿Éµ¼µÄº¯Êý£¬½«ÊäÈëµÄ3DÊý¾Ý±ä»»Îª3DµÄÊä³öÊý¾Ý¡£
+
+\winsub{ÓÃÀ´¹¹½¨¾í»ýÍøÂçµÄ¸÷ÖÖ²ã}
+
+¾í»ýÉñ¾­ÍøÂçÖ÷ÒªÓÉÈýÖÖÀàÐÍµÄ²ã¹¹³É£º{\bf ¾í»ý²ã}£¬{\bf »ã¾Û(Pooling)²ã}ºÍ{\bf È«Á¬½Ó²ã}(È«Á¬½Ó²ãºÍ³£¹æÉñ¾­ÍøÂçÖÐµÄÒ»Ñù)¡£
+
+\winsub{¾í»ý²ã}
+
+
+
 
 
 

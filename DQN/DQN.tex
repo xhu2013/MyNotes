@@ -38,6 +38,19 @@
 %插入超连接
 \usepackage[colorlinks,linkcolor=blue]{hyperref}
 
+%公式换行
+\usepackage{amssymb,amsmath}
+
+
+%边框
+
+%字体颜色
+\usepackage{color}
+
+
+
+
+
 % configure page header
 \usepackage{fancyhdr}
 \setlength{\headheight}{15pt}
@@ -65,7 +78,7 @@ keepaspectratio]{background.png}%
 \titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
 
 \begin{document}
-\begin{CJK*}{GBK}{song}
+\begin{CJK*}{GBK}{kai}
 \AddToShipoutPicture{\BackgroundPic}
 \normalfont\ECFAugie
 
@@ -83,6 +96,8 @@ keepaspectratio]{background.png}%
 \newcommand{\winrthree}{\begin{math}\text{R}^\text{3}\end{math}}
 \newcommand{\wineq}[1]{\begin{equation}\notag#1\end{equation}}
 
+%本人加的
+\newcommand{\winsubsub}[1]{\subsubsection*{$\quad \diamond$\hspace{0.2cm} #1}} % dot
 %%%%%%%%%%%%%%%%%%%%%%
 % start writing here %
 %%%%%%%%%%%%%%%%%%%%%%
@@ -124,18 +139,243 @@ keepaspectratio]{background.png}%
 
 增强学习的任务就是找到一个最优的策略Policy从而使Reward最多。
 
+\winsec{DQN 从入门到放弃2 增强学习与MDP}
 
+\href{https://zhuanlan.zhihu.com/p/21292697}{DQN 从入门到放弃2 增强学习与MDP}
 
+\winsub{增强学习的世界观}
 
+\begin{itemize}
+  \item 世界的时间是可以分割成一个一个时间片的，并且有完全的先后顺序，因此可以形成
+      $${s_0,a_0,r_0,s_1,a_1,r_1,\dots,s_t,a_t,r_t}$$
+      这样的状态，动作和反馈系列。
+  \item 增强学习中每一次参数的调整都会对世界造成确定性的影响。
+\end{itemize}
 
+\winsub{MDP(Markov Decision Process)马尔科夫决策过程}
 
+\windef{Markov}
+一个状态$S_t$是Markov当且仅当
+$$P(s_{t+1}|s_t)=P(s_{t+1}|s_t,s_{t-1},\dots,s_1,s_0)$$
+$P$为概率。
 
+一个基本的MDP可以用$(S,A,P)$来表示，$S$表示状态，$A$ 表示动作，$P$表示状态转移概率，也就是根据当前的状态$s_t$ 和$a_t$转移到$s_{t+1}$的概率。如果我们知道了转移概率$P$，也就是称为我们获得了{\bf 模型Model}，有了模型，未来就可以求解，那么获取最优的动作也就有可能，这种通过模型来获取最优动作的方法也就称为Model-based 的方法。但是现实情况下，很多问题是很难得到准确的模型的，因此就有Model-free的方法来寻找最优的动作。
 
+\winsub{回报Result}
 
+\windef{回报Result}
+回报Return来表示某个时刻$t$的状态将具备的回报：
+$$G_t=R_{t+1}+\lambda R_{t+2}+\dots=\sum_{k=0}^{\infty}{\lambda^kR_{t+k+1}}$$
+上面$R$是Reward反馈，$\lambda$是discount factor折扣因子，一般小于1，就是说一般当下的反馈是比较重要的，时间越久，影响越小。
 
+用价值函数value function $v(s)$来表示一个状态未来的潜在价值。
 
+\windef{value function}
+value function就是回报的期望：
+$$v(s)={\mathbb E}[G_t|S_t=s]$$
 
+\winsec{DQN 从入门到放弃3 价值函数与Bellman方程}
 
+\href{https://zhuanlan.zhihu.com/p/21340755}{DQN 从入门到放弃3 价值函数与Bellman方程}
+
+\winsub{Value Function 价值函数}
+
+\winsub{再谈增强学习的意义}
+
+L深度学习给了计算机“神经网络大脑”，RL给了计算机学习机制。
+
+\winsub{Bellman方程}
+
+\begin{equation*}
+\begin{aligned}
+v(x)&={\mathbb E}[G_t|S_t=s]\\
+&={\mathbb E}[R_{t+1}+\lambda R_{t+2}+\lambda^2 R_{t+3}+\dots|S_t=s]\\
+&={\mathbb E}[R_{t+1}+\lambda (R_{t+2}+\lambda R_{t+3}+\dots)|S_t=s]\\
+&={\mathbb E}[R_{t+1}+\lambda G_{t+1}|S_t=s]\\
+&={\mathbb E}[R_{t+1}+\lambda v(S_{t+1})|S_t=s]
+\end{aligned}
+\end{equation*}
+
+\windef{Bellman方程}
+$$v(s)={\mathbb E}[R_{t+1}+\lambda v(S_{t+1})|S_t=s]$$
+
+\winsec{DQN 从入门到放弃4 动态规划与Q-Learning}
+
+\href{https://zhuanlan.zhihu.com/p/21378532}{DQN 从入门到放弃4 动态规划与Q-Learning}
+
+\winsub{上文回顾}
+
+Bellman方程透出的含义就是价值函数的计算可以通过迭代的方式来实现。
+
+\winsub{Action-Value function 动作价值函数}
+
+\windef{动作价值函数Action-Value function}
+\begin{equation*}
+\begin{aligned}
+Q^\pi(s,a)&={\mathbb E}[r_{t+1}+\lambda r_{t+2}+\lambda^2 r_{t+3}+\dots|s,a]\\
+&={\mathbb E}_{s^{'}}[r+\lambda Q^\pi(s^{'},a^{'})|s,a]
+\end{aligned}
+\end{equation*}
+
+\winsub{Optimal value function 最优价值函数}
+
+最优动作价值函数和一般的动作价值函数的关系：
+$$Q^{*}(s,a)=\max_{\pi}{Q^\pi(s,a)}$$
+$$Q^{*}(s,a)={\mathbb E}_{s^{'}}[r+\lambda \max_{a^{'}}{Q^{*}(s^{'},a^{'})}|s,a]$$
+
+\winsub{策略迭代Policy Iteration}
+
+Policy Iteration的目的是通过迭代计算value function 价值函数的方式来使policy收敛到最优。
+
+Policy Iteration本质上就是直接使用Bellman方程而得到的：
+\begin{equation*}
+\begin{aligned}
+v_{k+1}(s)&\doteq {\mathbb E}_{\pi}[R_{t+1}+\gamma v_k(S_{t+1})|S_t=s]\\
+&=\sum_{a}{\pi(a|s)\sum_{s^{'},r}{p(s^{'},r|s,a)[r+\gamma v_k(s^{'})]}}
+\end{aligned}
+\end{equation*}
+
+Policy Iteration一般分成两步：
+\begin{enumerate}[1.]
+  \item Policy Evaluation 策略评估。目的是 更新Value Function，或者说更好的估计基于当前策略的价值。
+  \item Policy Improvement 策略改进。 使用 greedy policy 产生新的样本用于第一步的策略评估。
+\end{enumerate}
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.75\columnwidth]{policyiteration.png}
+\label{policyiteration}
+\end{figure}
+
+\begin{figure}[!htb]
+\begin{mdframed}
+\begin{enumerate}[1.]
+  \item Initialization
+  \begin{enumerate}[\hspace{0.5cm}]
+    \item $V(s)\in {\mathbb R}$ and $\pi(s)\in {\cal A}(s)$ arbitrarily for all $s\in {\cal S}$
+  \end{enumerate}
+  \item Policy Evaluation
+  \begin{enumerate}[\hspace{0.5cm}]
+    \item Repeat
+    \begin{enumerate}[\hspace{0.5cm}]
+      \item $\Delta\leftarrow 0$
+      \item For each $s\in {\cal S}$
+      \begin{enumerate}[\hspace{0.5cm}]
+        \item $v\leftarrow V(s)$
+        \item $V(s)\leftarrow\sum_{s^{'},r}{p(s^{'},r|s,\pi(s))[r+\gamma V(s^{'})]}$
+        \item $\Delta\leftarrow \max{(\Delta,|v-V(s)|)}$
+      \end{enumerate}
+    \end{enumerate}
+    \item Until $\Delta<\theta$ (a small positive number)
+  \end{enumerate}
+  \item Policy Improvement
+  \begin{enumerate}[\hspace{0.5cm}]
+    \item $policy-stable \leftarrow true$
+    \item For each $s\in{\cal S}$
+    \begin{enumerate}[\hspace{0.5cm}]
+      \item $a\leftarrow \pi(s)$
+      \item $\pi(s)\leftarrow argmax_a{\sum_{s^{'},r}{p(s^{'},r|s,a)[r+\lambda V(s^{'})]}}$
+      \item if $a\neq \pi(s)$, then $policy-stable\leftarrow false$
+    \end{enumerate}
+    \item if $policy-stable$, then stop and return $V$ and $\pi$; else go to 2
+  \end{enumerate}
+\end{enumerate}
+\end{mdframed}
+\label{policyiterationcode}
+\caption{Policy iteration算法}
+\end{figure}
+这里policy evaluation部分的迭代需要知道state状态转移概率$p$，也就是说依赖于model模型。
+
+\winsub{Value Iteration 价值迭代}
+
+Value Iteration则是使用Bellman 最优方程得到
+\begin{equation*}
+\begin{aligned}
+v_{*}&=\max_{a}{{\mathbb E}[R_{t+1}+\gamma v_{*}(S_{t+1})|S_t=s,A_t=a]}\\
+&=\max_{a}{\sum_{s_{'},r}{p(s^{'},r|s,a)[r+\gamma v_{*}(s^{'})]}}
+\end{aligned}
+\end{equation*}
+然后改变成迭代形式
+\begin{equation*}
+\begin{aligned}
+v_{k+1}(s)&\doteq \max_{a}{{\mathbb E}[R_{t+1}+\gamma v_k(S_{t+1})|S_t=s,A_t=a]}\\
+&=\max_{a}{\sum_{s^{'},r}{p(s^{'},r|s,a)[r+\gamma v_k(s^{'})]}}
+\end{aligned}
+\end{equation*}
+
+value iteration的算法如下：
+
+\begin{figure}[!htb]
+\begin{mdframed}
+\begin{enumerate}[]
+  \item Initialize array $V$ arbitrarily (e.g., $V(s)=0$ for all $s\in {\cal S}^{+}$)
+  \item Repeat
+  \begin{enumerate}[\hspace{0.5cm}]
+    \item $\Delta \leftarrow 0$
+    \item For each $s\in {\cal S}$
+    \begin{enumerate}[\hspace{0.5cm}]
+      \item $v\leftarrow V(s)$
+      \item $V(s)\leftarrow\max_{a}{\sum_{s^{'},r}{p(s^{'},r|s,a)[r+\gamma V(s^{'})]}}$
+      \item $\Delta\leftarrow\max{(\Delta,|v-V(s)|)}$
+    \end{enumerate}
+  \end{enumerate}
+  \item until $\Delta<\theta$ (a small positive number)
+  \item Output a deterministic policy, $\pi$, such that
+      \begin{enumerate}[\hspace{0.5cm}]
+        \item $\pi(s)=argmax_a{\sum_{s^{'},r}{p(s^{'},r|s,a)[r_\gamma V(s^{'})]}}$
+      \end{enumerate}
+\end{enumerate}
+\end{mdframed}
+\label{valueiterationcode}
+\caption{Value iteration算法}
+\end{figure}
+
+value iteration较之policy iteration更直接，不过问题也都是一样，需要知道状态转移函数$p$才能计算。
+
+\winsub{Q-Learning}
+Q Learning提出了一种更新Q值的办法：
+$$Q(S_t,A_t)\leftarrow Q(S_t,A_t)+\alpha (R_{t+1}+\lambda \max_{a}{Q(S_{t+1},a)-Q(S_t,A_t)})$$
+
+具体的算法如下：
+
+\begin{figure}[!htb]
+\begin{mdframed}
+\begin{enumerate}[]
+  \item 初始化$Q(s,a)$，$\forall s\in S$，$a\in A(s)$，任意的数值，并且$Q(terminal-state,\cdot)=0$
+  \item 重复(对每一节episode)
+  \begin{enumerate}[\hspace{0.5cm}]
+    \item 初始化状态$S$
+    \item 重复(对episode中的每一步)
+    \begin{enumerate}[\hspace{0.5cm}]
+      \item 使用某一个policy比如($\epsilon-greedy$)根据状态$S$选取一个动作执行 
+      \item 执行完动作后，观察reward和新的状态$S^{'}$
+      \item $Q(S_t,A_t)\leftarrow Q(S_t,A_t)+\alpha({\color{red}R_{t+1}+\lambda \max_{a}{Q(S_{t+1},a)}}-Q(S_t,A_t))$
+      \item $S\leftarrow S^{'}$
+    \end{enumerate}
+    \item 循环直到$S$终止
+  \end{enumerate}
+\end{enumerate}
+\end{mdframed}
+\caption{Q-Learning算法}
+\label{qlearningcode}
+\end{figure}
+
+\winsub{Exploration and Exploitation 探索与利用}
+
+\begin{itemize}
+  \item 以Q-Learning算法叫做Off-policy的算法。
+  \item Q-Learning完全不考虑model模型也就是环境的具体情况，只考虑看到的环境及reward，因此是model-free的方法。
+\end{itemize}
+
+选择怎样的policy来生成action呢？有两种做法：
+\begin{itemize}
+  \item 随机的生成一个动作。
+  \item greedy policy贪婪策略，如$\epsilon$-greedy策略。
+\end{itemize}
+
+\winsec{DQN从入门到放弃5 深度解读DQN算法}
+
+\href{https://zhuanlan.zhihu.com/p/21421729}{DQN从入门到放弃5 深度解读DQN算法}
 
 
 

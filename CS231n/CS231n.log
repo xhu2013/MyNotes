@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.3.5)  12 AUG 2017 23:51
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.3.5)  13 AUG 2017 19:26
 entering extended mode
 **E:/MyNotes/CS231n/CS231n.tex
 (E:/MyNotes/CS231n/CS231n.tex
@@ -1021,7 +1021,7 @@ LaTeX Warning: The counter will not be printed.
 
 File: background.png Graphic file (type png)
 <use background.png>
-Package pdftex.def Info: background.png used on input line 256.
+Package pdftex.def Info: background.png used on input line 255.
 (pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
  [4] <svmvssoftmax.png, id=89, 602.25pt x 293.095pt>
 File: svmvssoftmax.png Graphic file (type png)
@@ -1036,7 +1036,7 @@ LaTeX Warning: The counter will not be printed.
 
 File: background.png Graphic file (type png)
 <use background.png>
-Package pdftex.def Info: background.png used on input line 287.
+Package pdftex.def Info: background.png used on input line 283.
 (pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
  [5 <E:/MyNotes/CS231n/svmvssoftmax.png>]
 Overfull \hbox (17.97952pt too wide) in paragraph at lines 288--289
@@ -1047,31 +1047,31 @@ Overfull \hbox (17.97952pt too wide) in paragraph at lines 288--289
 /bx/n/12/62 k \C19/kai/bx/n/12/40 ı \C19/kai/bx/n/12/64 ´ \C19/kai/bx/n/12/36 á
  \C19/kai/bx/n/12/37  \C19/kai/bx/n/12/43 ⁄ \C19/kai/bx/n/12/37 ÿ \C19/kai/bx/
 n/12/57 ” \C19/kai/bx/n/12/40  \C19/kai/bx/n/12/55 ¢ \C19/kai/bx/n/12/59 y \C1
-9/kai/bx/n/12/41 ê \C19/kai/bx/n/12/55 ™\T1/fau/m/n/12 (\C19/kai/bx/n/12/48 ~ \
-C19/kai/bx/n/12/54 X \C19/kai/bx/n/12/26 µ\T1/fau/m/n/12 Softmax\C19/kai/bx/n/1
-2/44 Ω\T1/fau/m/n/12 SVM)\C19/kai/bx/n/12/25 " 
+9/kai/bx/n/12/41 ê \C19/kai/bx/n/12/55 ™\T1/fau/bx/n/12 (\C19/kai/bx/n/12/48 ~ 
+\C19/kai/bx/n/12/54 X \C19/kai/bx/n/12/26 µ\T1/fau/bx/n/12 Softmax\C19/kai/bx/n
+/12/44 Ω\T1/fau/bx/n/12 SVM)\C19/kai/bx/n/12/25 " 
  []
 
 
 LaTeX Warning: The counter will not be printed.
              The label is:  on input line 297.
 
+File: background.png Graphic file (type png)
+<use background.png>
+Package pdftex.def Info: background.png used on input line 330.
+(pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
+ [6]
 
 LaTeX Warning: The counter will not be printed.
              The label is:  on input line 332.
 
-File: background.png Graphic file (type png)
-<use background.png>
-Package pdftex.def Info: background.png used on input line 334.
-(pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
- [6]
 
 LaTeX Warning: The counter will not be printed.
              The label is:  on input line 350.
 
 File: background.png Graphic file (type png)
 <use background.png>
-Package pdftex.def Info: background.png used on input line 379.
+Package pdftex.def Info: background.png used on input line 375.
 (pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
  [7]
 Overfull \hbox (33.72746pt too wide) detected at line 382
@@ -1086,15 +1086,15 @@ lcmss/m/n/12 ))\OML/llcmm/m/it/12 \OT1/llcmss/m/n/12 (\OML/llcmm/m/it/12 x\OT1
 LaTeX Warning: The counter will not be printed.
              The label is:  on input line 388.
 
+File: background.png Graphic file (type png)
+<use background.png>
+Package pdftex.def Info: background.png used on input line 417.
+(pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
+ [8]
 
 LaTeX Warning: The counter will not be printed.
              The label is:  on input line 419.
 
-File: background.png Graphic file (type png)
-<use background.png>
-Package pdftex.def Info: background.png used on input line 421.
-(pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
- [8]
 
 LaTeX Warning: The counter will not be printed.
              The label is:  on input line 429.
@@ -1112,7 +1112,7 @@ Package pdftex.def Info: relu.png used on input line 454.
 (pdftex.def)             Requested size: 489.10307pt x 185.86739pt.
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 464.
+Package pdftex.def Info: background.png used on input line 461.
 (pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
 
 [9 <E:/MyNotes/CS231n/sigmoidtanh.png>]
@@ -1154,12 +1154,12 @@ kai/bx/n/12/40 — \C19/kai/bx/n/12/59 ï \C19/kai/m/n/12/51 8 \C19/kai/bx/n/12/37
  I \C19/kai/bx/n/12/43 º \C19/kai/bx/n/12/55 Í \C19/kai/bx/n/12/63 O \C19/kai/b
 x/n/12/45 \ \C19/kai/bx/n/12/61 ò \C19/kai/bx/n/12/42 á$\OML/llcmm/m/it/12 \OM
 S/llcmsy/m/n/12 j\OML/llcmm/m/it/12 w\OMS/llcmsy/m/n/12 j$\C19/kai/bx/n/12/25 "
-\T1/fau/m/n/12 L1\C19/kai/bx/n/12/43 ⁄\T1/fau/m/n/12 L2\C19/kai/bx/n/12/64  \C
-19/kai/bx/n/12/63 K \C19/kai/bx/n/12/44 z \C19/kai/bx/n/12/61 è \C19/kai/bx/n/1
-2/47 å \C19/kai/bx/n/12/61 ± \C19/kai/bx/n/12/46 ? \C19/kai/bx/n/12/60 1 \C19/k
-ai/bx/n/12/65 | \C19/kai/bx/n/12/43 ‹ \C19/kai/bx/n/12/26 µ$\OML/llcmm/m/it/12 
-[]\OMS/llcmsy/m/n/12 j\OML/llcmm/m/it/12 w\OMS/llcmsy/m/n/12 j \OT1/llcmss/m/n
-/12 +
+\T1/fau/bx/n/12 L1\C19/kai/bx/n/12/43 ⁄\T1/fau/bx/n/12 L2\C19/kai/bx/n/12/64  
+\C19/kai/bx/n/12/63 K \C19/kai/bx/n/12/44 z \C19/kai/bx/n/12/61 è \C19/kai/bx/n
+/12/47 å \C19/kai/bx/n/12/61 ± \C19/kai/bx/n/12/46 ? \C19/kai/bx/n/12/60 1 \C19
+/kai/bx/n/12/65 | \C19/kai/bx/n/12/43 ‹ \C19/kai/bx/n/12/26 µ$\OML/llcmm/m/it/1
+2 []\OMS/llcmsy/m/n/12 j\OML/llcmm/m/it/12 w\OMS/llcmsy/m/n/12 j \OT1/llcmss/m
+/n/12 +
  []
 
 
@@ -1167,17 +1167,59 @@ LaTeX Warning: The counter will not be printed.
              The label is:  on input line 569.
 
 
+LaTeX Warning: The counter will not be printed.
+             The label is:  on input line 583.
+
+File: background.png Graphic file (type png)
+<use background.png>
+Package pdftex.def Info: background.png used on input line 593.
+(pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
+ [13]
+File: background.png Graphic file (type png)
+ <use background.png>
+Package pdftex.def Info: background.png used on input line 645.
+(pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
+ [14]
+
+LaTeX Warning: The counter will not be printed.
+             The label is:  on input line 679.
+
+File: background.png Graphic file (type png)
+<use background.png>
+Package pdftex.def Info: background.png used on input line 682.
+(pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
+ [15]
+
+LaTeX Warning: The counter will not be printed.
+             The label is:  on input line 694.
+
+File: background.png Graphic file (type png)
+<use background.png>
+Package pdftex.def Info: background.png used on input line 726.
+(pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
+ [16] <convnets.png, id=236, 602.25pt x 139.52126pt>
+File: convnets.png Graphic file (type png)
+
+<use convnets.png>
+Package pdftex.def Info: convnets.png used on input line 755.
+(pdftex.def)             Requested size: 366.8273pt x 84.98434pt.
+File: background.png Graphic file (type png)
+ <use background.png>
+Package pdftex.def Info: background.png used on input line 766.
+(pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
+ [17] 
 AED: lastpage setting LastPage
 File: background.png Graphic file (type png)
 <use background.png>
-Package pdftex.def Info: background.png used on input line 665.
+Package pdftex.def Info: background.png used on input line 879.
 (pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
- [13]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 665.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 665.
- (E:\MyNotes\CS231n\CS231n.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 665.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 665.
+ [18 <E:/MyNotes/CS231n/convnets.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 879.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 879.
+
+(E:\MyNotes\CS231n\CS231n.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 879.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 879.
 Package rerunfilecheck Info: File `CS231n.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1189,11 +1231,11 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 16334 strings out of 495354
- 250668 string characters out of 3183860
- 364009 words of memory out of 3000000
- 19132 multiletter control sequences out of 15000+200000
- 46241 words of font info for 154 fonts, out of 3000000 for 9000
+ 16514 strings out of 495354
+ 254020 string characters out of 3183860
+ 374335 words of memory out of 3000000
+ 19293 multiletter control sequences out of 15000+200000
+ 47442 words of font info for 158 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  38i,14n,48p,849b,675s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/s
@@ -1216,9 +1258,9 @@ fonts/type1/public/lxfonts/lcmsy8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfont
 s/leclb8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts/leclq8.pfb><d:/CTEX/MiK
 TeX/fonts/type1/public/lxfonts/llcmss8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/l
 xfonts/lmsbm8.pfb>
-Output written on CS231n.pdf (13 pages, 955805 bytes).
+Output written on CS231n.pdf (18 pages, 1048415 bytes).
 PDF statistics:
- 351 PDF objects out of 1000 (max. 8388607)
- 69 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 400 PDF objects out of 1000 (max. 8388607)
+ 87 named destinations out of 1000 (max. 500000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

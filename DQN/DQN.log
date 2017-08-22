@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.3.5)  10 AUG 2017 18:52
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.3.5)  18 AUG 2017 23:21
 entering extended mode
 **E:/MyNotes/DQN/DQN.tex
 (E:/MyNotes/DQN/DQN.tex
@@ -710,6 +710,9 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip109
 )
+(d:\CTEX\MiKTeX\tex\latex\amsfonts\amssymb.sty
+Package: amssymb 2009/06/22 v3.00
+)
 (d:\CTEX\MiKTeX\tex\latex\fancyhdr\fancyhdr.sty
 \fancy@headwidth=\skip110
 \f@ncyO@elh=\skip111
@@ -733,84 +736,84 @@ Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 \titlewidthlast=\dimen166
 \titlewidthfirst=\dimen167
 ) (E:\MyNotes\DQN\DQN.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
 
 (d:\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -833,7 +836,7 @@ Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             or
 (lastpage)             http://www.ctan.org/tex-archive/ 
 (lastpage)             install/macros/latex/contrib/pageslts.tds.zip
-(lastpage)             ! on input line 67.
+(lastpage)             ! on input line 80.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -869,7 +872,7 @@ Package lastpage Info: Please have a look at the pageslts package at
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 67.
+Package hyperref Info: Link coloring ON on input line 80.
 (d:\CTEX\MiKTeX\tex\latex\hyperref\nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 
@@ -879,9 +882,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 Normal \count register pool exhausted, switching to extended pool.
 \c@section@level=\count277
 )
-LaTeX Info: Redefining \ref on input line 67.
-LaTeX Info: Redefining \pageref on input line 67.
-LaTeX Info: Redefining \nameref on input line 67.
+LaTeX Info: Redefining \ref on input line 80.
+LaTeX Info: Redefining \pageref on input line 80.
+LaTeX Info: Redefining \nameref on input line 80.
 
 (E:\MyNotes\DQN\DQN.out) (E:\MyNotes\DQN\DQN.out)
 \@outlinefile=\write3
@@ -895,95 +898,214 @@ File: extended.enc 2008/12/29 4.8.2
 (d:\CTEX\MiKTeX\tex\latex\cjk\extended.chr
 File: extended.chr 2008/12/29 4.8.2
 )
-LaTeX Font Info:    Try loading font information for T1+fau on input line 70.
+LaTeX Font Info:    Try loading font information for T1+fau on input line 83.
 
 (d:\CTEX\MiKTeX\tex\latex\emerald\t1fau.fd
 File: t1fau.fd 2006/01/25 Fontinst v1.926 font definitions for T1/fau.
 )
-LaTeX Font Info:    Try loading font information for C19+song on input line 93.
+LaTeX Font Info:    Try loading font information for C19+kai on input line 108.
 
 
-(d:\CTEX\CTeX\tex\latex\CJK\GB\c19song.fd
-File: c19song.fd 2009/09/23 4.8.2
+(d:\CTEX\CTeX\tex\latex\CJK\GB\c19kai.fd
+File: c19kai.fd 2009/09/23 4.8.2
 )
-Overfull \hbox (16.59593pt too wide) in paragraph at lines 93--93
+Overfull \hbox (16.59593pt too wide) in paragraph at lines 108--108
 |$[]$| 
  []
 
 
 LaTeX Font Warning: Font shape `T1/fau/bx/n' undefined
-(Font)              using `T1/fau/m/n' instead on input line 102.
+(Font)              using `T1/fau/m/n' instead on input line 117.
 
-LaTeX Font Info:    Try loading font information for OMS+fau on input line 111.
+LaTeX Font Info:    Try loading font information for OMS+fau on input line 126.
 
-LaTeX Font Info:    No file OMSfau.fd. on input line 111.
+LaTeX Font Info:    No file OMSfau.fd. on input line 126.
 
 LaTeX Font Warning: Font shape `OMS/fau/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbullet' on input line 111.
+(Font)              for symbol `textbullet' on input line 126.
 
-
-AED: lastpage setting LastPage
 
 Package Fancyhdr Warning: \headheight is too small (15.0pt): 
  Make it at least 18.0pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-<background.png, id=6, 2559.5625pt x 3312.375pt>
+<background.png, id=7, 2559.5625pt x 3312.375pt>
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 154.
+Package pdftex.def Info: background.png used on input line 153.
 (pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
  [1{d:/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}
 
  <E:/MyNotes/DQN/background.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 154.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 154.
+File: background.png Graphic file (type png)
+ <use background.png>
+Package pdftex.def Info: background.png used on input line 197.
+(pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
+ [2]
+File: background.png Graphic file (type png)
+ <use background.png>
+Package pdftex.def Info: background.png used on input line 242.
+(pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
+ [3]
+<policyiteration.png, id=67, 778.91pt x 456.70625pt>
+File: policyiteration.png Graphic file (type png)
+ <use policyiteration.png>
+Package pdftex.def Info: policyiteration.png used on input line 246.
+(pdftex.def)             Requested size: 366.8273pt x 215.08401pt.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \hspace {0.5cm} on input line 254.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \hspace {0.5cm} on input line 258.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \hspace {0.5cm} on input line 260.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \hspace {0.5cm} on input line 263.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \hspace {0.5cm} on input line 272.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \hspace {0.5cm} on input line 275.
+
+Package mdframed Info: mdframed inside float 
+ mdframed uses option nobreak mdframed on input line 283.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 283.
+
+Overfull \hbox (10.43872pt too wide) in paragraph at lines 287--288
+[]\C19/kai/m/n/12/63 ˘ \C19/kai/bx/n/12/48 p\T1/fau/bx/n/12 policy e-val-u-a-ti
+on\C19/kai/bx/n/12/37 ‹ \C19/kai/bx/n/12/41 © \C19/kai/bx/n/12/40  S \C19/kai/
+m/n/12/39 ì \C19/kai/bx/n/12/60 I \C19/kai/m/n/12/61 á \C19/kai/bx/n/12/64  \C
+19/kai/bx/n/12/40 \T1/fau/bx/n/12 state\C19/kai/bx/n/12/65 G \C19/kai/m/n/12/5
+7  \C19/kai/bx/n/12/65 = \C19/kai/m/n/12/61 £ \C19/kai/m/n/12/42 V \C19/kai/m/
+n/12/49 «$\OML/llcmm/m/it/12 p$\C19/kai/m/n/12/26 ß \C19/kai/m/n/12/61 è \C19/k
+ai/bx/n/12/46 “ \C19/kai/bx/n/12/55 ¥ \C19/kai/m/n/12/56 ` \C19/kai/m/n/12/61 ù
+ \C19/kai/bx/n/12/48 6 \C19/kai/m/n/12/62 u\T1/fau/bx/n/12 model\C19/kai/m/n/12
+/51 
+ []
+
+File: background.png Graphic file (type png)
+<use background.png>
+Package pdftex.def Info: background.png used on input line 289.
+(pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
+ [4 <E:/MyNotes/DQN/policyiteration.png>]
+
+LaTeX Warning: The counter will not be printed.
+             The label is:  on input line 310.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \hspace {0.5cm} on input line 313.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \hspace {0.5cm} on input line 316.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \hspace {0.5cm} on input line 324.
+
+Package mdframed Info: mdframed inside float 
+ mdframed uses option nobreak mdframed on input line 328.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 328.
+
+LaTeX Warning: The counter will not be printed.
+             The label is:  on input line 343.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \hspace {0.5cm} on input line 346.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \hspace {0.5cm} on input line 349.
+
+Package mdframed Info: mdframed inside float 
+ mdframed uses option nobreak mdframed on input line 358.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 358.
+
+Overfull \hbox (24.7475pt too wide) in paragraph at lines 367--368
+[]\T1/fau/bx/n/12 Q-Learning\C19/kai/m/n/12/58  \C19/kai/m/n/12/54  \C19/kai/
+bx/n/12/37 ÿ \C19/kai/m/n/12/47  \C19/kai/m/n/12/49 ƒ\T1/fau/bx/n/12 model\C19
+/kai/m/n/12/51  \C19/kai/bx/n/12/60 . \C19/kai/m/n/12/61 è \C19/kai/bx/n/12/46
+ “ \C19/kai/bx/n/12/55 ¥ \C19/kai/bx/n/12/44 Ç \C19/kai/bx/n/12/46 ∏ \C19/kai/b
+x/n/12/40  \C19/kai/bx/n/12/46 ‰ \C19/kai/m/n/12/57 N \C19/kai/m/n/12/53 ú \C1
+9/kai/m/n/12/47 π \C19/kai/m/n/12/26 ß \C19/kai/bx/n/12/64 ê \C19/kai/m/n/12/47
+  \C19/kai/m/n/12/49 ƒ \C19/kai/m/n/12/47 w \C19/kai/bx/n/12/40   \C19/kai/b
+x/n/12/44 Ç \C19/kai/bx/n/12/46 ∏ \C19/kai/bx/n/12/45 9\T1/fau/bx/n/12 reward\C
+19/kai/m/n/12/26 ß
+ []
+
+File: background.png Graphic file (type png)
+<use background.png>
+Package pdftex.def Info: background.png used on input line 368.
+(pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
+ [5] 
+AED: lastpage setting LastPage
+File: background.png Graphic file (type png)
+<use background.png>
+Package pdftex.def Info: background.png used on input line 394.
+(pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
+ [6]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 394.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 394.
  (E:\MyNotes\DQN\DQN.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 154.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 154.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 394.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 394.
 Package rerunfilecheck Info: File `DQN.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 14266 strings out of 495354
- 216940 string characters out of 3183860
- 321192 words of memory out of 3000000
- 17153 multiletter control sequences out of 15000+200000
- 33924 words of font info for 112 fonts, out of 3000000 for 9000
+ 14784 strings out of 495354
+ 224066 string characters out of 3183860
+ 331351 words of memory out of 3000000
+ 17620 multiletter control sequences out of 15000+200000
+ 44441 words of font info for 148 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 38i,13n,43p,843b,419s stack positions out of 5000i,500n,10000p,200000b,50000s
-<d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/
-chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTe
-X/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun
-.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truety
-pe/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/
-CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/sim
-sun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/tru
-etype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CT
-EX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/
-simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/
-truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:
-/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chine
-se/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fon
-ts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf>
-<d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/ch
-inese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/
-fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.t
-tf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype
-/chinese/simsun.ttf><d:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf>{d:/CTEX/Mi
-KTeX/fonts/enc/dvips/fontname/8r.enc}<d:/CTEX/MiKTeX/fonts/type1/public/amsfont
-s/cm/cmsy10.pfb><d:/CTEX/MiKTeX/fonts/type1/emerald/faumw.pfb><d:/CTEX/MiKTeX/f
-onts/type1/public/lxfonts/lcmmi8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts
-/leclb8.pfb>
-Output written on DQN.pdf (1 page, 533712 bytes).
+ 38i,14n,43p,843b,847s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/s
+imkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS
+/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:
+/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai
+.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Font
+s/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WIND
+OWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf>
+<C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/sim
+kai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/F
+onts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/W
+INDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.t
+tf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf>{d:/CTEX/MiKTeX/fo
+nts/enc/dvips/fontname/8r.enc}<d:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+sy10.pfb><d:/CTEX/MiKTeX/fonts/type1/emerald/faumw.pfb><d:/CTEX/MiKTeX/fonts/ty
+pe1/public/lxfonts/lcmex8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts/lcmmi8
+.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts/lcmsy8.pfb><d:/CTEX/MiKTeX/font
+s/type1/public/lxfonts/leclb8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts/le
+clq8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts/llcmss8.pfb><d:/CTEX/MiKTeX
+/fonts/type1/public/lxfonts/lmsbm8.pfb>
+Output written on DQN.pdf (6 pages, 796981 bytes).
 PDF statistics:
- 157 PDF objects out of 1000 (max. 8388607)
- 2 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 264 PDF objects out of 1000 (max. 8388607)
+ 48 named destinations out of 1000 (max. 500000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

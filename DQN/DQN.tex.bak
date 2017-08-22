@@ -38,6 +38,16 @@
 %插入超连接
 \usepackage[colorlinks,linkcolor=blue]{hyperref}
 
+%公式换行
+\usepackage{amssymb,amsmath}
+
+
+%边框
+
+
+
+
+
 % configure page header
 \usepackage{fancyhdr}
 \setlength{\headheight}{15pt}
@@ -65,7 +75,7 @@ keepaspectratio]{background.png}%
 \titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
 
 \begin{document}
-\begin{CJK*}{GBK}{song}
+\begin{CJK*}{GBK}{kai}
 \AddToShipoutPicture{\BackgroundPic}
 \normalfont\ECFAugie
 
@@ -83,6 +93,8 @@ keepaspectratio]{background.png}%
 \newcommand{\winrthree}{\begin{math}\text{R}^\text{3}\end{math}}
 \newcommand{\wineq}[1]{\begin{equation}\notag#1\end{equation}}
 
+%本人加的
+\newcommand{\winsubsub}[1]{\subsubsection*{$\quad \diamond$\hspace{0.2cm} #1}} % dot
 %%%%%%%%%%%%%%%%%%%%%%
 % start writing here %
 %%%%%%%%%%%%%%%%%%%%%%
@@ -91,101 +103,248 @@ keepaspectratio]{background.png}%
 
 
 \winsec{Deep Reinforcement Learning 深度增强学习资源 (持续更新）}
+
 \href{https://zhuanlan.zhihu.com/p/20885568}{Deep Reinforcement Learning 深度增强学习资源 (持续更新）}
 
 
 \winsec{DQN从入门到放弃1 DQN与增强学习}
+
 \href{https://zhuanlan.zhihu.com/p/21262246}{DQN 从入门到放弃1 DQN与增强学习}
 
+\winsub{前言}
 
+深度增强学习Deep Reinforcement Learning是将深度学习与增强学习结合起来从而实现从Perception感知到Action动作的端对端学习End-to-End Learning的一种全新的算法。
 
+\winsub{预备条件}
 
+概率论、线性代数、Python编程基础
 
+\begin{itemize}
+  \item 深度学习(Deep Learning)
+  \item 增强学习(Reinforcement Learning)
+\end{itemize}
 
+\winsub{增强学习是什么}
 
+\windef{智能体Agent}表示一个具备行为能力的物体，比如机器人，无人车，人等等。
 
+增强学习考虑的问题就是{\bf 智能体Agent}和{\bf 环境Environment}之间交互的任务。
 
+\windef{反馈值Reward}所谓的Reward就是Agent执行了动作与环境进行交互后，环境会发生变化，变化的好与坏就用Reward来表示。
 
+\windef{观察Observation}Observation表示Agent获取的感知信息。
 
+增强学习的任务就是找到一个最优的策略Policy从而使Reward最多。
 
+\winsec{DQN 从入门到放弃2 增强学习与MDP}
 
+\href{https://zhuanlan.zhihu.com/p/21292697}{DQN 从入门到放弃2 增强学习与MDP}
 
+\winsub{增强学习的世界观}
 
+\begin{itemize}
+  \item 世界的时间是可以分割成一个一个时间片的，并且有完全的先后顺序，因此可以形成
+      $${s_0,a_0,r_0,s_1,a_1,r_1,\dots,s_t,a_t,r_t}$$
+      这样的状态，动作和反馈系列。
+  \item 增强学习中每一次参数的调整都会对世界造成确定性的影响。
+\end{itemize}
 
+\winsub{MDP(Markov Decision Process)马尔科夫决策过程}
 
+\windef{Markov}
+一个状态$S_t$是Markov当且仅当
+$$P(s_{t+1}|s_t)=P(s_{t+1}|s_t,s_{t-1},\dots,s_1,s_0)$$
+$P$为概率。
 
+一个基本的MDP可以用$(S,A,P)$来表示，$S$表示状态，$A$ 表示动作，$P$表示状态转移概率，也就是根据当前的状态$s_t$ 和$a_t$转移到$s_{t+1}$的概率。如果我们知道了转移概率$P$，也就是称为我们获得了{\bf 模型Model}，有了模型，未来就可以求解，那么获取最优的动作也就有可能，这种通过模型来获取最优动作的方法也就称为Model-based 的方法。但是现实情况下，很多问题是很难得到准确的模型的，因此就有Model-free的方法来寻找最优的动作。
 
+\winsub{回报Result}
 
+\windef{回报Result}
+回报Return来表示某个时刻$t$的状态将具备的回报：
+$$G_t=R_{t+1}+\lambda R_{t+2}+\dots=\sum_{k=0}^{\infty}{\lambda^kR_{t+k+1}}$$
+上面$R$是Reward反馈，$\lambda$是discount factor折扣因子，一般小于1，就是说一般当下的反馈是比较重要的，时间越久，影响越小。
 
+用价值函数value function $v(s)$来表示一个状态未来的潜在价值。
 
+\windef{value function}
+value function就是回报的期望：
+$$v(s)={\mathbb E}[G_t|S_t=s]$$
 
-% section
-\winsec{section name goes here}
+\winsec{DQN 从入门到放弃3 价值函数与Bellman方程}
 
-% term definition
-\winsub{term definition}
-\windef{term - and it's definition}
+\href{https://zhuanlan.zhihu.com/p/21340755}{DQN 从入门到放弃3 价值函数与Bellman方程}
 
-% example
-\winsub{an example}
-\winex{example heading}
+\winsub{Value Function 价值函数}
 
-% system of equations
-\winsub{a system of equations}
-\winsys{
-2x+4y=2 \\
-2x+6y=3}
+\winsub{再谈增强学习的意义}
 
-% matrix
-\winsub{working a multistep problem}
-\winmat{
-a & b & c \\
-d & e & f \\
-g & h & i }
-% row operation
-\winero{R_1+R_2}
-% matrix
-\winmat{
-a & b & c \\
-d & e & f \\
-g & h & i }
-% result
-\winres{
-x = 1 \\
-y = 2 \\
-z = 3}
+L深度学习给了计算机“神经网络大脑”，RL给了计算机学习机制。
 
-% vector in 3-space
-\winsub{a vector in \winrthree}
-v = \winmat{
-x \\
-y \\
-z }
+\winsub{Bellman方程}
 
-\winsub{a multi-step process}
-A \step{do stuff} B \step{more stuff} C
+\begin{equation*}
+\begin{aligned}
+v(x)&={\mathbb E}[G_t|S_t=s]\\
+&={\mathbb E}[R_{t+1}+\lambda R_{t+2}+\lambda^2 R_{t+3}+\dots|S_t=s]\\
+&={\mathbb E}[R_{t+1}+\lambda (R_{t+2}+\lambda R_{t+3}+\dots)|S_t=s]\\
+&={\mathbb E}[R_{t+1}+\lambda G_{t+1}|S_t=s]\\
+&={\mathbb E}[R_{t+1}+\lambda v(S_{t+1})|S_t=s]
+\end{aligned}
+\end{equation*}
 
-% numbered list
-\winsub{an enumerated list}
-\begin{enumerate}
-\item{this is the first item in an enumerated list}
-\item{this is the second item in an enumerated list}
+\windef{Bellman方程}
+$$v(s)={\mathbb E}[R_{t+1}+\lambda v(S_{t+1})|S_t=s]$$
+
+\winsec{DQN 从入门到放弃4 动态规划与Q-Learning}
+
+\href{https://zhuanlan.zhihu.com/p/21378532}{DQN 从入门到放弃4 动态规划与Q-Learning}
+
+\winsub{上文回顾}
+
+Bellman方程透出的含义就是价值函数的计算可以通过迭代的方式来实现。
+
+\winsub{Action-Value function 动作价值函数}
+
+\windef{动作价值函数Action-Value function}
+\begin{equation*}
+\begin{aligned}
+Q^\pi(s,a)&={\mathbb E}[r_{t+1}+\lambda r_{t+2}+\lambda^2 r_{t+3}+\dots|s,a]\\
+&={\mathbb E}_{s^{'}}[r+\lambda Q^\pi(s^{'},a^{'})|s,a]
+\end{aligned}
+\end{equation*}
+
+\winsub{Optimal value function 最优价值函数}
+
+最优动作价值函数和一般的动作价值函数的关系：
+$$Q^{*}(s,a)=\max_{\pi}{Q^\pi(s,a)}$$
+$$Q^{*}(s,a)={\mathbb E}_{s^{'}}[r+\lambda \max_{a^{'}}{Q^{*}(s^{'},a^{'})}|s,a]$$
+
+\winsub{策略迭代Policy Iteration}
+
+Policy Iteration的目的是通过迭代计算value function 价值函数的方式来使policy收敛到最优。
+
+Policy Iteration本质上就是直接使用Bellman方程而得到的：
+\begin{equation*}
+\begin{aligned}
+v_{k+1}(s)&\doteq {\mathbb E}_{\pi}[R_{t+1}+\gamma v_k(S_{t+1})|S_t=s]\\
+&=\sum_{a}{\pi(a|s)\sum_{s^{'},r}{p(s^{'},r|s,a)[r+\gamma v_k(s^{'})]}}
+\end{aligned}
+\end{equation*}
+
+Policy Iteration一般分成两步：
+\begin{enumerate}[1.]
+  \item Policy Evaluation 策略评估。目的是 更新Value Function，或者说更好的估计基于当前策略的价值。
+  \item Policy Improvement 策略改进。 使用 greedy policy 产生新的样本用于第一步的策略评估。
 \end{enumerate}
 
-% manual line breaks
-\winsub{manually broken lines}
-the first line\\
-the second line\\
-the third line
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.75\columnwidth]{policyiteration.png}
+\label{policyiteration}
+\end{figure}
 
-% equation
-\winsub{some math}
-\wineq{
-\int_a^b \! f(x) \; dx % definite
-\int \! f(x) \, dx \; % indefinite
-\frac{\pi}{2} \; % fraction
-\sqrt{\theta} \; % root
-n = 1,2,3 \ldots 4}
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.75\columnwidth]{policyiterationcode.png}
+\label{policyiterationcode}
+\end{figure}
+
+这里policy evaluation部分的迭代需要知道state状态转移概率$p$，也就是说依赖于model模型。
+
+\winsub{Value Iteration 价值迭代}
+
+Value Iteration则是使用Bellman 最优方程得到
+\begin{equation*}
+\begin{aligned}
+v_{*}&=\max_{a}{{\mathbb E}[R_{t+1}+\gamma v_{*}(S_{t+1})|S_t=s,A_t=a]}\\
+&=\max_{a}{\sum_{s_{'},r}{p(s^{'},r|s,a)[r+\gamma v_{*}(s^{'})]}}
+\end{aligned}
+\end{equation*}
+然后改变成迭代形式
+\begin{equation*}
+\begin{aligned}
+v_{k+1}(s)&\doteq \max_{a}{{\mathbb E}[R_{t+1}+\gamma v_k(S_{t+1})|S_t=s,A_t=a]}\\
+&=\max_{a}{\sum_{s^{'},r}{p(s^{'},r|s,a)[r+\gamma v_k(s^{'})]}}
+\end{aligned}
+\end{equation*}
+
+value iteration的算法如下：
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.75\columnwidth]{valueiterationcode.png}
+\label{valueiterationcode}
+\end{figure}
+value iteration较之policy iteration更直接，不过问题也都是一样，需要知道状态转移函数$p$才能计算。
+
+\winsub{Q-Learning}
+Q Learning提出了一种更新Q值的办法：
+$$Q(S_t,A_t)\leftarrow Q(S_t,A_t)+\alpha (R_{t+1}+\lambda \max_{a}{Q(S_{t+1},a)-Q(S_t,A_t)})$$
+
+具体的算法如下：
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.75\columnwidth]{qlearningcode.png}
+\label{qlearningcode}
+\end{figure}
+
+\winsub{Exploration and Exploitation 探索与利用}
+
+\begin{itemize}
+  \item 以Q-Learning算法叫做Off-policy的算法。
+  \item Q-Learning完全不考虑model模型也就是环境的具体情况，只考虑看到的环境及reward，因此是model-free的方法。
+\end{itemize}
+
+选择怎样的policy来生成action呢？有两种做法：
+\begin{itemize}
+  \item 随机的生成一个动作。
+  \item greedy policy贪婪策略，如$\epsilon$-greedy策略。
+\end{itemize}
+
+\winsec{DQN从入门到放弃5 深度解读DQN算法}
+
+\href{https://zhuanlan.zhihu.com/p/21421729}{DQN从入门到放弃5 深度解读DQN算法}
+
+\begin{figure}[!htb]
+\begin{mdframed}
+asdfasdfasd\\
+\hspace{0.5cm}sdfgsdfgsd
+\end{mdframed}
+\end{figure}
+
+
+
+
+\begin{figure}[!htb]
+\begin{mdframed}
+\begin{enumerate}[1.]
+  \item Initialization
+  \begin{enumerate}[]
+    \item $V(s)\in {\mathbb R}$ and $\pi(s)\in {\cal A}(s)$ arbitrarily for all $s\in {\cal S}$
+  \end{enumerate}
+  \item Policy Evaluation
+  \begin{enumerate}[\hspace{0.5cm}]
+    \item Repeat
+    \begin{enumerate}[\hspace{0.5cm}]
+      \item $\Delta\leftarrow 0$
+      \item For each $s\in {\cal S}$
+      \begin{enumerate}[\hspace{0.5cm}]
+        \item $v\leftarrow V(s)$
+        \item $V(s)\leftarrow\sum_{s^{'},r}{p(s^{'},r|s,\pi(s))[r+\gamma V(s^{'})]}$
+        \item $\Delta\leftarrow \max{(\Delta,|v-V(s)|)}$
+      \end{enumerate}
+    \end{enumerate}
+    \item Until $\Delta<\theta$ (a small positive number)
+  \end{enumerate}
+  \item Policy Improvement
+\end{enumerate}
+\end{mdframed}
+\end{figure}
+
+
+
+
+
 
 
 
