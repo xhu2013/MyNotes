@@ -328,12 +328,10 @@ In case problem 1 is also subject to a set of terminal constraints of the form:
 \end{equation}
 where $\psi:{\mathbb R}^{n_x}\times{\mathbb R}\mapsto{\mathbb R}^{n_{\psi}}$ is vector function, variational analysis shows that the necessary conditions for a minimum of $J$ are (7),(5),(2), and the following terminal condition:
 \begin{equation}
-\left. \left(\lambda \right)^T\right|_{t_f}
+
 \end{equation}
 
-\begin{equation}
-\frac{1}{2}|_{t_f}
-\end{equation}
+
 
 
 

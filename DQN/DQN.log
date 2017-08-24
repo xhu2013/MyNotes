@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.3.5)  18 AUG 2017 23:21
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.3.5)  24 AUG 2017 13:47
 entering extended mode
 **E:/MyNotes/DQN/DQN.tex
 (E:/MyNotes/DQN/DQN.tex
@@ -1054,18 +1054,44 @@ File: background.png Graphic file (type png)
 <use background.png>
 Package pdftex.def Info: background.png used on input line 368.
 (pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
- [5] 
+ [5]
+
+LaTeX Warning: The counter will not be printed.
+             The label is:  on input line 401.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \hspace {0.5cm} on input line 405.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \hspace {0.5cm} on input line 408.
+
+Package mdframed Info: mdframed inside float 
+ mdframed uses option nobreak mdframed on input line 422.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 422.
+File: background.png Graphic file (type png)
+<use background.png>
+Package pdftex.def Info: background.png used on input line 428.
+(pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
+ [6]
+Overfull \hbox (134.3762pt too wide) in paragraph at lines 428--428
+|$[]$| 
+ []
+
+
 AED: lastpage setting LastPage
 File: background.png Graphic file (type png)
 <use background.png>
-Package pdftex.def Info: background.png used on input line 394.
+Package pdftex.def Info: background.png used on input line 445.
 (pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
- [6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 394.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 394.
+ [7]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 445.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 445.
  (E:\MyNotes\DQN\DQN.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 394.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 394.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 445.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 445.
 Package rerunfilecheck Info: File `DQN.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1077,13 +1103,13 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 14784 strings out of 495354
- 224066 string characters out of 3183860
- 331351 words of memory out of 3000000
- 17620 multiletter control sequences out of 15000+200000
- 44441 words of font info for 148 fonts, out of 3000000 for 9000
+ 14851 strings out of 495354
+ 225190 string characters out of 3183860
+ 333351 words of memory out of 3000000
+ 17670 multiletter control sequences out of 15000+200000
+ 47762 words of font info for 156 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 38i,14n,43p,843b,847s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,14n,43p,843b,879s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/s
 imkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS
 /Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:
@@ -1103,9 +1129,9 @@ pe1/public/lxfonts/lcmex8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts/lcmmi8
 s/type1/public/lxfonts/leclb8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts/le
 clq8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts/llcmss8.pfb><d:/CTEX/MiKTeX
 /fonts/type1/public/lxfonts/lmsbm8.pfb>
-Output written on DQN.pdf (6 pages, 796981 bytes).
+Output written on DQN.pdf (7 pages, 814092 bytes).
 PDF statistics:
- 264 PDF objects out of 1000 (max. 8388607)
- 48 named destinations out of 1000 (max. 500000)
+ 291 PDF objects out of 1000 (max. 8388607)
+ 65 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

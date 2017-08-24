@@ -174,7 +174,12 @@ Using the above equations, it is easy to solve for the $x_t$ and $\lambda_t$ ser
 $$\lambda_t=\lambda_{t+1}+\frac{(p-\lambda_{t+1})^2}{4}$$
 $$x_{t+1}=x_t\frac{2-p+\lambda_{t+1}}{2}$$
 and using the initial and turn-T conditions, the $x_t$ series can be solved explicitly, giving $u_t$.
+\end{mdframed}
+\caption{Discrete-time version}
+\end{figure}
 
+\begin{figure}[!htb]
+\begin{mdframed}
 2. Continuous-time version
 
 The manager maximizes profit $\Pi$:
@@ -195,10 +200,95 @@ $$\dot{\lambda}(t)=-\frac{(p-\lambda(t))^2}{4}$$
 $$u(t)=x(t)\frac{p-\lambda(t)}{2}$$
 and using the initial and turn-T conditions, the functions can be solved to yield
 $$x(t)=\frac{(4-pt+pT)^2}{(4+pT)^2}x_0$$
-
 \end{mdframed}
+\caption{Continuous-time version}
 \end{figure}
 
+\winsec{最优控制问题的理论和算法}
+
+北京大学：\href{http://dsec.pku.edu.cn/~rli/research/doc/html/ocp.html}{最优控制问题的理论和算法}
+
+\winsec{Optimal control}
+
+Scholarpedia: \href{http://www.scholarpedia.org/article/Optimal_control}{Optimal control}
+
+\winsub{Origins and applications}
+
+Optimal control is closely related in its origins to the theory of calculus of variations.
+
+\winsub{Formulation of optimal control problems}
+
+The formulation of an optimal control problem requires the following:
+\begin{itemize}
+  \item a mathematical model of the system to be controlled,
+  \item a specification of the performance index,
+  \item a specification of all boundary conditions on states, and constraints to be satisfied by states and controls,
+  \item a statement of what variables are free.
+\end{itemize}
+
+\winsub{Continuous time optimal control using the variational approach}
+
+\winsubsub{General case with fixed final time and no terminal or path constraints}
+
+Problem 1: Find the control vector trajectory ${\bf u}: [t_0,t_f]\in {\mathbb R}\mapsto {\mathbb R}^{n_u}$ to minimize the performance index:
+\begin{equation}
+J=\varphi({\bf x}(t_f))+\int_{t_0}^{t_f}{L({\bf x}(t),{\bf u}(t),t)dt}
+\end{equation}
+subject to:
+\begin{equation}
+\dot{\bf x}(t)={\bf f}({\bf x}(t),{\bf u}(t),t), \ {\bf x}(t_0)={\bf x}_0
+\label{eq2}
+\end{equation}
+where $[t_0,t_f]$ is the time interval of interest, ${\bf x}: [t_0,t_f]\mapsto {\mathbb R}^{n_x}$ is the state vector; $\varphi: {\mathbb R}^{n_x}\times{\mathbb R}\mapsto{\mathbb R}$ is a terminal cost function, $L: {\mathbb R}^{n_x}\times{\mathbb R}^{n_u}\times{\mathbb R}\mapsto {\mathbb R}$ is an intermediate cost function, and ${\bf f}: {\mathbb R}^{n_x}\times{\mathbb R}^{n_u}\times{\mathbb R}\mapsto {\mathbb R}^{n_x}$ is vector field. Note that equation \ref{eq2} represents the dynamics of system and its initial state condition. Problem 1 as defined above is known as the Bolza problem. If $L({\bf x},{\bf u},t)=0$, then the problem is known as the Mayer problem, if $\varphi({\bf x}(t_f))=0$, it is known as the Lagrange problem. Note that the performance index $J=J({\bf u})$ is a function, this is a rule of correspondence that assigns a real value to each function ${\bf u}$ in a class. \href{http://www.scholarpedia.org/article/Optimal_control}{Calculus of variations} is concerned with the optimisation of functionals, and it is the tool that is used in this section to derive necessary optimality conditions for the minimisation of $J({\bf u})$.
+
+Adjoin the constraints to the performance index with a time-varying Lagrange multiplier vector function $\lambda: [t_0,t_f]\mapsto {\mathbb R}^{n_x}$ (also known as the co-state), to define an augmented performance index $\bar{J}$:
+\begin{equation}
+\bar{J}=\varphi({\bf x}(t_f))+\int_{t_0}^{t_f}{\{L({\bf x},{\bf u},t)+\lambda^T(t)[{\bf f}({\bf x},{\bf u},t)-\dot{\bf x}]\}dt}
+\end{equation}
+
+Define the Hamiltonian function $H$ as follows:
+\begin{equation}
+H({\bf x}(t),{\bf u}(t),\lambda(t),t)=L({\bf x}(t),{\bf u}(t),t)+\lambda(t)^T{\bf f}({\bf x}(t),{\bf }u(t),t),
+\end{equation}
+such that $\bar{J}$ can be written as:
+\begin{equation*}
+\bar{J}=\varphi({\bf x}(t_f))+\int_{t_0}^{t_f}{\{H({\bf x}(t),{\bf u}(t),\lambda(t),t)-\lambda^T(t)\dot({\bf x})\}dt}
+\end{equation*}
+
+Assume that $t_0$ and $t_f$ are fixed. Now consider an infinitesimal variation in ${\bf u}(t)$, that is denoted as $\delta{\bf u}(t)$. Such a variation will produce variations in the state history $\delta{\bf x}(t)$, and a variation in the performance index $\delta\bar{J}$:
+\begin{equation*}
+\delta\bar{J}=[(\frac{\partial \varphi}{\partial{\bf x}}-\lambda^T)\delta{\bf x}]_{t=t_f}+[\lambda^T\delta{\bf x}]_{t=t_0}+\int_{t_0}^{t_f}{\{(\frac{\partial H}{\partial{\bf x}+\dot{\lambda}^T})\delta{\bf x}+(\frac{\partial H}{\partial{\bf u}})\delta{\bf u}\}dt}
+\end{equation*}
+
+Since the Lagrange multipliers are arbitrary, they can be selected to make the coefficients of $\delta{\bf x}(t)$ and $\delta{\bf x}(t_f)$ equal to zero, as follows:
+\begin{equation}
+\dot{\lambda}(t)^T=-\frac{\partial H}{\partial {\bf x}}
+\end{equation}
+
+\begin{equation}
+\lambda(t_f)^T=\frac{\partial \varphi}{\partial {\bf x}}|_{t=t_f}
+\end{equation}
+
+This choice of $\lambda(t)$ results in the following expression for $\bar{J}$, assuming that the initial state is fixed, so that $\delta{\bf x}(t_0)$:
+\begin{equation*}
+\delta\bar{J}=\int_{t_0}^{t_f}{\{(\frac{\partial H}{\partial{\bf u}})\delta{\bf u}\}dt}
+\end{equation*}
+
+For a minimum, it is necessary that $\delta\bar{J}=0$. This gives the stationarity condition:
+\begin{equation}
+\frac{\partial H^T}{\partial {\bf u}}=0
+\end{equation}
+
+\winsubsub{The linear quadratic regulator}
+
+A special case of optimal control problem which is of particular importance arises when the objective function is a quadratic function of ${\bf x}$ and ${\bf u}$, and the dynamic equations are linear. The resulting feedback law in the case is known as the linear quadratic regulator (LQR). The performance index is given by:
+\begin{equation}
+J=\frac{1}{2}{\bf x}(t_f)^T{\bf S}_f{\bf x}(t_f)+\frac{1}{2}\int_{t_0}^{t_f}{({\bf x}(t)^T{\bf Q}{\bf x}(t)+{\bf u}(t)^T{\bf R}{\bf u}(t))dt}
+\end{equation}
+where ${\bf S}_f$ and ${\bf Q}$ are positive semidefinite matrices, and ${\bf R}$ is a positive definite matrix, while the system dynamics obey:
+\begin{equation}
+\dot{\bf x}(t)={\bf A}{\bf x}(t)+{\bf B}{\bf u}(t),\ {\bf x}(t_0)={\bf x}_0
+\end{equation}
 
 
 
@@ -218,15 +308,7 @@ $$x(t)=\frac{(4-pt+pT)^2}{(4+pT)^2}x_0$$
 
 
 
-
-
-
-
-
-
-
-
-
+%eq2
 
 
 \end{CJK*}

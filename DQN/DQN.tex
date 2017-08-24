@@ -347,7 +347,7 @@ $$Q(S_t,A_t)\leftarrow Q(S_t,A_t)+\alpha (R_{t+1}+\lambda \max_{a}{Q(S_{t+1},a)-
     \item 初始化状态$S$
     \item 重复(对episode中的每一步)
     \begin{enumerate}[\hspace{0.5cm}]
-      \item 使用某一个policy比如($\epsilon-greedy$)根据状态$S$选取一个动作执行 
+      \item 使用某一个policy比如($\epsilon-greedy$)根据状态$S$选取一个动作执行
       \item 执行完动作后，观察reward和新的状态$S^{'}$
       \item $Q(S_t,A_t)\leftarrow Q(S_t,A_t)+\alpha({\color{red}R_{t+1}+\lambda \max_{a}{Q(S_{t+1},a)}}-Q(S_t,A_t))$
       \item $S\leftarrow S^{'}$
@@ -370,13 +370,64 @@ $$Q(S_t,A_t)\leftarrow Q(S_t,A_t)+\alpha (R_{t+1}+\lambda \max_{a}{Q(S_{t+1},a)-
 选择怎样的policy来生成action呢？有两种做法：
 \begin{itemize}
   \item 随机的生成一个动作。
-  \item greedy policy贪婪策略，如$\epsilon$-greedy策略。
+  \item greedy policy贪婪策略，如$\epsilon$-greedy 策略。
 \end{itemize}
 
 \winsec{DQN从入门到放弃5 深度解读DQN算法}
 
 \href{https://zhuanlan.zhihu.com/p/21421729}{DQN从入门到放弃5 深度解读DQN算法}
 
+\winsub{详解Q-Learning}
+
+\winsub{维度灾难}
+
+\winsub{价值函数近似Value Function Approximation}
+
+\winsub{高维状态输入，低维动作输出的表示问题}
+
+\winsub{Q值神经网络化！}
+
+\winsub{DQN算法}
+
+Q网络训练的损失函数就是
+\begin{equation*}
+L(w)={\mathbb E}[({\color{blue}\underbrace{r+\gamma\max_{a^{'}}{Q(s^{'},a^{'},w)}}}-Q(s,a,w))^2]
+\end{equation*}
+
+\winsub{DQN训练}
+
+\begin{figure}[!htb]
+\begin{mdframed}
+\begin{enumerate}[]
+  \item Initialize replay memory ${\cal D}$ to capacity $N$
+  \item Initialize action-value function $Q$ with random weights
+  \item for episode=1,$M$ do
+  \begin{enumerate}[\hspace{0.5cm}]
+    \item Initialise sequence $s_1=\{x_1\}$ and preprocessed sequenced $\phi_1=\phi(s_1)$
+    \item for $t=1,T$ do
+    \begin{enumerate}[\hspace{0.5cm}]
+      \item With probability $\epsilon$ select a random action $a_t$
+      \item otherwise select $a_t=\max_{a}{Q^{*}(\phi(s_t),a;\theta)}$
+      \item Execute action $a_t$ in emulator and observe reward $r_t$ and image $x_{t+1}$
+      \item Set $s_{t+1}=s_t$, $a_t$, $x_{t+1}$ and preprocess $\phi_{t+1}=\phi(s_{t+1})$
+      \item Store transition $(\phi_t,a_t,r_t,\phi_{t+1})$ in ${\cal D}$
+      \item Sample random minibatch of transitions $(\phi_j,a_j,r_j,\phi_{j+1})$ form ${\cal d}$
+      \item Set $x=\begin{cases}r_j & {\text for terminal}\ \phi_{j+1}\\ r_j+\gamma\max_{a^{'}}{Q(\phi_{j+1},a^{'};\theta)} & {\text for non-terminal}\ \phi_{j+1}\end{cases}$
+      \item Perform a gradient descent step on $(y_j-Q(\phi_j,a_j;\theta))^2$ according to equation 3
+    \end{enumerate}
+    \item end for
+  \end{enumerate}
+  \item end for
+\end{enumerate}
+\end{mdframed}
+\caption{Deep Q-learning with Experience Replay}
+\end{figure}
+
+在DQN中增强学习Q-Learning算法和深度学习的SGD训练是同步进行的！
+
+\winsec{DQN实战篇1 从零开始安装Ubuntu, Cuda, Cudnn, Tensorflow, OpenAI Gym}
+
+\href{https://zhuanlan.zhihu.com/p/21434933}{DQN实战篇1 从零开始安装Ubuntu, Cuda, Cudnn, Tensorflow, OpenAI Gym}
 
 
 

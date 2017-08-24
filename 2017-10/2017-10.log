@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.3.5)  22 AUG 2017 23:30
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.3.5)  24 AUG 2017 17:41
 entering extended mode
 **E:/MyNotes/2017-10/2017-10.tex
 (E:/MyNotes/2017-10/2017-10.tex
@@ -938,24 +938,54 @@ Package mdframed Info: mdframed inside minipage
  mdframed uses option nobreak mdframed on input line 203.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 203.
- 
-AED: lastpage setting LastPage
+LaTeX Font Info:    Try loading font information for C19+kai on input line 207.
+
+
+(d:\CTEX\CTeX\tex\latex\CJK\GB\c19kai.fd
+File: c19kai.fd 2009/09/23 4.8.2
+)
 File: background.png Graphic file (type png)
-<use background.png>
-Package pdftex.def Info: background.png used on input line 238.
+ <use background.png>
+Package pdftex.def Info: background.png used on input line 211.
 (pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
  [3]
 File: background.png Graphic file (type png)
- <use background.png>
-Package pdftex.def Info: background.png used on input line 238.
+
+<use background.png>
+Package pdftex.def Info: background.png used on input line 219.
 (pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
  [4]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 238.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 238.
+LaTeX Font Info:    Try loading font information for OMS+fau on input line 223.
 
-(E:\MyNotes\2017-10\2017-10.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 238.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 238.
+LaTeX Font Info:    No file OMSfau.fd. on input line 223.
+
+
+LaTeX Font Warning: Font shape `OMS/fau/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbullet' on input line 223.
+
+File: background.png Graphic file (type png)
+<use background.png>
+Package pdftex.def Info: background.png used on input line 256.
+(pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
+ [5]
+File: background.png Graphic file (type png)
+ <use background.png>
+Package pdftex.def Info: background.png used on input line 309.
+(pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
+ [6]
+
+AED: lastpage setting LastPage
+File: background.png Graphic file (type png)
+<use background.png>
+Package pdftex.def Info: background.png used on input line 362.
+(pdftex.def)             Requested size: 614.26851pt x 794.93571pt.
+ [7]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 362.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 362.
+ (E:\MyNotes\2017-10\2017-10.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 362.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 362.
 Package rerunfilecheck Info: File `2017-10.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -964,21 +994,30 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 14226 strings out of 495354
- 214363 string characters out of 3183860
- 319256 words of memory out of 3000000
- 17143 multiletter control sequences out of 15000+200000
- 19075 words of font info for 65 fonts, out of 3000000 for 9000
+ 14356 strings out of 495354
+ 216263 string characters out of 3183860
+ 320312 words of memory out of 3000000
+ 17228 multiletter control sequences out of 15000+200000
+ 30683 words of font info for 102 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 38i,13n,43p,851b,578s stack positions out of 5000i,500n,10000p,200000b,50000s
-{d:/CTEX/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<d:/CTEX/MiKTeX/fonts/type1/e
-merald/faumw.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts/lcmex8.pfb><d:/CTEX
-/MiKTeX/fonts/type1/public/lxfonts/lcmmi8.pfb><d:/CTEX/MiKTeX/fonts/type1/publi
-c/lxfonts/lcmsy8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts/leclq8.pfb><d:/
-CTEX/MiKTeX/fonts/type1/public/lxfonts/llcmss8.pfb>
-Output written on 2017-10.pdf (4 pages, 402169 bytes).
+ 38i,14n,43p,1214b,605s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/s
+imkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS
+/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:
+/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai
+.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Font
+s/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WIND
+OWS/Fonts/simkai.ttf>{d:/CTEX/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<d:/CTEX/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/CTEX/MiKTeX/fonts/type1/eme
+rald/faumw.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts/lcmex8.pfb><d:/CTEX/M
+iKTeX/fonts/type1/public/lxfonts/lcmmi8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/
+lxfonts/lcmsy8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts/leclb8.pfb><d:/CT
+EX/MiKTeX/fonts/type1/public/lxfonts/leclq8.pfb><d:/CTEX/MiKTeX/fonts/type1/pub
+lic/lxfonts/llcmss8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts/llcmssb8.pfb
+><d:/CTEX/MiKTeX/fonts/type1/public/lxfonts/lmsbm8.pfb>
+Output written on 2017-10.pdf (7 pages, 510384 bytes).
 PDF statistics:
- 59 PDF objects out of 1000 (max. 8388607)
- 7 named destinations out of 1000 (max. 500000)
+ 185 PDF objects out of 1000 (max. 8388607)
+ 27 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

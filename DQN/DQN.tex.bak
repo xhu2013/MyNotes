@@ -44,6 +44,9 @@
 
 %边框
 
+%字体颜色
+\usepackage{color}
+
 
 
 
@@ -245,11 +248,42 @@ Policy Iteration一般分成两步：
 \end{figure}
 
 \begin{figure}[!htb]
-\centering
-\includegraphics[width=0.75\columnwidth]{policyiterationcode.png}
+\begin{mdframed}
+\begin{enumerate}[1.]
+  \item Initialization
+  \begin{enumerate}[\hspace{0.5cm}]
+    \item $V(s)\in {\mathbb R}$ and $\pi(s)\in {\cal A}(s)$ arbitrarily for all $s\in {\cal S}$
+  \end{enumerate}
+  \item Policy Evaluation
+  \begin{enumerate}[\hspace{0.5cm}]
+    \item Repeat
+    \begin{enumerate}[\hspace{0.5cm}]
+      \item $\Delta\leftarrow 0$
+      \item For each $s\in {\cal S}$
+      \begin{enumerate}[\hspace{0.5cm}]
+        \item $v\leftarrow V(s)$
+        \item $V(s)\leftarrow\sum_{s^{'},r}{p(s^{'},r|s,\pi(s))[r+\gamma V(s^{'})]}$
+        \item $\Delta\leftarrow \max{(\Delta,|v-V(s)|)}$
+      \end{enumerate}
+    \end{enumerate}
+    \item Until $\Delta<\theta$ (a small positive number)
+  \end{enumerate}
+  \item Policy Improvement
+  \begin{enumerate}[\hspace{0.5cm}]
+    \item $policy-stable \leftarrow true$
+    \item For each $s\in{\cal S}$
+    \begin{enumerate}[\hspace{0.5cm}]
+      \item $a\leftarrow \pi(s)$
+      \item $\pi(s)\leftarrow argmax_a{\sum_{s^{'},r}{p(s^{'},r|s,a)[r+\lambda V(s^{'})]}}$
+      \item if $a\neq \pi(s)$, then $policy-stable\leftarrow false$
+    \end{enumerate}
+    \item if $policy-stable$, then stop and return $V$ and $\pi$; else go to 2
+  \end{enumerate}
+\end{enumerate}
+\end{mdframed}
 \label{policyiterationcode}
+\caption{Policy iteration算法}
 \end{figure}
-
 这里policy evaluation部分的迭代需要知道state状态转移概率$p$，也就是说依赖于model模型。
 
 \winsub{Value Iteration 价值迭代}
@@ -270,11 +304,32 @@ v_{k+1}(s)&\doteq \max_{a}{{\mathbb E}[R_{t+1}+\gamma v_k(S_{t+1})|S_t=s,A_t=a]}
 \end{equation*}
 
 value iteration的算法如下：
+
 \begin{figure}[!htb]
-\centering
-\includegraphics[width=0.75\columnwidth]{valueiterationcode.png}
+\begin{mdframed}
+\begin{enumerate}[]
+  \item Initialize array $V$ arbitrarily (e.g., $V(s)=0$ for all $s\in {\cal S}^{+}$)
+  \item Repeat
+  \begin{enumerate}[\hspace{0.5cm}]
+    \item $\Delta \leftarrow 0$
+    \item For each $s\in {\cal S}$
+    \begin{enumerate}[\hspace{0.5cm}]
+      \item $v\leftarrow V(s)$
+      \item $V(s)\leftarrow\max_{a}{\sum_{s^{'},r}{p(s^{'},r|s,a)[r+\gamma V(s^{'})]}}$
+      \item $\Delta\leftarrow\max{(\Delta,|v-V(s)|)}$
+    \end{enumerate}
+  \end{enumerate}
+  \item until $\Delta<\theta$ (a small positive number)
+  \item Output a deterministic policy, $\pi$, such that
+      \begin{enumerate}[\hspace{0.5cm}]
+        \item $\pi(s)=argmax_a{\sum_{s^{'},r}{p(s^{'},r|s,a)[r_\gamma V(s^{'})]}}$
+      \end{enumerate}
+\end{enumerate}
+\end{mdframed}
 \label{valueiterationcode}
+\caption{Value iteration算法}
 \end{figure}
+
 value iteration较之policy iteration更直接，不过问题也都是一样，需要知道状态转移函数$p$才能计算。
 
 \winsub{Q-Learning}
@@ -282,9 +337,26 @@ Q Learning提出了一种更新Q值的办法：
 $$Q(S_t,A_t)\leftarrow Q(S_t,A_t)+\alpha (R_{t+1}+\lambda \max_{a}{Q(S_{t+1},a)-Q(S_t,A_t)})$$
 
 具体的算法如下：
+
 \begin{figure}[!htb]
-\centering
-\includegraphics[width=0.75\columnwidth]{qlearningcode.png}
+\begin{mdframed}
+\begin{enumerate}[]
+  \item 初始化$Q(s,a)$，$\forall s\in S$，$a\in A(s)$，任意的数值，并且$Q(terminal-state,\cdot)=0$
+  \item 重复(对每一节episode)
+  \begin{enumerate}[\hspace{0.5cm}]
+    \item 初始化状态$S$
+    \item 重复(对episode中的每一步)
+    \begin{enumerate}[\hspace{0.5cm}]
+      \item 使用某一个policy比如($\epsilon-greedy$)根据状态$S$选取一个动作执行
+      \item 执行完动作后，观察reward和新的状态$S^{'}$
+      \item $Q(S_t,A_t)\leftarrow Q(S_t,A_t)+\alpha({\color{red}R_{t+1}+\lambda \max_{a}{Q(S_{t+1},a)}}-Q(S_t,A_t))$
+      \item $S\leftarrow S^{'}$
+    \end{enumerate}
+    \item 循环直到$S$终止
+  \end{enumerate}
+\end{enumerate}
+\end{mdframed}
+\caption{Q-Learning算法}
 \label{qlearningcode}
 \end{figure}
 
@@ -305,41 +377,27 @@ $$Q(S_t,A_t)\leftarrow Q(S_t,A_t)+\alpha (R_{t+1}+\lambda \max_{a}{Q(S_{t+1},a)-
 
 \href{https://zhuanlan.zhihu.com/p/21421729}{DQN从入门到放弃5 深度解读DQN算法}
 
-\begin{figure}[!htb]
-\begin{mdframed}
-asdfasdfasd\\
-\hspace{0.5cm}sdfgsdfgsd
-\end{mdframed}
-\end{figure}
+\winsub{详解Q-Learning}
+
+\winsub{维度灾难}
+
+\winsub{价值函数近似Value Function Approximation}
+
+\winsub{高维状态输入，低维动作输出的表示问题}
+
+\winsub{Q值神经网络化！}
+
+\winsub{DQN算法}
+
+Q网络训练的损失函数就是
+\begin{equation*}
+L(w)={\mathbb E}[({\color{blue}\underbrace{r+\gamma\max_{a^{'}}{Q(s^{'},a^{'},w)}}}-Q(s,a,w))^2]
+\end{equation*}
 
 
 
 
-\begin{figure}[!htb]
-\begin{mdframed}
-\begin{enumerate}[1.]
-  \item Initialization
-  \begin{enumerate}[]
-    \item $V(s)\in {\mathbb R}$ and $\pi(s)\in {\cal A}(s)$ arbitrarily for all $s\in {\cal S}$
-  \end{enumerate}
-  \item Policy Evaluation
-  \begin{enumerate}[\hspace{0.5cm}]
-    \item Repeat
-    \begin{enumerate}[\hspace{0.5cm}]
-      \item $\Delta\leftarrow 0$
-      \item For each $s\in {\cal S}$
-      \begin{enumerate}[\hspace{0.5cm}]
-        \item $v\leftarrow V(s)$
-        \item $V(s)\leftarrow\sum_{s^{'},r}{p(s^{'},r|s,\pi(s))[r+\gamma V(s^{'})]}$
-        \item $\Delta\leftarrow \max{(\Delta,|v-V(s)|)}$
-      \end{enumerate}
-    \end{enumerate}
-    \item Until $\Delta<\theta$ (a small positive number)
-  \end{enumerate}
-  \item Policy Improvement
-\end{enumerate}
-\end{mdframed}
-\end{figure}
+
 
 
 
